@@ -1,0 +1,15 @@
+{
+  "name": "JS Detector",
+  "version": "0.1",
+  "description": "Detects javascript library and displays in toolbar.",
+  "background_page": "background.html",
+  "page_action": {
+    "default_icon": "icons/mootools.png",
+    "default_title": "Test",
+    "background": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*"
+  ]
+}

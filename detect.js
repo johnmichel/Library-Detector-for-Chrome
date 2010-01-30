@@ -16,11 +16,7 @@
                  Firefox  http://paulbakaus.com/
 **/
 
-// runs at document load and checks to see if the lib detect meta tag has been added
-
-if (window === top) {
-    var meta = document.getElementById('lib_detect_meta');
-    if (meta) {
-        chrome.extension.sendRequest(JSON.parse(meta.content));
-    }
+var meta = document.getElementById('lib_detect_meta');
+if (meta) {
+    chrome.extension.sendRequest(JSON.parse(meta.content));
 }

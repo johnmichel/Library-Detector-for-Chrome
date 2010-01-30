@@ -1,15 +1,43 @@
+/**
+    file: manifest.json
+
+    description: Sets up the extension and registers page scripts
+ 
+    license: Library Detector is freely distributable under the MIT License 
+             http://www.opensource.org/licenses/mit-license.php
+ 
+    copyright: Copyright (c) 2010 Andrew Bredow <bredow@gmail.com>. All rights reserved.
+ 
+    author: Andrew Bredow http://andrewbredow.com
+ 
+    inspiration: Library detect class inspired by Paul Bakaus' Library Detector for
+                 Firefox  http://paulbakaus.com/
+**/
+
 {
-  "name": "JS Detector",
-  "version": "0.1",
-  "description": "Detects javascript library and displays in toolbar.",
-  "background_page": "background.html",
-  "page_action": {
-    "default_icon": "icons/mootools.png",
-    "default_title": "Test",
-    "background": "popup.html"
-  },
-  "permissions": [
-    "tabs",
-    "http://*/*"
-  ]
+    "name": "JS Detector",
+    "version": "1.0",
+    "description": "Detects any javascript libraries running on a page and displays it's icon in the address bar.",
+    "background_page": "background.html",
+    "page_action": {
+        "default_icon": "icons/null.png",
+        "default_title": "Library Detector"
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["inject.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["detect.js"],
+            "run_at": "document_idle"
+        }
+    ]
 }

@@ -15,11 +15,11 @@
                  Firefox  http://paulbakaus.com/
 **/
 
-var detectLibrary = function() {
-    for (var i in Tests) {
-        var result = Tests[i].test(window);
+var libraryDetectorDetectLibrary = function() {
+    for (var i in LibraryDetectorTests) {
+        var result = LibraryDetectorTests[i].test(window);
         if (result !== false) {
-            result.icon = Tests[i].icon;
+            result.icon = LibraryDetectorTests[i].icon;
             result.name = i;
             return result;
         }
@@ -27,7 +27,7 @@ var detectLibrary = function() {
     return false;
 };
 
-var Tests = {
+var LibraryDetectorTests = {
 	
 	'jQuery': {
 		icon: 'jquery',
@@ -173,7 +173,7 @@ var Tests = {
 };
 
 if (window === top) {
-    var lib = detectLibrary();
+    var lib = libraryDetectorDetectLibrary();
     if (lib) {
         var meta = document.createElement('meta');
         meta.name = 'lib_detect';

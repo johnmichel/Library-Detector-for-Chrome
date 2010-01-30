@@ -168,6 +168,17 @@ var LibraryDetectorTests = {
 				return false;
 			}
 		}
+	},
+	
+    'Raphael': {
+		icon: 'raphael',
+		test: function(win) {
+			if(win.Raphael) {
+				return { version: win.Raphael.version };
+			} else {
+				return false;
+			}
+		}
 	}
 	
 };

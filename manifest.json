@@ -17,7 +17,7 @@
 {
     "name": "Library Detector",
     "version": "1.0",
-    "description": "Detects the javascript library running on a page and displays it's icon in the address bar.",
+    "description": "Detects the Javascript library running on a page and displays it's icon in the address bar.",
     "background_page": "background.html",
     "page_action": {
         "default_icon": "icons/null.png",

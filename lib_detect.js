@@ -186,10 +186,7 @@ var LibraryDetectorTests = {
 if (window === top) {
     var lib = libraryDetectorDetectLibrary();
     if (lib) {
-        var meta = document.createElement('meta');
-        meta.name = 'lib_detect';
-        meta.content = JSON.stringify(lib);
-        meta.id = 'lib_detect_meta';
-        document.getElementsByTagName('head')[0].appendChild(meta);
+        var data = [lib.name, lib.version, lib.icon];
+        document.getElementById('d41d8cd98f00b204e9800998ecf8427e_lib_detect').content = data.join('&');
     }
 }

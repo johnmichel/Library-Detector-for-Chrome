@@ -16,7 +16,7 @@
                  Firefox  http://paulbakaus.com/
 **/
 
-var meta = document.getElementById('lib_detect_meta');
+var meta = document.getElementById('d41d8cd98f00b204e9800998ecf8427e_lib_detect');
 if (meta) {
-    chrome.extension.sendRequest(JSON.parse(meta.content));
+    chrome.extension.sendRequest(meta.content);
 }

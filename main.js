@@ -15,13 +15,14 @@
 **/
 
 var setLibrary = function(library, tabId) {
+    library = library.split('&'); //name, version, icon
     chrome.pageAction.setIcon({
         tabId: tabId,
-        path: 'icons/'+library.icon+'.png'
+        path: 'icons/'+library[2]+'.png'
     });
     chrome.pageAction.setTitle({
         tabId: tabId,
-        title: library.name + ' ' + library.version
+        title: library[0] + ' ' + library[1]
     });
     chrome.pageAction.show(tabId);
 };

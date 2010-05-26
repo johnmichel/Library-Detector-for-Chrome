@@ -190,6 +190,17 @@ var LibraryDetectorTests = {
 				return false;
 			}
 		}
+	},
+	
+	'Processing.js': {
+		icon: 'processingjs',
+		test: function(win) {
+			if(win.Processing) {
+				return { version: '(not detectable)' };
+			} else {
+				return false;
+			}
+		}
 	}
 	
 };

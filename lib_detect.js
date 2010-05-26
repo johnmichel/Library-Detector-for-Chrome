@@ -179,6 +179,17 @@ var LibraryDetectorTests = {
 				return false;
 			}
 		}
+	},
+	
+	'Modernizr': {
+		icon: 'modernizr',
+		test: function(win) {
+			if(win.Modernizr) {
+				return { version: Modernizr._version };
+			} else {
+				return false;
+			}
+		}
 	}
 	
 };

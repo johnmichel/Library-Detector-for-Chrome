@@ -1,18 +1,6 @@
 /**
-    file: lib_detect.js
-
     description: Injected into document by inject.js to create a meta element with 
                  any recognized JS libraries.
- 
-    license: Library Detector is freely distributable under the MIT License 
-             http://www.opensource.org/licenses/mit-license.php
- 
-    copyright: Copyright (c) 2010 Andrew Bredow <bredow@gmail.com>. All rights reserved.
- 
-    author: Andrew Bredow http://andrewbredow.com
- 
-    inspiration: Library detect class inspired by Paul Bakaus' Library Detector for
-                 Firefox  http://paulbakaus.com/
 **/
 
 (function() {

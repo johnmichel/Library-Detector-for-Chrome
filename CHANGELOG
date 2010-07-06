@@ -1,0 +1,10 @@
+1.0
+	- Initial release
+1.1
+	- Added missing Raphael icon
+	- Fixed meta tag concurrency problem
+	- Removed dependency on JSON for data transfer between extension and Document namespace
+1.2
+	- Added support for Modernizr and Processingjs (contributed by johnmichel)
+	- Removed Document namespace variable pollution
+	- Cleaned up documentation, adding README, LICENSE, and CHANGELOG

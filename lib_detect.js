@@ -170,7 +170,6 @@
     			}
     		}
     	},
-	
         'Raphael': {
     		icon: 'raphael',
     		test: function(win) {
@@ -180,8 +179,30 @@
     				return false;
     			}
     		}
-    	}
+    	},
 	
+    	'Modernizr': {
+    		icon: 'modernizr',
+    		test: function(win) {
+    			if(win.Modernizr) {
+    				return { version: Modernizr._version };
+    			} else {
+    				return false;
+    			}
+    		}
+    	},
+	
+    	'Processing.js': {
+    		icon: 'processingjs',
+    		test: function(win) {
+    			if(win.Processing) {
+    				return { version: '( version not detectable)' };
+    			} else {
+    				return false;
+    			}
+    		}
+    	}
+    	
     };
 
     if (window === top) {

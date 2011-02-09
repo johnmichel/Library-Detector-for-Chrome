@@ -5,10 +5,8 @@ utilized on webpages you visit and displays their icons in the address bar. Curr
 supports jQuery, jQuery UI, Dojo, Prototype, Scriptaculous, MooTools, Spry, YUI, 
 Qooxdoo, Ext JS, base2, Google Closure, Raphael, Modernizr, and Processing.js.
 
-Author: 
-	Andrew Bredow http://andrewbredow.com <bredow@gmail.com>
-
 Contributors:
+	Andrew Bredow http://andrewbredow.com <bredow@gmail.com>
 	John Michel http://www.cowbird.org/
 
 Inspiration: 

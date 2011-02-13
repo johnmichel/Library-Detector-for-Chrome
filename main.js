@@ -3,27 +3,84 @@
 **/
 
 var libraries, library, tabId;
+var Libraries = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
 
+/**
+ * Parse the data from the meta tag
+ */
+function parseLibraries(libs) {
+	if (libs.length === 0) return [];
+	var libkeys = [];
+	libs = libs.split(',');
+	for (var i=0; i<libs.length; i++) {
+		var libdata = libs[i].split(':');
+		libkeys.push({
+			name: libdata[0],
+			version: libdata[1]
+		});
+	}
+	return libkeys;
+}
+
+/**
+ * Add in the static properties that go with the runtime library data
+ */
+function getLibraries(libs) {  //name, version, icon, url
+	libraries = parseLibraries(libs);
+	for (var i=0; i<libraries.length; i++) {
+		lib = libraries[i];
+		lib.url = Libraries[lib.name].url;
+		lib.icon = Libraries[lib.name].icon;
+	}
+	return libraries;
+}
+
+/**
+ * Set no icon
+ */
+function setNoIcon() {
+	chrome.pageAction.setIcon({
+        tabId: tabId,
+        path: 'icons/null.png'
+    });
+	chrome.pageAction.setTitle({
+        tabId: tabId,
+        title: ''
+	});
+	chrome.pageAction.setPopup({
+        'tabId': tabId,
+        'popup': ''
+    });
+	chrome.pageAction.show(tabId);
+}
+
+/**
+ * Dispatch the program
+ */
 function run(libs, tab) {
 	tabId = tab;
-	libraries = JSON.parse(libs); //name, version, icon, url
-	console.log(libraries);
+	libraries = getLibraries(libs);
+	if (libraries.length === 0) {
+		setNoIcon();
+		return;
+	}
     library = libraries[0];
-	console.log(library);
 	getIcon(library.icon, libraries.length);
 };
 
+/**
+ * Callback to finish rendering after canvases are done loading
+ */
 function dispatch(pixelData) {
+	
 	chrome.pageAction.setIcon({
         tabId: tabId,
         imageData: pixelData
     });
-
-    chrome.pageAction.setTitle({
+	chrome.pageAction.setTitle({
         tabId: tabId,
         title: library.name + ' ' + library.version
     });
-    
     chrome.pageAction.setPopup({
         'tabId': tabId,
         'popup': 'popup.html'
@@ -34,8 +91,10 @@ function dispatch(pixelData) {
     chrome.pageAction.show(tabId);
 };
 
+/**
+ * Use a canvas to add an overlay to the icon, if necessary, return the pixel data
+ */
 function getIcon(iconName, count) {
-	console.log(iconName);
 	var image = document.createElement('canvas');
 	image.width = 16;
 	image.height = 16;

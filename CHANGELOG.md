@@ -6,7 +6,7 @@ Changelog
 - Added links to library homepages when the dropdown menu is opened
 - Simplified method for populating meta tag with runtime library data
 - Reorganized filesystem
-- Text files are now 23.7% mroe sexy in Markdown
+- Text files are now 23.7% more sexy in Markdown
 
 ### 1.2
 - Added support for Modernizr and Processingjs (contributed by johnmichel)

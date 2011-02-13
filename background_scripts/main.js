@@ -41,7 +41,7 @@ function getLibraries(libs) {  //name, version, icon, url
 function setNoIcon() {
 	chrome.pageAction.setIcon({
         tabId: tabId,
-        path: 'icons/null.png'
+        path: '../icons/null.png'
     });
 	chrome.pageAction.setTitle({
         tabId: tabId,
@@ -79,11 +79,11 @@ function dispatch(pixelData) {
     });
 	chrome.pageAction.setTitle({
         tabId: tabId,
-        title: library.name + ' ' + library.version
+        title: libraries.length > 1 ? 'Multiple libraries' : library.name + ' ' + library.version
     });
     chrome.pageAction.setPopup({
         'tabId': tabId,
-        'popup': 'popup.html'
+        'popup': '../popups/libraries.html'
     });
     
     localStorage.setItem('libraries_' + tabId, JSON.stringify(libraries));
@@ -102,7 +102,7 @@ function getIcon(iconName, count) {
 	var context = image.getContext('2d');
 	
 	var icon = new Image;
-	icon.src = 'icons/'+iconName+'.png';
+	icon.src = '../icons/'+iconName+'.png';
 	icon.addEventListener('load', function() {
 		context.drawImage(icon, 0, 0, 16, 16);
 		if (count > 1) {

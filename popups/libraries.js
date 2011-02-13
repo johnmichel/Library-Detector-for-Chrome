@@ -9,7 +9,7 @@ var addLibrary = function(library) {
 	var link = document.createElement('a');
 	link.href = library.url;
 	link.innerHTML = library.name;
-	link.setAttribute('style', "background: transparent url('icons/" + library.icon + ".png') no-repeat left center");
+	link.setAttribute('style', "background: transparent url('../icons/" + library.icon + ".png') no-repeat left center");
 	link.target = '_blank';
 
 	var version = document.createElement('span');

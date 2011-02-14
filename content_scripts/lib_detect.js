@@ -21,12 +21,11 @@
         var libraries = [];
         for (var i in tests) {
             var result = tests[i].test(window);
-            if (result !== false) {
-                libraries.push({
-					name: i,
-					version: result.version
-				});
-            }
+            if (result === false) continue;
+            libraries.push({
+				name: i,
+				version: result.version
+			});
         }
         return libraries;
     };

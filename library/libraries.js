@@ -7,9 +7,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			var jq = win.jQuery || win.$ || win.$jq || win.$j;
 			if(jq && jq.fn && jq.fn.jquery) {
 				return { version: jq.fn.jquery };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -22,9 +21,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				var plugins = 'accordion,datepicker,dialog,draggable,droppable,progressbar,resizable,selectable,slider,menu,grid,tabs'.split(','), concat = [];
 				for (var i=0; i < plugins.length; i++) { if(jq.ui[plugins[i]]) concat.push(plugins[i].substr(0,1).toUpperCase() + plugins[i].substr(1)); };
 				return { version: jq.ui.version, details: concat.length ? 'Plugins used: '+concat.join(',') : '' };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -34,9 +32,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.dojo) {
 				return { version: win.dojo.version.toString(), details: 'Details: '+(win.dijit ? 'Uses Dijit' : 'none') };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -46,9 +43,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Prototype && win.Prototype.Version) {
 				return { version: win.Prototype.Version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -58,9 +54,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Scriptaculous && win.Scriptaculous.Version) {
 				return { version: win.Scriptaculous.Version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -70,9 +65,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.MooTools && win.MooTools.version) {
 				return { version: win.MooTools.version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -82,9 +76,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Spry) {
 				return { version: '(not detectable)' };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -94,9 +87,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.YAHOO && win.YAHOO.VERSION) {
 				return { version: win.YAHOO.VERSION };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -106,9 +98,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.qx && win.qx.Bootstrap) {
 				return { version: '(not detectable)' };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -118,9 +109,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Ext && win.Ext.version) {
 				return { version: win.Ext.version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -130,9 +120,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.base2 && win.base2.version) {
 				return { version: win.base2.version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -142,9 +131,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.goog) {
 				return { version: '2.0' };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 	
@@ -154,9 +142,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Raphael) {
 				return { version: win.Raphael.version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -166,9 +153,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Modernizr) {
 				return { version: Modernizr._version };
-			} else {
-				return false;
 			}
+			return false;
 		}
 	},
 
@@ -178,9 +164,53 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Processing) {
 				return { version: '(version not detectable)' };
-			} else {
-				return false;
 			}
+			return false;
+		}
+	},
+	
+	'Backbone.js': {
+		icon: 'backbone', //@todo add in icon
+		url: 'http://documentcloud.github.com/backbone',
+		test: function(win) {
+			if (win.Backbone) {
+				return {version: win.Backbone.VERSION};
+			}
+			return false;
+		}
+	},
+	
+	'Underscore.js': {
+		icon: 'underscore', //@todo add in icon
+		url: 'http://documentcloud.github.com/underscore',
+		test: function(win) {
+			// *should* be safeish for sites that have assigned a generic "_" to something else
+			if (win._ && win._.VERSION && typeof win._.tap === 'function') {
+				return {version: win._.VERSION};
+			}
+			return false;
+		}
+	},
+	
+	'Sammy.js': {
+		icon: 'sammy',
+		url: 'http://sammyjs.org',
+		test: function(win) {
+			if (win.Sammy && win.Sammy.VERSION) {
+				return {version: win.Sammy.VERSION};
+			}
+			return false;
+		}
+	},
+	
+	'Rico': {
+		icon: 'rico',
+		url: 'http://openrico.org',
+		test:  function(win) {
+			if (win.Rico && win.Rico.Version) {
+				return {version: win.Rico.Version};
+			}
+			return false;
 		}
 	}
 	

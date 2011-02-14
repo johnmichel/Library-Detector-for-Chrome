@@ -7,6 +7,7 @@ Changelog
 - Simplified method for populating meta tag with runtime library data
 - Reorganized filesystem
 - Text files are now 23.7% more sexy in Markdown
+- Added support for Backbone.js, Underscore.js, Sammy.js, Rico
 
 ### 1.2
 - Added support for Modernizr and Processingjs (contributed by johnmichel)

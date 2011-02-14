@@ -3,8 +3,27 @@ Library Detector For Chrome
 
 The Library Detector extension discovers which Javascript libraries are being 
 utilized on webpages you visit and displays their icons in the address bar. Currently 
-supports jQuery, jQuery UI, Dojo, Prototype, Scriptaculous, MooTools, Spry, YUI, 
-Qooxdoo, Ext JS, base2, Google Closure, Raphael, Modernizr, and Processing.js.
+supports: 
+
+- jQuery
+- jQuery UI
+- Dojo
+- Prototype
+- Scriptaculous
+- MooTools 
+- Spry
+- YUI, 
+- Qooxdoo
+- Ext JS
+- base2
+- Google Closure
+- Raphael
+- Modernizr 
+- Processing.js
+- Backbone.js,
+- Underscore.js
+- Sammy.js
+- Rico
 
 ### To run the development version of the plugin
 1. Clone the Git repo from Github 'git clone git@github.com:andrewbredow/Library-Detector-for-Chrome.git LibraryDetector'

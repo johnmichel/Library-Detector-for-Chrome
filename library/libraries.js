@@ -170,7 +170,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	},
 	
 	'Backbone.js': {
-		icon: 'backbone', //@todo add in icon
+		icon: 'backbone',
 		url: 'http://documentcloud.github.com/backbone',
 		test: function(win) {
 			if (win.Backbone) {
@@ -181,7 +181,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	},
 	
 	'Underscore.js': {
-		icon: 'underscore', //@todo add in icon
+		icon: 'underscore',
 		url: 'http://documentcloud.github.com/underscore',
 		test: function(win) {
 			// *should* be safeish for sites that have assigned a generic "_" to something else

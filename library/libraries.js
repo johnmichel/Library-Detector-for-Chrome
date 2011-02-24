@@ -339,16 +339,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       }
 	       return false;
 	   }
-	},
+	}/*,
 	
+
 	'jQuery Tools': {
 	   icon: 'jquerytools',
 	   url: 'http://flowplayer.org/tools',
 	   test: function(win) {
-	       if (win.$.tools) {
+            var jq = win.jQuery || win.$ || win.$jq || win.$j;
+            if(jq && jq.fn && jq.fn.jquery && win.$.tools) {
+	   
+	       //if ((win.$ || win.jQuery) && win.$.tools) {
 	           return {version: $.tools.version};
 	       }
 	       return false;
 	   }
     }
+*/
 };

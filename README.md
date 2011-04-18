@@ -24,6 +24,19 @@ supports:
 - Underscore.js
 - Sammy.js
 - Rico
+- MochiKit
+- gRaphaël
+- Glow
+- Socket.IO
+- Mustache.js
+- Fabric.js
+- FuseJS
+- Tween.js
+- SproutCore
+- Zepto.js
+- three.js
+- jQuery Tools
+
 
 ### To run the development version of the plugin
 1. Clone the Git repo from Github 'git clone git@github.com:andrewbredow/Library-Detector-for-Chrome.git LibraryDetector'
@@ -33,7 +46,7 @@ supports:
 
 ### Contributors
 - Andrew Bredow [homepage](http://andrewbredow.com)
-- John Michel [homepage](http://www.cowbird.org)
+- John Michel [homepage](http://cowbird.org)
 - Artem Nezvigin [homepage](http://artnez.com) (Multiple library icon concept)
 
 ### Inspiration

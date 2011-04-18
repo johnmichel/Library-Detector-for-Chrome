@@ -136,7 +136,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-    'Raphael': {
+    'Raphaël': {
 		icon: 'raphael',
 		url: 'http://raphaeljs.com',
 		test: function(win) {
@@ -163,7 +163,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://processingjs.org',
 		test: function(win) {
 			if(win.Processing) {
-				return { version: '(version not detectable)' };
+				return { version: Processing.version };
 			}
 			return false;
 		}
@@ -212,6 +212,148 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			}
 			return false;
 		}
-	}
+	},
 	
+	'MochiKit': {
+		icon: 'mochikit',
+		url: 'http://www.mochikit.com',
+		test: function(win) {
+			if (win.MochiKit) {
+				return {version: MochiKit.VERSION};	
+			}
+			return false;
+		}
+	},
+	
+	'gRaphaël': {
+		icon: 'graphael',
+		url: 'http://g.raphaeljs.com',
+		test: function(win) {
+			if (win.Raphael && win.Raphael.fn.g) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'Glow': {
+		icon: 'glow',
+		url: 'http://www.bbc.co.uk/glow',
+		test: function(win) {
+			if (win.gloader) {
+				return {version: '(not detectable)'};
+			}
+			else if (win.glow) {
+				return {version: win.glow.VERSION};
+			}
+			else if (win.Glow) {
+				return {version: win.Glow.version};
+			}
+			return false;
+		}		
+	},
+	
+	'Socket.IO': {
+		icon: 'icon_48', // currently has no icon
+		url: 'http://socket.io',
+		test: function(win) {
+			if (win.io) {
+				return {version: win.io.version};
+			}
+			return false;
+		}
+	},
+	
+	'Mustache.js': {
+		icon: 'mustache',
+		url: 'http://mustache.github.com',
+		test: function(win) {
+			if (win.Mustache) {
+				return {version: win.Mustache.version};
+			}
+			return false;
+		}
+	},
+	
+	'Fabric.js': {
+		icon: 'icon_48', // currently has no icon
+		url: 'https://github.com/kangax/fabric.js',
+		test: function(win) {
+			if (win.fabric) {
+				return {version: win.fabric.version};
+			}
+			return false;
+		}
+	},
+	
+	'FuseJS': {
+		icon: 'fusejs',
+		url: 'http://fusejs.com',
+		test: function(win) {
+			if (win.fuse) {
+				return {version: win.fuse.version};
+			}
+			return false;
+		}
+	},
+	
+	'Tween.js': {
+		icon: 'icon_48', // currently has no icon
+		url: 'https://github.com/sole/tween.js',
+		test: function(win) {
+			if (win.TWEEN) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'SproutCore': {
+	   icon: 'sproutcore',
+	   url: 'http://www.sproutcore.com',
+	   test: function(win) {
+	       if (win.SC) {
+	           return {version: '(not detectable)'};
+	       }
+	       return false;
+	   }
+	},
+	
+	'Zepto.js': {
+	   icon: 'zepto',
+	   url: 'http://zeptojs.com',
+	   test: function(win) {
+	       if (win.Zepto && win.Zepto.fn) {
+	           return {version: '(not detectable)'};
+	       }
+	       return false;
+	   }
+	},
+	
+	'three.js': {
+	   icon: 'icon_48', // currently has no icon
+	   url: 'https://github.com/mrdoob/three.js',
+	   test: function(win) {
+	       if (win.THREE) {
+	           return {version: '(not detectable)'};
+	       }
+	       return false;
+	   }
+	}/*,
+	
+
+	'jQuery Tools': {
+	   icon: 'jquerytools',
+	   url: 'http://flowplayer.org/tools',
+	   test: function(win) {
+            var jq = win.jQuery || win.$ || win.$jq || win.$j;
+            if(jq && jq.fn && jq.fn.jquery && win.$.tools) {
+	   
+	       //if ((win.$ || win.jQuery) && win.$.tools) {
+	           return {version: $.tools.version};
+	       }
+	       return false;
+	   }
+    }
+*/
 };

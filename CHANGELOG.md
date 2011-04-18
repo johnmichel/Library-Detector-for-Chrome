@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### 2.11
+- Disabling jQuery Tools detection for now
+
+### 2.1
+- Added support for MochiKit, gRaphaël, Glow, Socket.IO, Mustache.js, Fabric.js, FuseJS, Tween.js, Sproutcore, Zepto.js, three.js, and jQuery Tools
+
 ### 2.0
 - Added ability to detect multiple libraries
 - Added links to library homepages when the dropdown menu is opened

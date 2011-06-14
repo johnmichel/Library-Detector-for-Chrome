@@ -110,6 +110,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			if(win.Ext && win.Ext.version) {
 				return { version: win.Ext.version };
 			}
+			else if (win.Ext && window.Ext.versions) {
+                return { version: window.Ext.versions.core.version };
+			}
 			return false;
 		}
 	},
@@ -125,18 +128,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 
-	'Closure': {
+	'Closure Library': {
 		icon: 'closure',
-		url: 'http://code.google.com/closure',
+		url: 'http://code.google.com/closure/library',
 		test: function(win) {
 			if(win.goog) {
-				return { version: '2.0' };
+				return { version: '(not detectable)' };
 			}
 			return false;
 		}
 	},
 	
-    'Raphaël': {
+    'Rapha&euml;l': {
 		icon: 'raphael',
 		url: 'http://raphaeljs.com',
 		test: function(win) {
@@ -169,7 +172,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-	'Backbone.js': {
+	'Backbone': {
 		icon: 'backbone',
 		url: 'http://documentcloud.github.com/backbone',
 		test: function(win) {
@@ -180,7 +183,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-	'Underscore.js': {
+	'Underscore': {
 		icon: 'underscore',
 		url: 'http://documentcloud.github.com/underscore',
 		test: function(win) {
@@ -192,7 +195,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-	'Sammy.js': {
+	'Sammy': {
 		icon: 'sammy',
 		url: 'http://sammyjs.org',
 		test: function(win) {
@@ -225,7 +228,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-	'gRaphaël': {
+	'gRapha&euml;l': {
 		icon: 'graphael',
 		url: 'http://g.raphaeljs.com',
 		test: function(win) {
@@ -243,7 +246,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			if (win.gloader) {
 				return {version: '(not detectable)'};
 			}
-			else if (win.glow) {
+			else if (win.glow && win.glow.dom) {
 				return {version: win.glow.VERSION};
 			}
 			else if (win.Glow) {
@@ -257,14 +260,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
-			if (win.io) {
+			if (win.io && win.io.on) {
 				return {version: win.io.version};
 			}
 			return false;
 		}
 	},
 	
-	'Mustache.js': {
+	'Mustache': {
 		icon: 'mustache',
 		url: 'http://mustache.github.com',
 		test: function(win) {
@@ -312,7 +315,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'sproutcore',
 	   url: 'http://www.sproutcore.com',
 	   test: function(win) {
-	       if (win.SC) {
+	       if (win.SC && win.SC.Application) {
 	           return {version: '(not detectable)'};
 	       }
 	       return false;
@@ -339,21 +342,117 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       }
 	       return false;
 	   }
-	}/*,
+	},
 	
+	'PhiloGL': {
+	   icon: 'philogl',
+	   url: 'http://senchalabs.github.com/philogl/',
+	   test: function(win) {
+	       if (win.PhiloGL) {
+	           return {version: win.PhiloGL.version};
+	       }
+	       return false;
+	   }
+	},
+	
+	'CamanJS': {
+		icon: 'camanjs',
+		url: 'http://camanjs.com/',
+		test: function(win) {
+			if (win.Caman) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'yepnope': {
+		icon: 'yepnope',
+		url: 'http://yepnopejs.com/',
+		test: function(win) {
+			if (win.yepnope) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'LABjs': {
+		icon: 'icon_48',
+		url: 'http://labjs.com/',
+		test: function(win) {
+			if (win.$LAB) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'Head JS': {
+		icon: 'headjs',
+		url: 'http://headjs.com/',
+		test: function(win) {
+			if (win.head &&  win.head.js) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'ControlJS': {
+		icon: 'icon_48',
+		url: 'http://stevesouders.com/controljs/',
+		test: function(win) {
+			if (win.CJS) {
+				return {version: '(not detectable)'};
+			}
+			return false;
+		}
+	},
+	
+	'RequireJS': {
+		icon: 'requirejs',
+		url: 'http://requirejs.org/',
+		test: function(win) {
+			if (win.require) {
+				return {version: win.require.version};
+			}
+			return false;
+		}
+	},
+	
+	'RightJS': {
+		icon: 'rightjs',
+		url: 'http://rightjs.org/',
+		test: function(win) {
+			if (win.RightJS) {
+				return {version: win.RightJS.version};
+			}
+			return false;
+		}
+	},	
 
 	'jQuery Tools': {
 	   icon: 'jquerytools',
 	   url: 'http://flowplayer.org/tools',
 	   test: function(win) {
-            var jq = win.jQuery || win.$ || win.$jq || win.$j;
-            if(jq && jq.fn && jq.fn.jquery && win.$.tools) {
-	   
-	       //if ((win.$ || win.jQuery) && win.$.tools) {
-	           return {version: $.tools.version};
+            var jq = win.jQuery || win.$;
+            if(jq && win.$.tools) {
+	           return { version: $.tools.version };
+	       }
+	       return false;
+	   }
+    },	
+    
+    'Pusher': {
+	   icon: 'pusher',
+	   url: 'http://pusher.com/docs/pusher_js',
+	   test: function(win) {
+            if(win.Pusher) {
+	           return { version: win.Pusher.VERSION };
 	       }
 	       return false;
 	   }
     }
-*/
+// maybe include some of the other javascript loaders? - http://jhn.me/7aeW
 };

@@ -75,7 +75,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://labs.adobe.com/technologies/spry',
 		test: function(win) {
 			if(win.Spry) {
-				return { version: '(not detectable)' };
+				return { version: 'none' };
 			}
 			return false;
 		}
@@ -97,7 +97,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://qooxdoo.org',
 		test: function(win) {
 			if(win.qx && win.qx.Bootstrap) {
-				return { version: '(not detectable)' };
+				return { version: 'none' };
 			}
 			return false;
 		}
@@ -219,7 +219,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://www.mochikit.com',
 		test: function(win) {
 			if (win.MochiKit) {
-				return {version: MochiKit.VERSION};	
+				return {version: MochiKit.VERSION || MochiKit.Base.VERSION};	
 			}
 			return false;
 		}
@@ -230,7 +230,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://g.raphaeljs.com',
 		test: function(win) {
 			if (win.Raphael && win.Raphael.fn.g) {
-				return {version: '(not detectable)'};
+				return {version: 'none'};
 			}
 			return false;
 		}
@@ -241,7 +241,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://www.bbc.co.uk/glow',
 		test: function(win) {
 			if (win.gloader) {
-				return {version: '(not detectable)'};
+				return {version: 'none'};
 			}
 			else if (win.glow) {
 				return {version: win.glow.VERSION};
@@ -257,7 +257,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
-			if (win.io) {
+			if (win.io && win.io.sockets && win.io.version) { // fix! e.g. Google Reader currently shows up as using socket.io, which they are not doing
 				return {version: win.io.version};
 			}
 			return false;
@@ -279,7 +279,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/kangax/fabric.js',
 		test: function(win) {
-			if (win.fabric) {
+			if (win.fabric && win.fabric.version) {
 				return {version: win.fabric.version};
 			}
 			return false;
@@ -290,19 +290,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'fusejs',
 		url: 'http://fusejs.com',
 		test: function(win) {
-			if (win.fuse) {
+			if (win.fuse && win.fuse.version) {
 				return {version: win.fuse.version};
 			}
 			return false;
 		}
 	},
 	
-	'Tween.js': {
+	'Tween.js': { // @todo wtf won't this one work?
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/sole/tween.js',
 		test: function(win) {
 			if (win.TWEEN) {
-				return {version: '(not detectable)'};
+			    console.log(win.TWEEN);
+				return {version: 'none'};
 			}
 			return false;
 		}
@@ -312,8 +313,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'sproutcore',
 	   url: 'http://www.sproutcore.com',
 	   test: function(win) {
-	       if (win.SC) {
-	           return {version: '(not detectable)'};
+	       if (win.SC && win.SC.bundleDidLoad) {
+	           return {version: 'none'};
 	       }
 	       return false;
 	   }
@@ -324,7 +325,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   url: 'http://zeptojs.com',
 	   test: function(win) {
 	       if (win.Zepto && win.Zepto.fn) {
-	           return {version: '(not detectable)'};
+	           return {version: 'none'};
 	       }
 	       return false;
 	   }
@@ -334,8 +335,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'icon_48', // currently has no icon
 	   url: 'https://github.com/mrdoob/three.js',
 	   test: function(win) {
-	       if (win.THREE) {
-	           return {version: '(not detectable)'};
+	       if (win.THREE && win.THREE) {
+	           return {version: 'none'};
 	       }
 	       return false;
 	   }

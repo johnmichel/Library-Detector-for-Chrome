@@ -12,8 +12,8 @@ var addLibrary = function(library) {
 	link.setAttribute('style', "background: transparent url('../icons/" + library.icon + ".png') no-repeat left center");
 	link.target = '_blank';
 
-	var version = document.createElement('span');
-	version.innerHTML = ' ' + library.version;
+    var version = document.createElement('span');
+    version.innerHTML = library.version !== 'none' ? library.version : '';
 
 	container.appendChild(link);
 	container.appendChild(version);

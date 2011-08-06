@@ -13,7 +13,7 @@ var addLibrary = function(library) {
 	link.target = '_blank';
 
     var version = document.createElement('span');
-    version.innerHTML = library.version !== 'none' ? library.version : '';
+    version.innerHTML = library.version !== 'none' ? (' ' + library.version) : '';
 
 	container.appendChild(link);
 	container.appendChild(version);

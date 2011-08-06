@@ -120,7 +120,6 @@ function getIcon(iconName, count) {
 			context.textBaseline = 'bottom';
 			context.textAlign = 'right';
 			context.fillText(count, 15.75, 16);
-			
 		}
 		dispatch(context.getImageData(0, 0, 16, 16));
 	}, false);

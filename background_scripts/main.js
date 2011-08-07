@@ -79,7 +79,7 @@ function dispatch(pixelData) {
     });
 	chrome.pageAction.setTitle({
         tabId: tabId,
-        title: libraries.length > 1 ? 'Multiple libraries' : library.name + ' ' + library.version
+        title: libraries.length > 1 ? libraries.length + ' libraries detected' : library.name + ' ' + library.version
     });
     chrome.pageAction.setPopup({
         'tabId': tabId,

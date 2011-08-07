@@ -260,8 +260,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
-			if (win.io && win.io.on) {
-				return {version: win.io.version};
+            if (win.io && win.io.sockets && win.io.version) { // fix! e.g. Google Reader currently shows up as using socket.io, which they are not doing
+                return {version: win.io.version};
 			}
 			return false;
 		}
@@ -293,14 +293,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'fusejs',
 		url: 'http://fusejs.com',
 		test: function(win) {
-			if (win.fuse) {
+			if (win.fuse && win.fuse.version) {
 				return {version: win.fuse.version};
 			}
 			return false;
 		}
 	},
 	
-	'Tween.js': {
+	'Tween.js': { // @todo wtf won't this one work?
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/sole/tween.js',
 		test: function(win) {
@@ -346,7 +346,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	
 	'PhiloGL': {
 	   icon: 'philogl',
-	   url: 'http://senchalabs.github.com/philogl/',
+	   url: 'http://senchalabs.github.com/philogl',
 	   test: function(win) {
 	       if (win.PhiloGL) {
 	           return {version: win.PhiloGL.version};

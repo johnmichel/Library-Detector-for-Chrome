@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### 2.5
+- Changing how version-less libraries are reported
+- Tweaking the way multiple libraries are displayed
+- Adding support for PhiloGL, CamanJS, yepnope, LABjs, Head JS, ControlJS, RequireJS, RightJS, jQuery Tools, Pusher, Paper.js, Swiffy, Move, and AmplifyJS
+
 ### 2.11
 - Disabling jQuery Tools detection for now
 

@@ -77,6 +77,7 @@ function dispatch(pixelData) {
         tabId: tabId,
         imageData: pixelData
     });
+    
 	chrome.pageAction.setTitle({
         tabId: tabId,
         title: libraries.length > 1 ? libraries.length + ' libraries detected' : library.name + ' ' + library.version

@@ -11,13 +11,15 @@ var addLibrary = function(library) {
 	link.innerHTML = library.name;
 	link.setAttribute('style', "background: transparent url('../icons/" + library.icon + ".png') no-repeat left center");
 	link.target = '_blank';
-
-    var version = document.createElement('span');
-    version.innerHTML = library.version !== 'none' ? (' ' + library.version) : '';
-
+		
 	container.appendChild(link);
-	container.appendChild(version);
-	
+
+	var version = document.createElement('span');
+	if (library.version !== undefined || library.version !== 'undefined' || library.version !== null || library.version !== '') {
+        version.innerHTML = ' ' + library.version;
+        container.appendChild(version);
+	}
+
     document.getElementById('libraries').appendChild(container);
 };
 

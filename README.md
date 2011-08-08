@@ -35,7 +35,20 @@ supports:
 - SproutCore
 - Zepto.js
 - three.js
+- PhiloGL
+- CamanJS
+- yepnope
+- LABjs
+- Head JS
+- ControlJS
+- RequireJS
+- RightJS
 - jQuery Tools
+- Pusher
+- Paper.js
+- Swiffy
+- Move
+- AmplifyJS
 
 
 ### To run the development version of the plugin

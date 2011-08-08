@@ -75,7 +75,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://labs.adobe.com/technologies/spry',
 		test: function(win) {
 			if(win.Spry) {
-				return { version: 'none' };
+				return { version: '' };
 			}
 			return false;
 		}
@@ -97,7 +97,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://qooxdoo.org',
 		test: function(win) {
 			if(win.qx && win.qx.Bootstrap) {
-				return { version: 'none' };
+				return { version: '' };
 			}
 			return false;
 		}
@@ -133,7 +133,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://code.google.com/closure/library',
 		test: function(win) {
 			if(win.goog) {
-				return { version: 'none' };
+				return { version: '' };
 			}
 			return false;
 		}
@@ -176,7 +176,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'backbone',
 		url: 'http://documentcloud.github.com/backbone',
 		test: function(win) {
-			if (win.Backbone) {
+			if (win.Backbone && win.Backbone.Model.extend) {
 				return {version: win.Backbone.VERSION};
 			}
 			return false;
@@ -199,7 +199,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'sammy',
 		url: 'http://sammyjs.org',
 		test: function(win) {
-			if (win.Sammy && win.Sammy.VERSION) {
+			if (win.Sammy && win.Sammy.VERSION && win.Sammy.Application.curry) {
 				return {version: win.Sammy.VERSION};
 			}
 			return false;
@@ -221,8 +221,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'mochikit',
 		url: 'http://www.mochikit.com',
 		test: function(win) {
-			if (win.MochiKit) {
-				return {version: MochiKit.VERSION || MochiKit.Base.VERSION};	
+			if (win.MochiKit && win.MochiKit.Base.module) {
+				return {version: MochiKit.VERSION};	
 			}
 			return false;
 		}
@@ -233,7 +233,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://g.raphaeljs.com',
 		test: function(win) {
 			if (win.Raphael && win.Raphael.fn.g) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -244,7 +244,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://www.bbc.co.uk/glow',
 		test: function(win) {
 			if (win.gloader) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			else if (win.glow && win.glow.dom) {
 				return {version: win.glow.VERSION};
@@ -260,8 +260,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
-			if (win.io && win.io.on) {
-				return {version: win.io.version};
+            if (win.io && win.io.sockets && win.io.version) { // fix! e.g. Google Reader currently shows up as using socket.io, which they are not doing
+                return {version: win.io.version};
 			}
 			return false;
 		}
@@ -271,7 +271,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'mustache',
 		url: 'http://mustache.github.com',
 		test: function(win) {
-			if (win.Mustache) {
+			if (win.Mustache && win.Mustache.to_html) {
 				return {version: win.Mustache.version};
 			}
 			return false;
@@ -282,7 +282,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/kangax/fabric.js',
 		test: function(win) {
-			if (win.fabric && win.fabric.version) {
+			if (win.fabric && win.fabric.util) {
 				return {version: win.fabric.version};
 			}
 			return false;
@@ -305,8 +305,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'https://github.com/sole/tween.js',
 		test: function(win) {
 			if (win.TWEEN) {
-			    console.log(win.TWEEN);
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -317,7 +316,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   url: 'http://www.sproutcore.com',
 	   test: function(win) {
 	       if (win.SC && win.SC.Application) {
-	           return {version: 'none'};
+	           return {version: ''};
 	       }
 	       return false;
 	   }
@@ -328,7 +327,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   url: 'http://zeptojs.com',
 	   test: function(win) {
 	       if (win.Zepto && win.Zepto.fn) {
-	           return {version: 'none'};
+	           return {version: ''};
 	       }
 	       return false;
 	   }
@@ -338,8 +337,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'icon_48', // currently has no icon
 	   url: 'https://github.com/mrdoob/three.js',
 	   test: function(win) {
-	       if (win.THREE && win.THREE) {
-	           return {version: 'none'};
+	       if (win.THREE) {
+	           return {version: ''};
 	       }
 	       return false;
 	   }
@@ -358,10 +357,10 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	
 	'CamanJS': {
 		icon: 'camanjs',
-		url: 'http://camanjs.com',
+		url: 'http://camanjs.com/',
 		test: function(win) {
 			if (win.Caman) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -372,7 +371,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://yepnopejs.com/',
 		test: function(win) {
 			if (win.yepnope) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -383,7 +382,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://labjs.com/',
 		test: function(win) {
 			if (win.$LAB) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -394,7 +393,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://headjs.com/',
 		test: function(win) {
 			if (win.head &&  win.head.js) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -405,7 +404,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://stevesouders.com/controljs/',
 		test: function(win) {
 			if (win.CJS) {
-				return {version: 'none'};
+				return {version: ''};
 			}
 			return false;
 		}
@@ -415,7 +414,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'requirejs',
 		url: 'http://requirejs.org/',
 		test: function(win) {
-			if (win.require && win.require.version) {
+			if (win.require && win.require.def) {
 				return {version: win.require.version};
 			}
 			return false;
@@ -426,7 +425,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'rightjs',
 		url: 'http://rightjs.org/',
 		test: function(win) {
-			if (win.RightJS) {
+			if (win.RightJS && win.RightJS.isNode) {
 				return {version: win.RightJS.version};
 			}
 			return false;
@@ -449,8 +448,52 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'pusher',
 	   url: 'http://pusher.com/docs/pusher_js',
 	   test: function(win) {
-            if(win.Pusher) {
+            if(win.Pusher && win.Pusher.Channel) {
 	           return { version: win.Pusher.VERSION };
+	       }
+	       return false;
+	   }
+    },	
+    
+    'Paper.js': {
+	   icon: 'paperjs',
+	   url: 'http://paperjs.org/',
+	   test: function(win) {
+            if(win.paper && win.paper.Point) {
+	           return { version: win.paper.version };
+	       }
+	       return false;
+	   }
+    },
+    
+    'Swiffy': {
+	   icon: 'icon_48',
+	   url: 'http://swiffy.googlelabs.com/',
+	   test: function(win) {
+            if(win.swiffy) {
+	           return { version: '' };
+	       }
+	       return false;
+	   }
+    },
+    
+    'Move': {
+	   icon: 'move',
+	   url: 'http://movelang.org/',
+	   test: function(win) {
+            if(win.move && win.move.compile) {
+	           return { version: win.move.version() };
+	       }
+	       return false;
+	   }
+    },
+    
+    'AmplifyJS': {
+	   icon: 'amplifyjs',
+	   url: 'http://amplifyjs.com/',
+	   test: function(win) {
+            if(win.amplify && win.amplify.publish) {
+	           return { version: '' };
 	       }
 	       return false;
 	   }

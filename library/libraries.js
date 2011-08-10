@@ -498,5 +498,5 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     }
-// maybe include some of the other javascript loaders? - http://jhn.me/7aeW
+    
 };

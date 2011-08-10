@@ -260,7 +260,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
-            if (win.io && win.io.sockets && win.io.version) { // fix! e.g. Google Reader currently shows up as using socket.io, which they are not doing
+            if (win.io && win.io.sockets && win.io.version) {
                 return {version: win.io.version};
 			}
 			return false;

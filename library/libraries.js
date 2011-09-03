@@ -437,8 +437,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   url: 'http://flowplayer.org/tools',
 	   test: function(win) {
             var jq = win.jQuery || win.$;
-            if(jq && win.$.tools) {
-	           return { version: $.tools.version };
+            if(jq && jq.tools) {
+	           return { version: jq.tools.version };
 	       }
 	       return false;
 	   }

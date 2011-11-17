@@ -81,13 +81,24 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 
-	'YUI': {
+	'YUI 2': {
 		icon: 'yui',
-		url: 'http://developer.yahoo.com/yui',
+		url: 'http://yuilibrary.com/',
 		test: function(win) {
-			if(win.YAHOO && win.YAHOO.VERSION) {
+			if (win.YAHOO && win.YAHOO.VERSION) {
 				return { version: win.YAHOO.VERSION };
 			}
+			return false;
+		}
+	},
+	
+	'YUI 3': {
+		icon: 'yui3',
+		url: 'http://yuilibrary.com/',
+		test: function(win) {
+			if (win.YUI && win.YUI.Env && win.YUI.version) {
+                return { version: win.YUI.version };
+            }
 			return false;
 		}
 	},
@@ -494,6 +505,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   test: function(win) {
             if(win.amplify && win.amplify.publish) {
 	           return { version: '' };
+	       }
+	       return false;
+	   }
+    },
+    
+    'Popcorn.js': {
+	   icon: 'popcornjs',
+	   url: 'http://mozillapopcorn.org/popcornjs/',
+	   test: function(win) {
+            if(win.Popcorn && win.Popcorn.Events) {
+	           return { version: win.Popcorn.version };
 	       }
 	       return false;
 	   }

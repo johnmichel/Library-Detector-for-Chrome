@@ -83,7 +83,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
 	'YUI 2': {
 		icon: 'yui',
-		url: 'http://yuilibrary.com/',
+		url: 'http://developer.yahoo.com/yui/2/',
 		test: function(win) {
 			if (win.YAHOO && win.YAHOO.VERSION) {
 				return { version: win.YAHOO.VERSION };

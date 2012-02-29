@@ -425,8 +425,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'requirejs',
 		url: 'http://requirejs.org/',
 		test: function(win) {
-			if (win.require && win.require.def) {
-				return {version: win.require.version};
+			if ((win.require && win.require.load) || (win.requirejs && win.requirejs.load)) {
+				return {version: win.require.version || win.requirejs.version};
 			}
 			return false;
 		}
@@ -443,17 +443,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},	
 
-	'jQuery Tools': {
-	   icon: 'jquerytools',
-	   url: 'http://flowplayer.org/tools',
-	   test: function(win) {
-            var jq = win.jQuery || win.$;
-            if(jq && win.$.tools) {
-	           return { version: $.tools.version };
-	       }
-	       return false;
-	   }
-    },	
+	/*
+    'jQuery Tools': {
+    	   icon: 'jquerytools',
+    	   url: 'http://flowplayer.org/tools',
+    	   test: function(win) {
+                var jq = win.jQuery || win.$;
+                if(jq && win.$.tools) {
+    	           return { version: $.tools.version };
+    	       }
+    	       return false;
+    	   }
+        },
+    */	
     
     'Pusher': {
 	   icon: 'pusher',
@@ -516,6 +518,28 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   test: function(win) {
             if(win.Popcorn && win.Popcorn.Events) {
 	           return { version: win.Popcorn.version };
+	       }
+	       return false;
+	   }
+    },
+    
+    'D3': {
+	   icon: 'icon_48',
+	   url: 'http://mbostock.github.com/d3/',
+	   test: function(win) {
+            if(win.d3 && win.d3.select) {
+	           return { version: win.d3.version };
+	       }
+	       return false;
+	   }
+    },
+    
+    'Handlebars': {
+	   icon: 'handlebars',
+	   url: 'http://handlebarsjs.com/',
+	   test: function(win) {
+            if(win.Handlebars && win.Handlebars.compile) {
+	           return { version: win.Handlebars.VERSION };
 	       }
 	       return false;
 	   }

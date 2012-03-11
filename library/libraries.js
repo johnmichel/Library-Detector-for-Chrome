@@ -522,25 +522,36 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     
     'D3': {
-	   icon: 'icon_48',
-	   url: 'http://mbostock.github.com/d3/',
-	   test: function(win) {
+	    icon: 'icon_48',
+	    url: 'http://mbostock.github.com/d3/',
+	    test: function(win) {
             if(win.d3 && win.d3.select) {
-	           return { version: win.d3.version };
-	       }
-	       return false;
-	   }
+                return { version: win.d3.version };
+	        }
+	        return false;
+	    }
     },
     
     'Handlebars': {
-	   icon: 'handlebars',
-	   url: 'http://handlebarsjs.com/',
-	   test: function(win) {
+	    icon: 'handlebars',
+	    url: 'http://handlebarsjs.com/',
+	    test: function(win) {
             if(win.Handlebars && win.Handlebars.compile) {
-	           return { version: win.Handlebars.VERSION };
-	       }
-	       return false;
-	   }
+                return { version: win.Handlebars.VERSION };
+	        }
+	        return false;
+	    }
+    },
+    
+    'Spine': {
+        icon: 'icon_48',
+        url: 'http://spinejs.com/',
+        test: function(win) {
+            if (win.Spine && win.Spine.Controller) {
+                return {version: win.Spine.version};
+            }
+            return false;
+        }
     }
     
 };

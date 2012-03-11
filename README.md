@@ -51,6 +51,7 @@ supports:
 - AmplifyJS
 - D3
 - Handlebars
+- Spine
 
 
 ### To run the development version of the plugin

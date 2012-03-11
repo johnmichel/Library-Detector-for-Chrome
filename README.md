@@ -49,6 +49,8 @@ supports:
 - Swiffy
 - Move
 - AmplifyJS
+- D3
+- Handlebars
 
 
 ### To run the development version of the plugin
@@ -61,6 +63,7 @@ supports:
 - Andrew Bredow [homepage](http://andrewbredow.com)
 - John Michel [homepage](http://cowbird.org)
 - Artem Nezvigin [homepage](http://artnez.com) (Multiple library icon concept)
+- Karl Swedberg [homepage](http://www.learningjquery.com/)
 
 ### Inspiration
 Library detect class inspired by Paul Bakaus' Library Detector for Firefox

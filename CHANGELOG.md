@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### 2.6
+- Experimental support for detecting libraries loaded with script loader (johnmichel)
+- Add support for D3 and Handlebars (johnmichel)
+- Re-enable jQuery tools detection (kswedberg)
+- Other minor fixes and new images
+
 ### 2.5
 - Changing how version-less libraries are reported
 - Tweaking the way multiple libraries are displayed

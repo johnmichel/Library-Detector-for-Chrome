@@ -118,13 +118,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		icon: 'extjs',
 		url: 'http://www.sencha.com/products/extjs',
 		test: function(win) {
-			if(win.Ext && win.Ext.version) {
-				return { version: win.Ext.version };
-			}
-			else if (win.Ext && window.Ext.versions) {
+            if(win.Ext && win.Ext.version) {
+                return { version: win.Ext.version };
+            }
+            else if (win.Ext && window.Ext.versions) {
                 return { version: window.Ext.versions.core.version };
-			}
-			return false;
+            }
+            return false;
 		}
 	},
 
@@ -141,9 +141,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
 	'Closure Library': {
 		icon: 'closure',
-		url: 'http://code.google.com/closure/library',
+		url: 'https://developers.google.com/closure/library',
 		test: function(win) {
-			if(win.goog) {
+			if(win.goog && win.goog.provide) {
 				return { version: '' };
 			}
 			return false;
@@ -291,7 +291,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	
 	'Fabric.js': {
 		icon: 'icon_48', // currently has no icon
-		url: 'https://github.com/kangax/fabric.js',
+		url: 'http://fabricjs.com/',
 		test: function(win) {
 			if (win.fabric && win.fabric.util) {
 				return {version: win.fabric.version};
@@ -311,7 +311,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
-	'Tween.js': { // @todo wtf won't this one work?
+	'Tween.js': {
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/sole/tween.js',
 		test: function(win) {
@@ -348,8 +348,11 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	   icon: 'icon_48', // currently has no icon
 	   url: 'https://github.com/mrdoob/three.js',
 	   test: function(win) {
-	       if (win.THREE) {
-	           return {version: ''};
+	       if (win.THREE && win.THREE.REVISION) {
+	           return {version: 'r' + win.THREE.REVISION};
+	       }
+	       else if (win.THREE) {
+    	       return {version: ''};
 	       }
 	       return false;
 	   }
@@ -357,7 +360,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	
 	'PhiloGL': {
 	   icon: 'philogl',
-	   url: 'http://senchalabs.github.com/philogl',
+	   url: 'http://www.senchalabs.org/philogl/',
 	   test: function(win) {
 	       if (win.PhiloGL) {
 	           return {version: win.PhiloGL.version};
@@ -445,7 +448,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
 	'jQuery Tools': {
 	   icon: 'jquerytools',
-	   url: 'http://flowplayer.org/tools',
+	   url: 'http://flowplayer.org/tools/',
 	   test: function(win) {
             var jq = win.jQuery || win.$;
             if(jq && jq.tools) {
@@ -457,7 +460,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     
     'Pusher': {
 	   icon: 'pusher',
-	   url: 'http://pusher.com/docs/pusher_js',
+	   url: 'http://pusher.com/docs/pusher_js/',
 	   test: function(win) {
             if(win.Pusher && win.Pusher.Channel) {
 	           return { version: win.Pusher.VERSION };
@@ -479,7 +482,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     
     'Swiffy': {
 	   icon: 'icon_48',
-	   url: 'http://swiffy.googlelabs.com/',
+	   url: 'http://www.google.com/doubleclick/studio/swiffy/',
 	   test: function(win) {
             if(win.swiffy) {
 	           return { version: '' };
@@ -549,6 +552,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.Spine && win.Spine.Controller) {
                 return {version: win.Spine.version};
+            }
+            return false;
+        }
+    },
+    
+    'jQuery Mobile': {
+        icon: 'jquery_mobile',
+        url: 'http://jquerymobile.com/',
+        test: function(win) {
+            var jq = win.jQuery || win.$ || win.$jq || win.$j;
+            if(jq && jq.fn && jq.fn.jquery && jq.mobile) {
+                return { version: jq.mobile.version || '' };
             }
             return false;
         }

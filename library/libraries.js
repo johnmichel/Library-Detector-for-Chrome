@@ -6,7 +6,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			
 			var gwtVersion = null;
-			var frames = document.getElementsByTagName('iframe');
+			var frames = win.document.getElementsByTagName('iframe');
 			for (var i=0; i<frames.length; i++) {
 			    // prevent security access errors
 			    try {
@@ -18,6 +18,11 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			    catch(e) {}
 			}
 
+			// ok, if no iframes, could be a non iframe linker, check local
+			if(gwtVersion==null || win.$gwt_version) {
+	            gwtVersion = win.$gwt_version;
+			}
+			
 			if(gwtVersion) {
 				return { version: gwtVersion }; // all Google sites use 0.0.999, need to dig deeper in that case
 			}
@@ -25,6 +30,61 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 
+	'Highcharts': {
+		icon: 'highcharts',
+		url: 'http://www.highcharts.com',
+		test: function(win) {
+			if(win.Highcharts && win.Highcharts.version) {
+				return { version: win.Highcharts.version };
+			}
+			return false;
+		}
+	},
+	
+	'InfoVis': {
+		icon: 'jit',
+		url: 'http://philogb.github.com/jit/',
+		test: function(win) {
+			if(win.$jit && win.$jit.version) {
+				return { version: win.$jit.version };
+			}
+			return false;
+		}
+	},
+	
+	'Blackbird': {
+		icon: 'blackbird',
+		url: 'http://www.gscottolson.com/blackbirdjs/',
+		test: function(win) {
+			if(win.log && win.log.warn) {
+				return { version: "1.0"}; // no version info
+			}
+			return false;
+		}
+	},
+	
+	'CreateJS': {
+		icon: 'createjs',
+		url: 'http://createjs.com/#!/CreateJS',
+		test: function(win) {
+			if(win.Stage || win.Shape || win.Container) {
+				return { version: "1.0"}; // no version info available
+			}
+			return false;
+		}
+	},
+	
+	'Google Maps': {
+		icon: 'gmaps',
+		url: 'https://developers.google.com/maps/',
+			test: function(win) {
+				if(win.google && win.google.maps && win.google.maps.version) {
+					return { version: win.google.maps.version};
+				}
+				return false;
+			}
+	},
+	
 	'jQuery': {
 		icon: 'jquery',
 		url: 'http://jquery.com',
@@ -550,8 +610,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     
     'D3': {
-	    icon: 'icon_48',
-	    url: 'http://mbostock.github.com/d3/',
+	    icon: 'd3',
+	    url: 'http://d3js.org',
 	    test: function(win) {
             if(win.d3 && win.d3.select) {
                 return { version: win.d3.version };

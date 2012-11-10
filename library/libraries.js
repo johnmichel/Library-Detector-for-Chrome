@@ -1,4 +1,29 @@
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
+		
+	'GWT': {
+		icon: 'gwt',
+		url: 'http://developers.google.com/web-toolkit/',
+		test: function(win) {
+			
+			var gwtVersion = null;
+			var frames = document.getElementsByTagName('iframe');
+			for (var i=0; i<frames.length; i++) {
+			    // prevent security access errors
+			    try {
+			        if(frames[i].contentWindow.$gwt_version) {
+			            gwtVersion = frames[i].contentWindow.$gwt_version;
+			            break;
+			        }
+			    }
+			    catch(e) {}
+			}
+
+			if(gwtVersion) {
+				return { version: gwtVersion }; // all Google sites use 0.0.999, need to dig deeper in that case
+			}
+			return false;
+		}
+	},
 
 	'jQuery': {
 		icon: 'jquery',

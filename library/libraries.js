@@ -24,7 +24,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			}
 			
 			if(gwtVersion) {
-				return { version: gwtVersion }; // all Google sites use 0.0.999, need to dig deeper in that case
+				// all Google sites use 0.0.999, need to dig deeper in that case
+				gwtVersion = (gwtVersion=="0.0.999") ? "Google Internal" : gwtVersion;
+				return { version: gwtVersion }; 
 			}
 			return false;
 		}
@@ -52,12 +54,23 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		}
 	},
 	
+	'FlotCharts': {
+		icon: 'icon_48',
+		url: 'http://www.flotcharts.org/',
+		test: function(win) {
+			if(win.$ && win.$.plot && win.$.plot.version) {
+				return { version: win.$.plot.version };
+			}
+			return false;
+		}
+	},
+	
 	'Blackbird': {
 		icon: 'blackbird',
 		url: 'http://www.gscottolson.com/blackbirdjs/',
 		test: function(win) {
 			if(win.log && win.log.warn) {
-				return { version: "1.0"}; // no version info
+				return { version: "N/A"}; // no version info
 			}
 			return false;
 		}
@@ -68,7 +81,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		url: 'http://createjs.com/#!/CreateJS',
 		test: function(win) {
 			if(win.Stage || win.Shape || win.Container) {
-				return { version: "1.0"}; // no version info available
+				return { version: "N/A"}; // no version info available
 			}
 			return false;
 		}
@@ -353,7 +366,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	},
 	
 	'Socket.IO': {
-		icon: 'icon_48', // currently has no icon
+		icon: 'socketio', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
             if (win.io && win.io.sockets && win.io.version) {
@@ -652,6 +665,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    
+    'WebFont Loader': {
+    	icon: 'icon_48',
+    	url: 'https://github.com/typekit/webfontloader',
+    	test: function(win) {
+    		if(win.WebFont) {
+    			return { version: "N/A" };
+    		}
+    		return false;
+    	}
     }
     
 };

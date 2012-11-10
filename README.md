@@ -16,6 +16,7 @@ supports:
 - Dojo
 - Ext JS
 - Fabric.js
+- Flot Charts
 - FuseJS
 - Glow
 - Google Closure
@@ -55,6 +56,7 @@ supports:
 - three.js
 - Tween.js
 - Underscore.js
+- WebFont Loader
 - yepnope
 - YUI, 
 - Zepto.js

@@ -1,5 +1,103 @@
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
+		
+	'GWT': {
+		icon: 'gwt',
+		url: 'http://developers.google.com/web-toolkit/',
+		test: function(win) {
+			
+			var gwtVersion = null;
+			var frames = win.document.getElementsByTagName('iframe');
+			for (var i=0; i<frames.length; i++) {
+			    // prevent security access errors
+			    try {
+			        if(frames[i].contentWindow.$gwt_version) {
+			            gwtVersion = frames[i].contentWindow.$gwt_version;
+			            break;
+			        }
+			    }
+			    catch(e) {}
+			}
 
+			// ok, if no iframes, could be a non iframe linker, check local
+			if(gwtVersion==null || win.$gwt_version) {
+	            gwtVersion = win.$gwt_version;
+			}
+			
+			if(gwtVersion) {
+				// all Google sites use 0.0.999, need to dig deeper in that case
+				gwtVersion = (gwtVersion=="0.0.999") ? "Google Internal" : gwtVersion;
+				return { version: gwtVersion }; 
+			}
+			return false;
+		}
+	},
+
+	'Highcharts': {
+		icon: 'highcharts',
+		url: 'http://www.highcharts.com',
+		test: function(win) {
+			if(win.Highcharts && win.Highcharts.version) {
+				return { version: win.Highcharts.version };
+			}
+			return false;
+		}
+	},
+	
+	'InfoVis': {
+		icon: 'jit',
+		url: 'http://philogb.github.com/jit/',
+		test: function(win) {
+			if(win.$jit && win.$jit.version) {
+				return { version: win.$jit.version };
+			}
+			return false;
+		}
+	},
+	
+	'FlotCharts': {
+		icon: 'icon_48',
+		url: 'http://www.flotcharts.org/',
+		test: function(win) {
+			if(win.$ && win.$.plot && win.$.plot.version) {
+				return { version: win.$.plot.version };
+			}
+			return false;
+		}
+	},
+	
+	'Blackbird': {
+		icon: 'blackbird',
+		url: 'http://www.gscottolson.com/blackbirdjs/',
+		test: function(win) {
+			if(win.log && win.log.warn) {
+				return { version: "N/A"}; // no version info
+			}
+			return false;
+		}
+	},
+	
+	'CreateJS': {
+		icon: 'createjs',
+		url: 'http://createjs.com/#!/CreateJS',
+		test: function(win) {
+			if(win.Stage || win.Shape || win.Container) {
+				return { version: "N/A"}; // no version info available
+			}
+			return false;
+		}
+	},
+	
+	'Google Maps': {
+		icon: 'gmaps',
+		url: 'https://developers.google.com/maps/',
+			test: function(win) {
+				if(win.google && win.google.maps && win.google.maps.version) {
+					return { version: win.google.maps.version};
+				}
+				return false;
+			}
+	},
+	
 	'jQuery': {
 		icon: 'jquery',
 		url: 'http://jquery.com',
@@ -268,7 +366,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	},
 	
 	'Socket.IO': {
-		icon: 'icon_48', // currently has no icon
+		icon: 'socketio', // currently has no icon
 		url: 'http://socket.io',
 		test: function(win) {
             if (win.io && win.io.sockets && win.io.version) {
@@ -525,8 +623,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     
     'D3': {
-	    icon: 'icon_48',
-	    url: 'http://mbostock.github.com/d3/',
+	    icon: 'd3',
+	    url: 'http://d3js.org',
 	    test: function(win) {
             if(win.d3 && win.d3.select) {
                 return { version: win.d3.version };
@@ -567,6 +665,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    
+    'WebFont Loader': {
+    	icon: 'icon_48',
+    	url: 'https://github.com/typekit/webfontloader',
+    	test: function(win) {
+    		if(win.WebFont) {
+    			return { version: "N/A" };
+    		}
+    		return false;
+    	}
     }
     
 };

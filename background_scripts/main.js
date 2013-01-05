@@ -66,7 +66,7 @@ function run(libs, tab) {
 	}
     library = libraries[0];
 	getIcon(library.icon, libraries.length);
-};
+}
 
 /**
  * Callback to finish rendering after canvases are done loading
@@ -90,7 +90,7 @@ function dispatch(pixelData) {
     localStorage.setItem('libraries_' + tabId, JSON.stringify(libraries));
     
     chrome.pageAction.show(tabId);
-};
+}
 
 /**
  * Use a canvas to add an overlay to the icon, if necessary, return the pixel data
@@ -123,8 +123,8 @@ function getIcon(iconName, count) {
 		}
 		dispatch(context.getImageData(0, 0, 16, 16));
 	}, false);
-};
+}
 
-chrome.extension.onRequest.addListener(function(library, sender, sendResponse) {
+chrome.extension.onMessage.addListener(function(library, sender, sendResponse) {
     run(library, sender.tab.id);
 });

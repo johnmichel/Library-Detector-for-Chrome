@@ -1,6 +1,13 @@
 Changelog
 =========
 
+### 2.7
+- Add support for jQuery Mobile, HighCharts, CreateJs, InfoVis, Blackbird, Google Maps
+- Fix some bugs with existing library detections
+- Fix a bug that results in oversize library icons in the popup
+- Upgrade to the Extension Manifest version 2
+
+
 ### 2.6
 - Experimental support for detecting libraries loaded with script loader (johnmichel)
 - Add support for D3 and Handlebars (johnmichel)

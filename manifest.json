@@ -12,7 +12,10 @@
         "128": "icons/icon_128.png"
     },
     "background": {
-        "page": "background_scripts/main.html"
+        "scripts": [
+            "library/libraries.js",
+            "background_scripts/main.js"
+        ]
     },
     "page_action": {
         "default_icon": "icons/null.png",

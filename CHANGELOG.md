@@ -1,6 +1,9 @@
 Changelog
 =========
 
+### 2.7.1
+- Add support for AngularJS
+
 ### 2.7
 - Add support for jQuery Mobile, HighCharts, CreateJs, InfoVis, Blackbird, Google Maps
 - Fix some bugs with existing library detections

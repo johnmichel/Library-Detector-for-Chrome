@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Library Detector",
-    "version": "2.7",
+    "version": "2.7.1",
     "web_accessible_resources": [
         "library/libraries.js",
         "content_scripts/lib_detect.js"

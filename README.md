@@ -6,6 +6,7 @@ utilized on webpages you visit and displays their icons in the address bar. Curr
 supports: 
 
 - AmplifyJS
+- AngularJS
 - Backbone.js
 - Blackbird
 - base2

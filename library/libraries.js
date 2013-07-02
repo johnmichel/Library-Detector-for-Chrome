@@ -644,6 +644,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     		}
     		return false;
     	}
+    },
+    
+    'AngularJS': {
+    	icon: 'angularjs',
+    	url: 'http://angularjs.org',
+    	test: function(win) {
+    	    var ng = win.angular;
+    		if(ng && ng.version && ng.version.full) {
+    			return { version: ng.version.full };
+    		}
+    		return false;
+    	}
     }
     
 };

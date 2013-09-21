@@ -10,7 +10,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'InfoVis': {
 		icon: 'jit',
 		url: 'http://philogb.github.com/jit/',
@@ -21,7 +21,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'FlotCharts': {
 		icon: 'icon_48',
 		url: 'http://www.flotcharts.org/',
@@ -32,7 +32,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Blackbird': {
 		icon: 'blackbird',
 		url: 'http://www.gscottolson.com/blackbirdjs/',
@@ -43,7 +43,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'CreateJS': {
 		icon: 'createjs',
 		url: 'http://createjs.com/#!/CreateJS',
@@ -54,7 +54,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Google Maps': {
 		icon: 'gmaps',
 		url: 'https://developers.google.com/maps/',
@@ -65,7 +65,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				return false;
 			}
 	},
-	
+
 	'jQuery': {
 		icon: 'jquery',
 		url: 'http://jquery.com',
@@ -157,7 +157,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'YUI 3': {
 		icon: 'yui3',
 		url: 'http://yuilibrary.com/',
@@ -215,7 +215,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
     'Rapha&euml;l': {
 		icon: 'raphael',
 		url: 'http://raphaeljs.com',
@@ -248,7 +248,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Backbone': {
 		icon: 'backbone',
 		url: 'http://documentcloud.github.com/backbone',
@@ -259,7 +259,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Underscore': {
 		icon: 'underscore',
 		url: 'http://documentcloud.github.com/underscore',
@@ -271,7 +271,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Sammy': {
 		icon: 'sammy',
 		url: 'http://sammyjs.org',
@@ -282,7 +282,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Rico': {
 		icon: 'rico',
 		url: 'http://openrico.org',
@@ -293,18 +293,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'MochiKit': {
 		icon: 'mochikit',
 		url: 'http://www.mochikit.com',
 		test: function(win) {
 			if (win.MochiKit && win.MochiKit.Base.module) {
-				return {version: MochiKit.VERSION};	
+				return {version: MochiKit.VERSION};
 			}
 			return false;
 		}
 	},
-	
+
 	'gRapha&euml;l': {
 		icon: 'graphael',
 		url: 'http://g.raphaeljs.com',
@@ -315,7 +315,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Glow': {
 		icon: 'glow',
 		url: 'http://www.bbc.co.uk/glow',
@@ -330,9 +330,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				return {version: win.Glow.version};
 			}
 			return false;
-		}		
+		}
 	},
-	
+
 	'Socket.IO': {
 		icon: 'socketio', // currently has no icon
 		url: 'http://socket.io',
@@ -343,7 +343,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Mustache': {
 		icon: 'mustache',
 		url: 'http://mustache.github.com',
@@ -354,7 +354,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Fabric.js': {
 		icon: 'icon_48', // currently has no icon
 		url: 'http://fabricjs.com/',
@@ -365,7 +365,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'FuseJS': {
 		icon: 'fusejs',
 		url: 'http://fusejs.com',
@@ -376,7 +376,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Tween.js': {
 		icon: 'icon_48', // currently has no icon
 		url: 'https://github.com/sole/tween.js',
@@ -387,7 +387,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'SproutCore': {
 	   icon: 'sproutcore',
 	   url: 'http://www.sproutcore.com',
@@ -398,7 +398,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
 	},
-	
+
 	'Zepto.js': {
 	   icon: 'zepto',
 	   url: 'http://zeptojs.com',
@@ -409,7 +409,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
 	},
-	
+
 	'three.js': {
 	   icon: 'icon_48', // currently has no icon
 	   url: 'https://github.com/mrdoob/three.js',
@@ -423,7 +423,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
 	},
-	
+
 	'PhiloGL': {
 	   icon: 'philogl',
 	   url: 'http://www.senchalabs.org/philogl/',
@@ -434,7 +434,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
 	},
-	
+
 	'CamanJS': {
 		icon: 'camanjs',
 		url: 'http://camanjs.com/',
@@ -445,7 +445,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'yepnope': {
 		icon: 'yepnope',
 		url: 'http://yepnopejs.com/',
@@ -456,7 +456,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'LABjs': {
 		icon: 'icon_48',
 		url: 'http://labjs.com/',
@@ -467,7 +467,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'Head JS': {
 		icon: 'headjs',
 		url: 'http://headjs.com/',
@@ -478,7 +478,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'ControlJS': {
 		icon: 'icon_48',
 		url: 'http://stevesouders.com/controljs/',
@@ -489,7 +489,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'RequireJS': {
 		icon: 'requirejs',
 		url: 'http://requirejs.org/',
@@ -500,7 +500,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
-	
+
 	'RightJS': {
 		icon: 'rightjs',
 		url: 'http://rightjs.org/',
@@ -510,7 +510,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			}
 			return false;
 		}
-	},	
+	},
 
 	'jQuery Tools': {
 	   icon: 'jquerytools',
@@ -522,8 +522,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       }
 	       return false;
 	   }
-    },	
-    
+    },
+
     'Pusher': {
 	   icon: 'pusher',
 	   url: 'http://pusher.com/docs/pusher_js/',
@@ -533,8 +533,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       }
 	       return false;
 	   }
-    },	
-    
+    },
+
     'Paper.js': {
 	   icon: 'paperjs',
 	   url: 'http://paperjs.org/',
@@ -545,7 +545,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     },
-    
+
     'Swiffy': {
 	   icon: 'icon_48',
 	   url: 'http://www.google.com/doubleclick/studio/swiffy/',
@@ -556,7 +556,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     },
-    
+
     'Move': {
 	   icon: 'move',
 	   url: 'http://movelang.org/',
@@ -567,7 +567,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     },
-    
+
     'AmplifyJS': {
 	   icon: 'amplifyjs',
 	   url: 'http://amplifyjs.com/',
@@ -578,7 +578,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     },
-    
+
     'Popcorn.js': {
 	   icon: 'popcornjs',
 	   url: 'http://mozillapopcorn.org/popcornjs/',
@@ -589,7 +589,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	       return false;
 	   }
     },
-    
+
     'D3': {
 	    icon: 'd3',
 	    url: 'http://d3js.org',
@@ -600,7 +600,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	        return false;
 	    }
     },
-    
+
     'Handlebars': {
 	    icon: 'handlebars',
 	    url: 'http://handlebarsjs.com/',
@@ -611,7 +611,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	        return false;
 	    }
     },
-    
+
     'Spine': {
         icon: 'icon_48',
         url: 'http://spinejs.com/',
@@ -622,7 +622,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    
+
     'jQuery Mobile': {
         icon: 'jquery_mobile',
         url: 'http://jquerymobile.com/',
@@ -634,7 +634,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    
+
     'WebFont Loader': {
     	icon: 'icon_48',
     	url: 'https://github.com/typekit/webfontloader',
@@ -645,7 +645,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     		return false;
     	}
     },
-    
+
     'AngularJS': {
     	icon: 'angularjs',
     	url: 'http://angularjs.org',
@@ -656,6 +656,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     		}
     		return false;
     	}
+    },
+
+    'Ember.js': {
+        icon: 'emberjs',
+        url: 'http://emberjs.com/',
+        test: function(win) {
+            var ember = win.Ember || win.Em;
+            if (ember && ember.VERSION) {
+                return { version: ember.VERSION };
+            }
+            return false;
+        }
     }
-    
+
 };

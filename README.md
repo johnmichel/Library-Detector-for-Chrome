@@ -1,9 +1,9 @@
 Library Detector For Chrome
 ===========================
 
-The Library Detector extension discovers which Javascript libraries are being 
-utilized on webpages you visit and displays their icons in the address bar. Currently 
-supports: 
+The Library Detector extension discovers which Javascript libraries are being
+utilized on webpages you visit and displays their icons in the address bar. Currently
+supports:
 
 - AmplifyJS
 - AngularJS
@@ -15,6 +15,7 @@ supports:
 - CreateJS
 - D3
 - Dojo
+- Ember.js
 - Ext JS
 - Fabric.js
 - Flot Charts
@@ -33,8 +34,8 @@ supports:
 - jQuery UI
 - LABjs
 - MochiKit
-- Modernizr 
-- MooTools 
+- Modernizr
+- MooTools
 - Move
 - Mustache.js
 - Paper.js
@@ -59,7 +60,7 @@ supports:
 - Underscore.js
 - WebFont Loader
 - yepnope
-- YUI, 
+- YUI,
 - Zepto.js
 
 

@@ -10,16 +10,7 @@ var Libraries = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
  */
 function parseLibraries(libs) {
 	if (libs.length === 0) return [];
-	var libkeys = [];
-	libs = libs.split(',');
-	for (var i=0; i<libs.length; i++) {
-		var libdata = libs[i].split(':');
-		libkeys.push({
-			name: libdata[0],
-			version: libdata[1]
-		});
-	}
-	return libkeys;
+	return JSON.parse(libs);
 }
 
 /**
@@ -72,12 +63,12 @@ function run(libs, tab) {
  * Callback to finish rendering after canvases are done loading
  */
 function dispatch(pixelData) {
-	
+
 	chrome.pageAction.setIcon({
         tabId: tabId,
         imageData: pixelData
     });
-    
+
 	chrome.pageAction.setTitle({
         tabId: tabId,
         title: libraries.length > 1 ? libraries.length + ' libraries detected' : library.name + ' ' + library.version
@@ -86,9 +77,9 @@ function dispatch(pixelData) {
         'tabId': tabId,
         'popup': '../popups/libraries.html'
     });
-    
+
     localStorage.setItem('libraries_' + tabId, JSON.stringify(libraries));
-    
+
     chrome.pageAction.show(tabId);
 }
 
@@ -99,13 +90,13 @@ function getIcon(iconName, count) {
 	var image = document.createElement('canvas');
 	image.width = 16;
 	image.height = 16;
-	
+
 	var context = image.getContext('2d');
-	
+
 	var icon = new Image;
 	icon.src = '../icons/'+iconName+'.png';
 	icon.addEventListener('load', function() {
-		context.drawImage(icon, 0, 0, 16, 16);
+    context.drawImage(icon, 0, 0, 16, 16);
 		if (count > 1) {
 			// overlay circle
 			context.fillStyle = '#fff';
@@ -113,7 +104,7 @@ function getIcon(iconName, count) {
 			context.arc(12.5, 11, 5.5, 0, Math.PI*2, true);
 			context.closePath();
 			context.fill();
-			
+
 			// overlay number
 			context.font = '10px Arial';
 			context.fillStyle = '#ff0000';

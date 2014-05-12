@@ -15,20 +15,21 @@
           if(window.Prototype) {
               var _Object_toJSON = Object.prototype.toJSON;
               var _Array_toJSON = Array.prototype.toJSON;
-              var _Hash_toJSON = Hash.prototype.toJSON;
               var _String_toJSON = String.prototype.toJSON;
+              // Hash is a object only defined by prottype
+              // var _Hash_toJSON = Hash.prototype.toJSON;
 
               delete Object.prototype.toJSON;
               delete Array.prototype.toJSON;
-              delete Hash.prototype.toJSON;
               delete String.prototype.toJSON;
+              // delete Hash.prototype.toJSON;
 
               var res = JSON.stringify(libraries);
 
               Object.prototype.toJSON = _Object_toJSON;
               Array.prototype.toJSON = _Array_toJSON;
-              Hash.prototype.toJSON = _Hash_toJSON;
               String.prototype.toJSON = _String_toJSON;
+              // Hash.prototype.toJSON = _Hash_toJSON;
 
               return res;
           }

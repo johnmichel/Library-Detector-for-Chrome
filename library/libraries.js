@@ -1,5 +1,81 @@
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
+		
+	'GWT': {
+		icon: 'gwt',
+		url: 'http://www.gwtproject.org/',
+		test: function(win) {
+			// pretty complicated, many possible tell tales
+			var doc = win.document,
+				hasHistFrame = doc.getElementById('__gwt_historyFrame'),
+				hasGwtUid = doc.gwt_uid,
+				hasBodyListener = doc.body.__listener,
+				hasBodyEventBits = doc.body.__eventBits,
+				hasModules = win.__gwt_activeModules,
+				hasJsonP = win.__gwt_jsonp__;
+			    
+			// use the many possible indicators    
+			if(hasHistFrame || hasGwtUid || hasBodyListener || hasBodyEventBits || hasModules || hasJsonP) {
+			
+				// carefully look at frames, but only if certain is GWT frame
+				var frames = doc.getElementsByTagName('iframe'),
+					gwtVersion = 'unknown';
+				for(var n=0; n<frames.length; n++) {
+					// catch security access errors
+					try {
+						if(frames[n].contentWindow && frames[n].contentWindow.$gwt_version) {
+							gwtVersion = frames[n].contentWindow.$gwt_version;
+							break;
+						}
+					}
+					catch(e) {}
+				}
+				
+				if(gwtVersion=='0.0.999') {
+				  gwtVersion = 'Google Internal';
+				}
+				
+				return { version: gwtVersion };
+			}
+			return false;
+		}
+	},
 
+	'Ink Interface': {
+		icon: 'ink',
+		url: 'http://ink.sapo.pt/',
+		test: function(win) {
+			if(window.Ink && window.Ink) {
+				return { version: 'unknown' };
+			}
+			return false;
+		}
+	},
+	
+	'Bootstrap': {
+		icon: 'bootstrap',
+		url: 'http://getbootstrap.com/',
+		// look for a function Boostrap has added to jQuery - regex for BS 2 & 3
+		test: function(win) {
+			if(win.$ && win.$.fn && win.$.fn.button &&
+			  window.$.fn.button.toString().match(/data\("(bs.)?button/) && 
+			  window.$.fn.button.toString().match(/data\("(bs.)?button/).length > 0) {
+				return { version: 'unknown' };
+			}
+			return false;
+		}
+	},
+	
+	'Zurb': {
+		icon: 'zurb',
+		url: 'http://foundation.zurb.com/',
+		test: function(win) {
+			if(win.Foundation && win.Foundation.version) {
+				return { version: win.Foundation.version };
+			}
+			return false;
+		}
+	},
+	
 	'Highcharts': {
 		icon: 'highcharts',
 		url: 'http://www.highcharts.com',

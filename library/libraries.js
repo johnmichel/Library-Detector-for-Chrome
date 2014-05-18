@@ -23,7 +23,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				for(var n=0; n<frames.length; n++) {
 					// catch security access errors
 					try {
-						if(frames[n].contentWindow && frames[n].contentWindow.$gwt_version) {
+						var hasNegativeTabIndex = frames[n].tabIndex < 0; // on for GWT
+						if(hasNegativeTabIndex && frames[n].contentWindow && frames[n].contentWindow.$gwt_version) {
 							gwtVersion = frames[n].contentWindow.$gwt_version;
 							break;
 						}

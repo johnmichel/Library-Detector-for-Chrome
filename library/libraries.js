@@ -11,10 +11,11 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				hasBodyListener = doc.body.__listener,
 				hasBodyEventBits = doc.body.__eventBits,
 				hasModules = win.__gwt_activeModules,
-				hasJsonP = win.__gwt_jsonp__;
+				hasJsonP = win.__gwt_jsonp__,
+				hasRootWinApp = win.__gwt_scriptsLoaded || win.__gwt_stylesLoaded || gwt_.__gwt_activeModules;
 			    
 			// use the many possible indicators    
-			if(hasHistFrame || hasGwtUid || hasBodyListener || hasBodyEventBits || hasModules || hasJsonP) {
+			if(hasHistFrame || hasGwtUid || hasBodyListener || hasBodyEventBits || hasModules || hasJsonP || hasRootWinApp) {
 			
 				// carefully look at frames, but only if certain is GWT frame
 				var frames = doc.getElementsByTagName('iframe'),
@@ -50,6 +51,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 			return false;
 		}
 	},
+
+	'Vaadin': {
+		icon: 'vaadin',
+		url: 'http://vaadin.com/home',
+		test: function(win) {
+			if(window.vaadin) {
+				return { version: 'unknown' };
+			}
+			return false;
+		}
+	},
 	
 	'Bootstrap': {
 		icon: 'bootstrap',
@@ -71,6 +83,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 		test: function(win) {
 			if(win.Foundation && win.Foundation.version) {
 				return { version: win.Foundation.version };
+			}
+			return false;
+		}
+	},
+	
+	'Polymer': {
+		icon: 'polymer',
+		url: 'http://www.polymer-project.org/',
+		test: function(win) {
+			if(win.Polymer) {
+				return { version: 'unknown' };
 			}
 			return false;
 		}

@@ -12,7 +12,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 				hasBodyEventBits = doc.body.__eventBits,
 				hasModules = win.__gwt_activeModules,
 				hasJsonP = win.__gwt_jsonp__,
-				hasRootWinApp = win.__gwt_scriptsLoaded || win.__gwt_stylesLoaded || gwt_.__gwt_activeModules;
+				hasRootWinApp = win.__gwt_scriptsLoaded || win.__gwt_stylesLoaded || win.__gwt_activeModules;
 			    
 			// use the many possible indicators    
 			if(hasHistFrame || hasGwtUid || hasBodyListener || hasBodyEventBits || hasModules || hasJsonP || hasRootWinApp) {

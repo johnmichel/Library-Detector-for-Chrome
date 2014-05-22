@@ -10,6 +10,7 @@ supports:
 - Backbone.js
 - Blackbird
 - base2
+- Bootstrap
 - CamanJS
 - ControlJS
 - CreateJS
@@ -29,6 +30,7 @@ supports:
 - Head JS
 - Highcharts
 - InfoVis
+- Ink
 - jQuery
 - jQuery Tools
 - jQuery UI
@@ -40,6 +42,7 @@ supports:
 - Mustache.js
 - Paper.js
 - PhiloGL
+- Polymer
 - Processing.js
 - Prototype
 - Pusher
@@ -58,10 +61,12 @@ supports:
 - three.js
 - Tween.js
 - Underscore.js
+- Vaadin
 - WebFont Loader
 - yepnope
 - YUI,
 - Zepto.js
+- Zurb Foundation
 
 
 ### To run the development version of the plugin

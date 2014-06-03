@@ -63,6 +63,7 @@ supports:
 - Tween.js
 - Underscore.js
 - Vaadin
+- Velocity.js
 - WebFont Loader
 - yepnope
 - YUI,

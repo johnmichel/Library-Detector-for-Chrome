@@ -768,6 +768,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
-    }
+    },
+
+    'Velocity.js': {
+		icon: 'icon_48',
+		url: 'http://velocityjs.org/',
+		test: function(win) {
+		    var jq = win.jQuery || win.$;            
+		    if(jq && jq.velocity) {
+		        return { version: "N/A" };
+		    }
+		    return false;
+		}
+	}
 
 };

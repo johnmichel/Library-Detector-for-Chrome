@@ -770,6 +770,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Hammer.js': {
+        icon: 'hammerjs',
+        url: 'http://eightmedia.github.io/hammer.js/',
+        test: function(win) {
+            var hammer = win.Hammer;
+            if(hammer) {
+                // Hammer.VERSION available in 1.0.10+
+                return { version: hammer.VERSION || "&lt; 1.0.10" };
+            }
+            return false;
+        }
+    },
+
     'Velocity.js': {
 		icon: 'icon_48',
 		url: 'http://velocityjs.org/',

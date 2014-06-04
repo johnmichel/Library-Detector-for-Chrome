@@ -376,16 +376,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Underscore': {
-		icon: 'underscore',
-		url: 'http://underscorejs.org/',
-		test: function(win) {
-			// *should* be safeish for sites that have assigned a generic "_" to something else
-			if (win._ && win._.VERSION && typeof win._.tap === 'function') {
-				return {version: win._.VERSION};
-			}
-			return false;
-		}
-	},
+        icon: 'underscore',
+        url: 'http://underscorejs.org/',
+        test: function(win) {
+            if (win._ && win._.VERSION && typeof win._.tap === 'function' &&
+                !d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests['Lo-Dash'].test(win)) {
+                return {version: win._.VERSION};
+            }
+            return false;
+        }
+    },
 
 	'Sammy': {
 		icon: 'sammy',

@@ -82,6 +82,7 @@ supports:
 - Artem Nezvigin [homepage](http://artnez.com) (Multiple library icon concept)
 - Karl Swedberg [homepage](http://www.learningjquery.com/)
 - Joseph Lust [homepage](http://www.lustforge.com/)
+- John-David Dalton [homepage](http://allyoucanleet.com/)
 
 ### Inspiration
 Library detect class inspired by Paul Bakaus' Library Detector for Firefox

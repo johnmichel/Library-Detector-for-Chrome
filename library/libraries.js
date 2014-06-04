@@ -368,7 +368,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 chain = typeof (chain = _ && _.chain) == 'function' && chain,
                 wrapper = (chain || _ || function() { return {}; })(1);
 
-            if (_ && _.VERSION && (wrapper.__wrapped__ || wrapper._wrapped)) {
+            if (_ && _.VERSION && wrapper.__wrapped__) {
                 return { version: _.VERSION };
             }
             return false;

@@ -770,6 +770,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Visibility.js': {
+        icon: 'icon_48',
+        url: 'https://github.com/ai/visibilityjs',
+        test: function(win) {
+            var visibility = win.Visibility;
+            if(visibility) {
+                return { version: 'unknown' };
+            }
+            return false;
+        }
+    },
+
     'Velocity.js': {
 		icon: 'icon_48',
 		url: 'http://velocityjs.org/',

@@ -63,6 +63,7 @@ supports:
 - Underscore.js
 - Vaadin
 - Velocity.js
+- Visibility.js
 - WebFont Loader
 - yepnope
 - YUI,

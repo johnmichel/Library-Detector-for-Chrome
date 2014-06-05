@@ -35,6 +35,7 @@ supports:
 - jQuery Tools
 - jQuery UI
 - LABjs
+- Lo-Dash
 - MochiKit
 - Modernizr
 - MooTools

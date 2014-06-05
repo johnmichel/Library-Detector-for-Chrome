@@ -34,6 +34,7 @@ supports:
 - jQuery
 - jQuery Tools
 - jQuery UI
+- Knockout JS
 - LABjs
 - MochiKit
 - Modernizr

@@ -712,6 +712,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 	    }
     },
 
+    'Knockout': {
+        icon: 'knockout',
+        url: 'http://knockoutjs.com/',
+        test: function(win) {
+            if(win.ko) {
+                return { version: win.ko.version };
+            }
+            return false;
+        }
+    },
+
     'Spine': {
         icon: 'icon_48',
         url: 'http://spinejs.com/',

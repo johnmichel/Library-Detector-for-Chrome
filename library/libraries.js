@@ -360,12 +360,27 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Lo-Dash': {
+        icon: 'lodash',
+        url: 'http://lodash.com/',
+        test: function(win) {
+            var _ = typeof (_ = win._) == 'function' && _,
+                chain = typeof (chain = _ && _.chain) == 'function' && chain,
+                wrapper = (chain || _ || function() { return {}; })(1);
+
+            if (_ && _.VERSION && wrapper.__wrapped__) {
+                return { version: _.VERSION };
+            }
+            return false;
+        }
+    },
+
     'Underscore': {
         icon: 'underscore',
-        url: 'http://documentcloud.github.com/underscore',
+        url: 'http://underscorejs.org/',
         test: function(win) {
-            // *should* be safeish for sites that have assigned a generic "_" to something else
-            if (win._ && win._.VERSION && typeof win._.tap === 'function') {
+            if (win._ && win._.VERSION && typeof win._.tap === 'function' &&
+                !d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests['Lo-Dash'].test(win)) {
                 return {version: win._.VERSION};
             }
             return false;

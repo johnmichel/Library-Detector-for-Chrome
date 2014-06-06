@@ -37,6 +37,7 @@ supports:
 - jQuery UI
 - Knockout JS
 - LABjs
+- Lo-Dash
 - MochiKit
 - Modernizr
 - MooTools
@@ -85,6 +86,7 @@ supports:
 - Karl Swedberg [homepage](http://www.learningjquery.com/)
 - Joseph Lust [homepage](http://www.lustforge.com/)
 - Eliot Sykes [homepage](http://www.webdevbreak.com/)
+- John-David Dalton [homepage](http://allyoucanleet.com/)
 
 ### Inspiration
 Library detect class inspired by Paul Bakaus' Library Detector for Firefox

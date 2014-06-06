@@ -820,12 +820,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    
     'Velocity.js': {
         icon: 'icon_48',
         url: 'http://velocityjs.org/',
         test: function(win) {
             var jq = win.jQuery || win.$;
             if(jq && jq.velocity) {
+                return { version: "N/A" };
+            }
+            return false;
+        }
+    },
+    
+    'IfVisible.js': {
+        icon: 'icon_48',
+        url: 'http://serkanyersen.github.io/ifvisible.js/',
+        test: function(win) {
+            var iv = win.ifvisible;
+            if(iv && iv.__ceGUID === "ifvisible.object.event.identifier") {
                 return { version: "N/A" };
             }
             return false;

@@ -30,6 +30,7 @@ supports:
 - Handlebars
 - Head JS
 - Highcharts
+- IfVisible.js
 - InfoVis
 - Ink
 - jQuery

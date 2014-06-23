@@ -832,7 +832,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    
+
     'IfVisible.js': {
         icon: 'icon_48',
         url: 'http://serkanyersen.github.io/ifvisible.js/',
@@ -844,6 +844,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+
     'DC.js': {
         icon: 'icon_48',
         url: 'http://dc-js.github.io/dc.js/',

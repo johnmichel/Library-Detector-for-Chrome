@@ -15,6 +15,7 @@ supports:
 - ControlJS
 - CreateJS
 - D3
+- DC.js
 - Dojo
 - Ember.js
 - Ext JS

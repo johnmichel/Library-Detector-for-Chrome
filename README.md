@@ -38,6 +38,7 @@ supports:
 - jQuery UI
 - Knockout JS
 - LABjs
+- Leaflet
 - Lo-Dash
 - MochiKit
 - Modernizr
@@ -70,7 +71,7 @@ supports:
 - Visibility.js
 - WebFont Loader
 - yepnope
-- YUI,
+- YUI
 - Zepto.js
 - Zurb Foundation
 

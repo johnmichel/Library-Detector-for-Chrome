@@ -843,6 +843,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+
+    'Greensock JS': {
+        icon: 'greensock',
+        url: 'https://github.com/greensock/GreenSock-JS',
+        test: function(win) {
+            var gs = win.TweenMax || win.TweenLite ;
+            if(gs && gs.version) {
+                return { version: gs.version }
+            }
+            return false;
+        }
     }
 
 };

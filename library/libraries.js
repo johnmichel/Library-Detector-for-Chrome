@@ -93,8 +93,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'polymer',
         url: 'http://www.polymer-project.org/',
         test: function(win) {
-            if(win.Polymer) {
-                return { version: 'unknown' };
+            if(win.Polymer && win.Polymer.version) {
+                return { version: win.Polymer.version };
             }
             return false;
         }

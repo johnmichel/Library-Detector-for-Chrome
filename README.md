@@ -27,6 +27,7 @@ supports:
 - Google Maps
 - Google Web Toolkit
 - gRaphaël
+- Greensock JS
 - Hammer.js
 - Handlebars
 - Head JS

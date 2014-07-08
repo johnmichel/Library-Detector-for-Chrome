@@ -49,6 +49,7 @@ supports:
 - Mustache.js
 - Paper.js
 - PhiloGL
+- Pixi.js
 - Polymer
 - Processing.js
 - Prototype
@@ -93,6 +94,11 @@ supports:
 - Eliot Sykes [homepage](http://www.webdevbreak.com/)
 - John-David Dalton [homepage](http://allyoucanleet.com/)
 - Tan Le [GitHub](https://github.com/tancnle)
+- Serkan Yerşen [homepage](http://serkan.io/)
+- Robert Pataki [GitHub](https://github.com/robertpataki)
+- Andrii Vakarev [GitHub](https://github.com/avakarev)
+- Allan Esquina [GitHub](https://github.com/allanesquina)
+- Derek Peterson [homepage](http://www.derekpetey.com/)
 
 ### Inspiration
 Library detect class inspired by Paul Bakaus' Library Detector for Firefox

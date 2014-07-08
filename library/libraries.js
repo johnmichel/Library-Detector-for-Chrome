@@ -855,6 +855,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Pixi.js': {
+        icon: 'pixi',
+        url: 'https://github.com/GoodBoyDigital/pixi.js',
+        test: function(win) {
+            var px = win.PIXI;
+            if(px && px.VERSION) {
+                return { version: PIXI.VERSION.split('v')[1] };
+            }
+            return false;
+        },
     'DC.js': {
         icon: 'icon_48',
         url: 'http://dc-js.github.io/dc.js/',
@@ -877,4 +887,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     }
+    }
+
 };

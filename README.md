@@ -56,6 +56,7 @@ supports:
 - Pusher
 - Qooxdoo
 - Raphael
+- React
 - RequireJS
 - Rico
 - RightJS

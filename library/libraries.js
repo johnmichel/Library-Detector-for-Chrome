@@ -327,6 +327,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'React': {
+        icon: 'react',
+        url: 'http://facebook.github.io/react/',
+        test: function(win) {
+            if(win.React) {
+                return { version: win.React.version };
+            }
+            return false;
+        }
+    },
+
     'Modernizr': {
         icon: 'modernizr',
         url: 'http://www.modernizr.com',

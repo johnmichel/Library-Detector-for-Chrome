@@ -42,6 +42,7 @@ supports:
 - LABjs
 - Leaflet
 - Lo-Dash
+- Mapbox
 - MochiKit
 - Modernizr
 - MooTools

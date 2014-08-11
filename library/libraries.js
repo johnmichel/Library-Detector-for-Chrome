@@ -158,12 +158,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     'Google Maps': {
         icon: 'gmaps',
         url: 'https://developers.google.com/maps/',
-            test: function(win) {
-                if(win.google && win.google.maps && win.google.maps.version) {
-                    return { version: win.google.maps.version};
-                }
-                return false;
+        test: function(win) {
+            if (win.google && win.google.maps && win.google.maps.version) {
+                return { version: win.google.maps.version };
             }
+            return false;
+        }
     },
 
     'jQuery': {
@@ -377,6 +377,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.L) {
                 return {version: win.L.version};
+            }
+            return false;
+        }
+    },
+
+    'Mapbox': {
+        icon: 'mapbox',
+        url: 'http://mapbox.com',
+        test: function(win) {
+            if (win.L && win.L.mapbox) {
+                return { version: win.L.mapbox.VERSION };
             }
             return false;
         }

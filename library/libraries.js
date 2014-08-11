@@ -587,8 +587,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'camanjs',
         url: 'http://camanjs.com/',
         test: function(win) {
-            if (win.Caman) {
-                return {version: ''};
+            if (win.Caman && win.Caman.version) {
+                return {version: win.Caman.version.release};
             }
             return false;
         }

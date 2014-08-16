@@ -929,7 +929,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'isotope',
         url: 'https://github.com/metafizzy/isotope',
         test: function(win) {
-            var iso = win.Isotope || $.Isotope;
+            var iso = win.Isotope || (win.$ != null && win.$.Isotope);
             if(iso) {
                 return { version: 'N/A' }
             }

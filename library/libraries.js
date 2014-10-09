@@ -858,13 +858,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48',
         url: 'http://velocityjs.org/',
         test: function(win) {
-            var jq = win.jQuery || win.$;
-            if(jq && jq.Velocity) {
+            var jq = win.jQuery || win.$,
+                velocity = jq ? jq.Velocity : win.Velocity;
+
+            if(velocity) {
                 return { 
                     version: 
-                        jq.Velocity.State.version.major + "." +
-                        jq.Velocity.State.version.minor + "." +
-                        jq.Velocity.State.version.patch
+                        velocity.version.major + "." +
+                        velocity.version.minor + "." +
+                        velocity.version.patch
                 };
             }
             return false;

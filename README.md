@@ -74,6 +74,7 @@ supports:
 - Vaadin
 - Velocity.js
 - Visibility.js
+- Vue.js
 - WebFont Loader
 - yepnope
 - YUI

@@ -937,5 +937,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
-    }
+    },
+	'Vue.js': {
+		icon: 'vue',
+		url: 'https://github.com/andrewbredow/Library-Detector-for-Chrome',
+		test: function(win) {
+			var vue = win.Vue;
+			if (vue) {
+				return { version: 'N/A' }
+			}
+			return false;
+		}
+	}
 };

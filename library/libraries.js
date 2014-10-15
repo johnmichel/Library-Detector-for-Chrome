@@ -46,7 +46,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'ink',
         url: 'http://ink.sapo.pt/',
         test: function(win) {
-            if(window.Ink && window.Ink) {
+            if(win.Ink && win.Ink) {
                 return { version: 'unknown' };
             }
             return false;
@@ -57,7 +57,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'vaadin',
         url: 'http://vaadin.com/home',
         test: function(win) {
-            if(window.vaadin) {
+            if(win.vaadin) {
                 return { version: 'unknown' };
             }
             return false;
@@ -70,8 +70,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         // look for a function Boostrap has added to jQuery - regex for BS 2 & 3
         test: function(win) {
             if(win.$ && win.$.fn && win.$.fn.button &&
-              window.$.fn.button.toString().match(/data\("(bs.)?button/) &&
-              window.$.fn.button.toString().match(/data\("(bs.)?button/).length > 0) {
+              win.$.fn.button.toString().match(/data\("(bs.)?button/) &&
+              win.$.fn.button.toString().match(/data\("(bs.)?button/).length > 0) {
                 return { version: 'unknown' };
             }
             return false;
@@ -287,8 +287,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if(win.Ext && win.Ext.version) {
                 return { version: win.Ext.version };
             }
-            else if (win.Ext && window.Ext.versions) {
-                return { version: window.Ext.versions.core.version };
+            else if (win.Ext && win.Ext.versions) {
+                return { version: win.Ext.versions.core.version };
             }
             return false;
         }

@@ -69,11 +69,42 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://getbootstrap.com/',
         // look for a function Boostrap has added to jQuery - regex for BS 2 & 3
         test: function(win) {
-            if(win.$ && win.$.fn && win.$.fn.button &&
-              window.$.fn.button.toString().match(/data\("(bs.)?button/) &&
-              window.$.fn.button.toString().match(/data\("(bs.)?button/).length > 0) {
-                return { version: 'unknown' };
+            var jQueryAvailable = win.$ && win.$.fn,
+                RE_PREFIX_V2 = '\\$this\\.data\\((?:\'|")',
+                RE_PREFIX_V3 = '\\$this\\.data\\((?:\'|")(?:bs\\.){1}',
+                bootstrapComponents = [
+                    'affix', 'alert', 'button', 'carousel', 'collapse', 'dropdown',
+                    'modal', 'popover', 'scrollspy', 'tab', 'tooltip'
+                ];
+
+            if(jQueryAvailable) {
+                var bootstrapVersion;
+
+                bootstrapComponents.some(function(component) {
+                    if(win.$.fn[component]) {
+                        // Bootstrap >= 3.2.0 detection
+                        if(win.$.fn[component].Constructor && win.$.fn[component].Constructor.VERSION) {
+                            bootstrapVersion = win.$.fn[component].Constructor.VERSION;
+                            return true;
+                        // Bootstrap >= 2.0.0 and <= 3.1.0 detection
+                        } else if(new RegExp(RE_PREFIX_V3 + component).test(win.$.fn[component].toString())) {
+                            bootstrapVersion = '>= 3.0.0 & <= 3.1.1';
+                            return true;
+                        // Bootstrap < 3.1.0 detection
+                        } else if(new RegExp(RE_PREFIX_V2 + component).test(win.$.fn[component].toString())) {
+                            bootstrapVersion = '>= 2.0.0 & <= 2.3.2';
+                            return true;
+                        }
+                    }
+
+                    return false;
+                });
+
+                if (bootstrapVersion) {
+                    return { version: bootstrapVersion };
+                }
             }
+
             return false;
         }
     },

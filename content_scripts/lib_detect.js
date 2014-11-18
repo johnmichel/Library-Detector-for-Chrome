@@ -21,12 +21,16 @@
             var tests = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
             var libraries = [];
             for (var i in tests) {
-                var result = tests[i].test(window);
-                if (result === false) continue;
-                libraries.push({
-                    name: i,
-                    version: result.version
-                });
+                try {
+                    var result = tests[i].test(window);
+                    if (result === false) continue;
+                    libraries.push({
+                        name: i,
+                        version: result.version
+                    });
+                } catch(e) {
+                    console.log('Library Detector test for ' + i + ' failed:', e);
+                }
             }
             return libraries;
         };

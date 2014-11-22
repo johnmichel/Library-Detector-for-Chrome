@@ -937,5 +937,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Marionette': {
+        icon: 'marionette',
+        url: 'http://marionettejs.com/',
+        test: function(win) {
+            if(win.Marionette) {
+                return { version: win.Marionette.VERSION };
+            }
+            return false;
+        }
     }
 };

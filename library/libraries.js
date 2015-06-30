@@ -978,5 +978,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Can': {
+        icon: 'icon_48',
+        url: 'http://canjs.com/',
+        test: function (win) {
+            if (win.can && win.can.Construct) {
+                return { version: win.can.VERSION };
+            }
+            return false;
+        }
     }
 };

@@ -82,26 +82,25 @@ supports:
 
 
 ### To run the development version of the plugin
-1. Clone the Git repo from Github 'git clone git@github.com:andrewbredow/Library-Detector-for-Chrome.git LibraryDetector'
-2. Navigate to chrome://extensions in Chrome
+1. Clone the Git repo from Github `git clone git@github.com:johnmichel/Library-Detector-for-Chrome.git LibraryDetector`
+2. Navigate to `chrome://extensions` in Chrome
 3. Expand the "Developer Mode" section
-4. Click "Load unpacked extension..." and select the LibraryDetector folder
+4. Click "Load unpacked extension..." and select the `LibraryDetector` folder
 
 ### Contributors
-- Andrew Bredow [homepage](http://andrewbredow.com)
-- John Michel [homepage](http://cowbird.org)
-- Artem Nezvigin [homepage](http://artnez.com) (Multiple library icon concept)
-- Karl Swedberg [homepage](http://www.learningjquery.com/)
-- Joseph Lust [homepage](http://www.lustforge.com/)
-- Eliot Sykes [homepage](http://www.webdevbreak.com/)
-- John-David Dalton [homepage](http://allyoucanleet.com/)
-- Tan Le [GitHub](https://github.com/tancnle)
-- Serkan Yerşen [homepage](http://serkan.io/)
-- Robert Pataki [GitHub](https://github.com/robertpataki)
-- Andrii Vakarev [GitHub](https://github.com/avakarev)
-- Allan Esquina [GitHub](https://github.com/allanesquina)
-- Derek Peterson [homepage](http://www.derekpetey.com/)
+- [Andrew Bredow](http://andrewbredow.com)
+- [John Michel](http://cowbird.org)
+- [Artem Nezvigin](http://artnez.com) (Multiple library icon concept)
+- [Karl Swedberg](http://www.learningjquery.com/)
+- [Joseph Lust](http://www.lustforge.com/)
+- [Eliot Sykes](http://www.webdevbreak.com/)
+- [John-David Dalton](http://allyoucanleet.com/)
+- [Tan Le](https://github.com/tancnle)
+- [Serkan Yerşen](http://serkan.io/)
+- [Robert Pataki](https://github.com/robertpataki)
+- [Andrii Vakarev](https://github.com/avakarev)
+- [Allan Esquina](https://github.com/allanesquina)
+- [Derek Peterson](http://www.derekpetey.com/)
 
 ### Inspiration
-Library detect class inspired by Paul Bakaus' Library Detector for Firefox
-http://paulbakaus.com/
+Library detection class inspired by [Paul Bakaus'](http://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

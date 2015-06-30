@@ -46,8 +46,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'ink',
         url: 'http://ink.sapo.pt/',
         test: function(win) {
-            if(window.Ink && window.Ink) {
                 return { version: 'unknown' };
+            if(win.Ink) {
             }
             return false;
         }
@@ -57,7 +57,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'vaadin',
         url: 'http://vaadin.com/home',
         test: function(win) {
-            if(window.vaadin) {
+            if(win.vaadin) {
                 return { version: 'unknown' };
             }
             return false;
@@ -318,8 +318,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if(win.Ext && win.Ext.version) {
                 return { version: win.Ext.version };
             }
-            else if (win.Ext && window.Ext.versions) {
-                return { version: window.Ext.versions.core.version };
+            else if (win.Ext && win.Ext.versions) {
+                return { version: win.Ext.versions.core.version };
             }
             return false;
         }
@@ -884,7 +884,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    
+
     'Velocity.js': {
         icon: 'icon_48',
         url: 'http://velocityjs.org/',
@@ -893,8 +893,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 velocity = jq ? jq.Velocity : win.Velocity;
 
             if(velocity) {
-                return { 
-                    version: 
+                return {
+                    version:
                         velocity.version.major + "." +
                         velocity.version.minor + "." +
                         velocity.version.patch
@@ -903,7 +903,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    
+
     'IfVisible.js': {
         icon: 'icon_48',
         url: 'http://serkanyersen.github.io/ifvisible.js/',

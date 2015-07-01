@@ -42,12 +42,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Ink Interface': {
+    'Ink': {
         icon: 'ink',
         url: 'http://ink.sapo.pt/',
         test: function(win) {
+            if (win.Ink && win.Ink.createModule) {
                 return { version: 'unknown' };
-            if(win.Ink) {
             }
             return false;
         }

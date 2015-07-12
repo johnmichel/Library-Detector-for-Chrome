@@ -5,81 +5,81 @@ The Library Detector extension discovers which Javascript libraries are being
 utilized on webpages you visit and displays their icons in the address bar. Currently
 supports:
 
-- AmplifyJS
-- AngularJS
-- Backbone.js
-- Blackbird
-- base2
-- Bootstrap
-- CamanJS
-- ControlJS
-- CreateJS
-- D3
-- DC.js
-- Dojo
-- Ember.js
-- Ext JS
-- Fabric.js
-- Flot Charts
-- FuseJS
-- Glow
-- Google Closure
-- Google Maps
-- Google Web Toolkit
-- gRaphaël
-- Greensock JS
-- Hammer.js
-- Handlebars
-- Head JS
-- Highcharts
-- IfVisible.js
-- InfoVis
-- Ink
-- jQuery
-- jQuery Tools
-- jQuery UI
-- Knockout JS
-- LABjs
-- Leaflet
-- Lo-Dash
-- Mapbox
-- MochiKit
-- Modernizr
-- MooTools
-- Move
-- Mustache.js
-- Paper.js
-- PhiloGL
-- Pixi.js
-- Polymer
-- Processing.js
-- Prototype
-- Pusher
-- Qooxdoo
-- Raphael
-- React
-- RequireJS
-- Rico
-- RightJS
-- Sammy.js
-- Scriptaculous
-- Socket.IO
-- Spine
-- SproutCore
-- Spry
-- Swiffy
-- three.js
-- Tween.js
-- Underscore.js
-- Vaadin
-- Velocity.js
-- Visibility.js
-- Vue.js
-- WebFont Loader
-- yepnope
-- YUI
-- Zepto.js
-- Zurb Foundation
+- [AmplifyJS](http://amplifyjs.com/)
+- [AngularJS](https://angularjs.org/)
+- [Backbone.js](http://backbonejs.org/)
+- [Blackbird](https://github.com/pockata/blackbird-js)
+- [base2](https://code.google.com/p/base2/)
+- [Bootstrap](http://getbootstrap.com/)
+- [CamanJS](http://camanjs.com/)
+- [ControlJS](https://stevesouders.com/controljs/)
+- [CreateJS](http://www.createjs.com/)
+- [D3](http://d3js.org/)
+- [DC.js](https://dc-js.github.io/dc.js/)
+- [Dojo](https://dojotoolkit.org/)
+- [Ember.js](http://emberjs.com/)
+- [Ext JS](https://www.sencha.com/products/extjs/)
+- [Fabric.js](http://fabricjs.com/)
+- [Flot Charts](http://www.flotcharts.org/)
+- [Foundation](http://foundation.zurb.com/)
+- [FuseJS](http://kiro.me/projects/fuse.html)
+- [Glow](http://www.bbc.co.uk/glow/)
+- [Google Closure](https://developers.google.com/closure/)
+- [Google Maps](https://developers.google.com/maps/)
+- [GWT](http://www.gwtproject.org/)
+- [gRaphaël](http://g.raphaeljs.com/)
+- [Greensock JS](https://greensock.com/gsap)
+- [Hammer.js](http://hammerjs.github.io/)
+- [Handlebars](http://handlebarsjs.com/)
+- [HeadJS](http://headjs.com/)
+- [Highcharts](http://www.highcharts.com/)
+- [IfVisible.js](http://serkanyersen.github.io/ifvisible.js/)
+- [InfoVis](http://philogb.github.io/jit/)
+- [Ink](http://ink.sapo.pt/)
+- [jQuery](http://jquery.com/)
+- [jQuery Tools](http://jquerytools.github.io/)
+- [jQuery UI](http://jqueryui.com/)
+- [Knockout](http://knockoutjs.com/)
+- [LABjs](http://labjs.com/)
+- [Leaflet](http://leafletjs.com/)
+- [Lodash](https://lodash.com/)
+- [Mapbox](https://www.mapbox.com/mapbox.js/)
+- [MochiKit](http://mochi.github.io/mochikit/)
+- [Modernizr](http://modernizr.com/)
+- [MooTools](http://mootools.net/)
+- [Move.js](https://visionmedia.github.io/move.js/)
+- [Mustache.js](https://mustache.github.io/)
+- [Paper.js](http://paperjs.org/)
+- [PhiloGL](http://www.senchalabs.org/philogl/)
+- [Pixi.js](http://www.pixijs.com/)
+- [Polymer](https://www.polymer-project.org/)
+- [Processing.js](http://processingjs.org/)
+- [Prototype](http://prototypejs.org/)
+- [Pusher](https://pusher.com/docs/javascript_quick_start)
+- [Qooxdoo](http://qooxdoo.org/)
+- [Raphaël](http://raphaeljs.com/)
+- [React](https://facebook.github.io/react/)
+- [RequireJS](http://requirejs.org/)
+- [Rico](http://openrico.sourceforge.net/examples/index.html)
+- [RightJS](http://rightjs.org/)
+- [Sammy.js](http://sammyjs.org/)
+- [Script.aculo.us](https://script.aculo.us/)
+- [Socket.IO](http://socket.io/)
+- [Spine](http://spinejs.com/)
+- [SproutCore](http://sproutcore.com/)
+- [Spry](https://github.com/adobe/Spry)
+- [Swiffy](https://developers.google.com/swiffy/)
+- [Three.js](http://threejs.org/)
+- [Tween.js](https://github.com/tweenjs/tween.js)
+- [Underscore](http://underscorejs.org/)
+- [Vaadin](https://vaadin.com/home)
+- [Velocity.js](http://julian.com/research/velocity/)
+- [Visibility.js](https://github.com/ai/visibilityjs)
+- [Vue.js](http://vuejs.org/)
+- [Web Font Loader](https://github.com/typekit/webfontloader)
+- [Yepnope](http://yepnopejs.com/)
+- [YUI](http://yuilibrary.com/)
+- [Zepto](http://zeptojs.com/)
 
 
 ### To run the development version of the plugin

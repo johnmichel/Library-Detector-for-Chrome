@@ -998,5 +998,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Two': {
+        icon: 'two',
+        url: 'https://jonobr1.github.io/two.js',
+        test: function(win) {
+            if (win.Two && win.Two.Utils) {
+                return { version: win.Two.Version };
+            }
+            return false;
+        }
     }
 };

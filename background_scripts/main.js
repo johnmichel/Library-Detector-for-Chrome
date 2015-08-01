@@ -39,19 +39,7 @@ function getLibraries(libs) {  //name, version, icon, url
  * Set no icon
  */
 function setNoIcon() {
-    chrome.pageAction.setIcon({
-        tabId: tabId,
-        path: '../icons/null.png'
-    });
-    chrome.pageAction.setTitle({
-        tabId: tabId,
-        title: ''
-    });
-    chrome.pageAction.setPopup({
-        'tabId': tabId,
-        'popup': ''
-    });
-    chrome.pageAction.show(tabId);
+    chrome.pageAction.hide(tabId);
 }
 
 /**

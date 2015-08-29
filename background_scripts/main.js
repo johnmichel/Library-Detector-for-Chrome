@@ -85,31 +85,47 @@ function dispatch(pixelData) {
  */
 function getIcon(iconName, count) {
     var image = document.createElement('canvas');
-    image.width = 16;
-    image.height = 16;
-
+    image.width = 19;
+    image.height = 19;
     var context = image.getContext('2d');
-
     var icon = new Image;
     icon.src = '../icons/'+iconName+'.png';
     icon.addEventListener('load', function() {
-        context.drawImage(icon, 0, 0, 16, 16);
+        context.drawImage(icon, 0, 0, 19, 19);
         if (count > 1) {
             // overlay circle
-            context.fillStyle = '#fff';
+            var x = 13,
+                y = 13,
+                radius = 5.5,
+                startAngle = 0,
+                endAngle = 2 * Math.PI,
+                counterClockwise = false,
+                lineWidth = 1,
+                lineColor = 'black',
+                fillColor = 'white';
             context.beginPath();
-            context.arc(12.5, 11, 5.5, 0, Math.PI*2, true);
+            context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
             context.closePath();
+            context.lineWidth = lineWidth;
+            context.strokeStyle = lineColor;
+            context.stroke();
+            context.fillStyle = fillColor;
             context.fill();
-
             // overlay number
-            context.font = '10px Arial';
-            context.fillStyle = '#ff0000';
+            var txtX = 15.75,
+                txtY = 19;
+                txtFont = '10px Monospace',
+                txtColor = 'black';
+            if (count >= 10) {
+                txtX = 17.75;
+            }
+            context.font = txtFont;
+            context.fillStyle = txtColor;
             context.textBaseline = 'bottom';
             context.textAlign = 'right';
-            context.fillText(count, 15.75, 16);
+            context.fillText(count, txtX, txtY);
         }
-        dispatch(context.getImageData(0, 0, 16, 16));
+        dispatch(context.getImageData(0, 0, 19, 19));
     }, false);
 }
 

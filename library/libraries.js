@@ -1013,7 +1013,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'brewser',
         url: 'http://handcraftedldn.github.io/brewser/',
         test: function(win) {
-            if(win.BREWSER) {
+            if(win.BREWSER && win.BREWSER.ua) {
                 return { version: BREWSER.VERSION };
             }
             return false;

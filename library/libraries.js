@@ -1008,5 +1008,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Brewser': {
+        icon: 'brewser',
+        url: 'http://handcraftedldn.github.io/brewser/',
+        test: function(win) {
+            if(win.BREWSER && win.BREWSER.ua) {
+                return { version: BREWSER.VERSION };
+            }
+            return false;
+        }
     }
 };

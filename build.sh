@@ -1,7 +1,7 @@
 #!/bin/sh
 
 include=(
-    background_scripts 
+    background_scripts
     content_scripts
     icons
     library

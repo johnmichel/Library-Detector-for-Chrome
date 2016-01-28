@@ -1027,5 +1027,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     			return { version: 'N/A'}
     		}
     	}
+    },
+    'Kendo UI': {
+        icon: 'kendoui',
+        url: 'https://github.com/telerik/kendo-ui-core',
+        test: function(win) {
+            if (win.kendo && win.kendo.View && win.kendo.View.extend) {
+                return {version: win.kendo.version};
+            }
+            return false;
+        }
     }
 };

@@ -227,7 +227,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'dojo',
         url: 'http://dojotoolkit.org',
         test: function(win) {
-            if(win.dojo) {
+            if(win.dojo && win.dojo.version) {
                 return { version: win.dojo.version.toString(), details: 'Details: '+(win.dijit ? 'Uses Dijit' : 'none') };
             }
             return false;

@@ -11,6 +11,7 @@ supports:
 - [Blackbird](https://github.com/pockata/blackbird-js)
 - [base2](https://code.google.com/p/base2/)
 - [Bootstrap](http://getbootstrap.com/)
+- [Brewser](http://handcraftedldn.github.io/brewser/)
 - [CamanJS](http://camanjs.com/)
 - [ControlJS](https://stevesouders.com/controljs/)
 - [CreateJS](http://www.createjs.com/)

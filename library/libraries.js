@@ -1018,5 +1018,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Material Design Lite': {
+    	icon: 'mdl',
+    	url: 'http://www.getmdl.io/',
+    	test: function(win) {
+    		if(win.componentHandler && win.componentHandler.upgradeElement) {
+    			return { version: 'N/A'}
+    		}
+    	}
     }
 };

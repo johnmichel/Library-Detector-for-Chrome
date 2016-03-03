@@ -1,80 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Library-detector-for-chrome by johnmichel</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
 
-	<title>andrewbredow/Library-Detector-for-Chrome @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #eaab2e;
-		  font-family: "Helvetica,Arial,FreeSans"; 
-  		color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #1554d1; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #1554d1; }
-    h3 { text-align: center; color: #1554d1; }
-    a { color: #1554d1; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
-</head>
+      <header>
+        <h1>Library-detector-for-chrome</h1>
+        <p>Extension that detects which JavaScript libraries are running on a page</p>
+      </header>
 
-<body>
-  <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-  
-  <div id="container">
+      <div id="banner">
+        <span id="logo"></span>
 
-    <div class="download">
-      <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+        <a href="https://github.com/johnmichel/Library-Detector-for-Chrome" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/johnmichel/Library-Detector-for-Chrome/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/johnmichel/Library-Detector-for-Chrome/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="library-detector-for-chrome" class="anchor" href="#library-detector-for-chrome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Library Detector For Chrome</h1>
+
+<p>The Library Detector extension discovers which Javascript libraries are being
+utilized on webpages you visit and displays their icons in the address bar. Currently
+supports:</p>
+
+<ul>
+<li><a href="http://amplifyjs.com/">AmplifyJS</a></li>
+<li><a href="https://angularjs.org/">AngularJS</a></li>
+<li><a href="http://backbonejs.org/">Backbone.js</a></li>
+<li><a href="https://github.com/pockata/blackbird-js">Blackbird</a></li>
+<li><a href="https://code.google.com/p/base2/">base2</a></li>
+<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="http://handcraftedldn.github.io/brewser/">Brewser</a></li>
+<li><a href="http://camanjs.com/">CamanJS</a></li>
+<li><a href="https://stevesouders.com/controljs/">ControlJS</a></li>
+<li><a href="http://www.createjs.com/">CreateJS</a></li>
+<li><a href="http://d3js.org/">D3</a></li>
+<li><a href="https://dc-js.github.io/dc.js/">DC.js</a></li>
+<li><a href="https://dojotoolkit.org/">Dojo</a></li>
+<li><a href="http://emberjs.com/">Ember.js</a></li>
+<li><a href="https://www.sencha.com/products/extjs/">Ext JS</a></li>
+<li><a href="http://fabricjs.com/">Fabric.js</a></li>
+<li><a href="http://www.flotcharts.org/">Flot Charts</a></li>
+<li><a href="http://foundation.zurb.com/">Foundation</a></li>
+<li><a href="http://kiro.me/projects/fuse.html">FuseJS</a></li>
+<li><a href="http://www.bbc.co.uk/glow/">Glow</a></li>
+<li><a href="https://developers.google.com/closure/">Google Closure</a></li>
+<li><a href="https://developers.google.com/maps/">Google Maps</a></li>
+<li><a href="http://www.gwtproject.org/">GWT</a></li>
+<li><a href="http://g.raphaeljs.com/">gRaphaël</a></li>
+<li><a href="https://greensock.com/gsap">Greensock JS</a></li>
+<li><a href="http://hammerjs.github.io/">Hammer.js</a></li>
+<li><a href="http://handlebarsjs.com/">Handlebars</a></li>
+<li><a href="http://headjs.com/">HeadJS</a></li>
+<li><a href="http://www.highcharts.com/">Highcharts</a></li>
+<li><a href="http://serkanyersen.github.io/ifvisible.js/">IfVisible.js</a></li>
+<li><a href="http://philogb.github.io/jit/">InfoVis</a></li>
+<li><a href="http://ink.sapo.pt/">Ink</a></li>
+<li><a href="http://jquery.com/">jQuery</a></li>
+<li><a href="http://jquerytools.github.io/">jQuery Tools</a></li>
+<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+<li><a href="http://knockoutjs.com/">Knockout</a></li>
+<li><a href="http://labjs.com/">LABjs</a></li>
+<li><a href="http://leafletjs.com/">Leaflet</a></li>
+<li><a href="https://lodash.com/">Lodash</a></li>
+<li><a href="https://www.mapbox.com/mapbox.js/">Mapbox</a></li>
+<li><a href="http://mochi.github.io/mochikit/">MochiKit</a></li>
+<li><a href="http://modernizr.com/">Modernizr</a></li>
+<li><a href="http://mootools.net/">MooTools</a></li>
+<li><a href="https://visionmedia.github.io/move.js/">Move.js</a></li>
+<li><a href="https://mustache.github.io/">Mustache.js</a></li>
+<li><a href="http://paperjs.org/">Paper.js</a></li>
+<li><a href="http://www.senchalabs.org/philogl/">PhiloGL</a></li>
+<li><a href="http://www.pixijs.com/">Pixi.js</a></li>
+<li><a href="https://www.polymer-project.org/">Polymer</a></li>
+<li><a href="http://processingjs.org/">Processing.js</a></li>
+<li><a href="http://prototypejs.org/">Prototype</a></li>
+<li><a href="https://pusher.com/docs/javascript_quick_start">Pusher</a></li>
+<li><a href="http://qooxdoo.org/">Qooxdoo</a></li>
+<li><a href="http://raphaeljs.com/">Raphaël</a></li>
+<li><a href="https://facebook.github.io/react/">React</a></li>
+<li><a href="http://requirejs.org/">RequireJS</a></li>
+<li><a href="http://openrico.sourceforge.net/examples/index.html">Rico</a></li>
+<li><a href="http://rightjs.org/">RightJS</a></li>
+<li><a href="http://sammyjs.org/">Sammy.js</a></li>
+<li><a href="https://script.aculo.us/">Script.aculo.us</a></li>
+<li><a href="http://socket.io/">Socket.IO</a></li>
+<li><a href="http://spinejs.com/">Spine</a></li>
+<li><a href="http://sproutcore.com/">SproutCore</a></li>
+<li><a href="https://github.com/adobe/Spry">Spry</a></li>
+<li><a href="https://developers.google.com/swiffy/">Swiffy</a></li>
+<li><a href="http://threejs.org/">Three.js</a></li>
+<li><a href="https://github.com/tweenjs/tween.js">Tween.js</a></li>
+<li><a href="http://underscorejs.org/">Underscore</a></li>
+<li><a href="https://vaadin.com/home">Vaadin</a></li>
+<li><a href="http://julian.com/research/velocity/">Velocity.js</a></li>
+<li><a href="https://github.com/ai/visibilityjs">Visibility.js</a></li>
+<li><a href="http://vuejs.org/">Vue.js</a></li>
+<li><a href="https://github.com/typekit/webfontloader">Web Font Loader</a></li>
+<li><a href="http://yepnopejs.com/">Yepnope</a></li>
+<li><a href="http://yuilibrary.com/">YUI</a></li>
+<li><a href="http://zeptojs.com/">Zepto</a></li>
+</ul>
+
+<h3>
+<a id="to-run-the-development-version-of-the-plugin" class="anchor" href="#to-run-the-development-version-of-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To run the development version of the plugin</h3>
+
+<ol>
+<li>Clone the Git repo from Github <code>git clone git@github.com:johnmichel/Library-Detector-for-Chrome.git LibraryDetector</code>
+</li>
+<li>Navigate to <code>chrome://extensions</code> in Chrome</li>
+<li>Expand the "Developer Mode" section</li>
+<li>Click "Load unpacked extension..." and select the <code>LibraryDetector</code> folder</li>
+</ol>
+
+<h3>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributors</h3>
+
+<ul>
+<li><a href="http://andrewbredow.com">Andrew Bredow</a></li>
+<li><a href="http://cowbird.org">John Michel</a></li>
+<li>
+<a href="http://artnez.com">Artem Nezvigin</a> (Multiple library icon concept)</li>
+<li><a href="http://www.learningjquery.com/">Karl Swedberg</a></li>
+<li><a href="http://www.lustforge.com/">Joseph Lust</a></li>
+<li><a href="http://www.webdevbreak.com/">Eliot Sykes</a></li>
+<li><a href="http://allyoucanleet.com/">John-David Dalton</a></li>
+<li><a href="https://github.com/tancnle">Tan Le</a></li>
+<li><a href="http://serkan.io/">Serkan Yerşen</a></li>
+<li><a href="https://github.com/robertpataki">Robert Pataki</a></li>
+<li><a href="https://github.com/avakarev">Andrii Vakarev</a></li>
+<li><a href="https://github.com/allanesquina">Allan Esquina</a></li>
+<li><a href="http://www.derekpetey.com/">Derek Peterson</a></li>
+</ul>
+
+<h3>
+<a id="inspiration" class="anchor" href="#inspiration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inspiration</h3>
+
+<p>Library detection class inspired by <a href="http://paulbakaus.com/">Paul Bakaus'</a> <a href="https://addons.mozilla.org/en-us/firefox/addon/library-detector/">Library Detector for Firefox</a></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/johnmichel">johnmichel</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-      
-    <h1><a href="http://github.com/andrewbredow/Library-Detector-for-Chrome">Library-Detector-for-Chrome</a> 
-      <span class="small">by <a href="http://github.com/andrewbredow">andrewbredow</a></span></h1>
-
-    <div class="description">
-      Extension that detects which Javascript library is running on a page
-    </div>
-
-    <p>Chrome extension that detects which Javascript library is being utilized by a page and displays the icon in the address bar. The library detector class was inspired by Paul Bakaus' Library Detector for Firefox which can be found at http://paulbakaus.com/</p><h2>Authors</h2>
-<p>Andrew Bredow (bredow@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Andrew Bredow (bredow@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome/zipball/master">zip</a> or
-      <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/andrewbredow/Library-Detector-for-Chrome</pre>
-    </p>
-      
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/andrewbredow/Library-Detector-for-Chrome">andrewbredow/Library-Detector-for-Chrome</a>
-    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-  </div>
-
-  
-</body>
+  </body>
 </html>

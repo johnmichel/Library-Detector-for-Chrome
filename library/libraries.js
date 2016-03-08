@@ -1037,5 +1037,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Matter.js': {
+        icon: 'matter-js',
+        url: 'http://brm.io/matter-js/',
+        test: function(win) {
+            if (win.Matter && win.Matter.Engine) {
+                return {version: 'N/A'};
+            }
+            return false;
+        }
     }
 };

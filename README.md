@@ -45,6 +45,7 @@ supports:
 - [Leaflet](http://leafletjs.com/)
 - [Lodash](https://lodash.com/)
 - [Mapbox](https://www.mapbox.com/mapbox.js/)
+- [Matter.js](http://brm.io/matter-js/)
 - [MochiKit](http://mochi.github.io/mochikit/)
 - [Modernizr](http://modernizr.com/)
 - [MooTools](http://mootools.net/)

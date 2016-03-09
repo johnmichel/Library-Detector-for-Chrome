@@ -1024,8 +1024,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     	url: 'http://www.getmdl.io/',
     	test: function(win) {
     		if(win.componentHandler && win.componentHandler.upgradeElement) {
-    			return { version: 'N/A'}
+    			return { version: 'N/A'};
     		}
+    		return false;
     	}
     },
     'Kendo UI': {

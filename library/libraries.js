@@ -406,7 +406,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'leaflet',
         url: 'http://leafletjs.com',
         test: function(win) {
-            if (win.L) {
+            if (win.L && win.L.GeoJSON && win.L.marker) {
                 return {version: win.L.version};
             }
             return false;
@@ -417,7 +417,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'mapbox',
         url: 'http://mapbox.com',
         test: function(win) {
-            if (win.L && win.L.mapbox) {
+            if (win.L && win.L.mapbox && win.L.mapbox.geocoder) {
                 return { version: win.L.mapbox.VERSION };
             }
             return false;

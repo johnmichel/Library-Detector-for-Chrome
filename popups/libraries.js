@@ -3,10 +3,9 @@
 **/
 
 var addLibrary = function(library) {
-
     var container = document.createElement('div');
-
     var link = document.createElement('a');
+
     link.href = library.url;
     link.innerHTML = library.name;
     link.setAttribute('style', "background: transparent url('../icons/" + library.icon + ".png') no-repeat left center; background-size: contain;");
@@ -27,7 +26,7 @@ var handlePageLoad = function() {
     chrome.tabs.getSelected(null, function(tab) {
         var libraries = JSON.parse(localStorage.getItem('libraries_'+tab.id));
         if (libraries === null) return;
-        for (var i=0,j=libraries.length; i<j; i++) {
+        for (var i=0, j=libraries.length; i < j; i++) {
             addLibrary(libraries[i]);
         }
     });

@@ -2,14 +2,18 @@
     description: Responds to notification from the Content Script and displays the icon
 **/
 
-var libraries, library, tabId;
+var libraries;
+var library;
+var tabId;
 var Libraries = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
 
 /**
  * Parse the data from the meta tag
  */
 function parseLibraries(libs) {
-    if (libs.length === 0) return [];
+    if (libs.length === 0) {
+        return [];
+    }
     var libkeys = [];
     libs = libs.split(',');
     for (var i=0; i<libs.length; i++) {
@@ -94,15 +98,15 @@ function getIcon(iconName, count) {
         context.drawImage(icon, 0, 0, 19, 19);
         if (count > 1) {
             // overlay circle
-            var x = 13,
-                y = 13,
-                radius = 5.5,
-                startAngle = 0,
-                endAngle = 2 * Math.PI,
-                counterClockwise = false,
-                lineWidth = 1,
-                lineColor = 'black',
-                fillColor = 'white';
+            var x = 13;
+            var y = 13;
+            var radius = 5.5;
+            var startAngle = 0;
+            var endAngle = 2 * Math.PI;
+            var counterClockwise = false;
+            var lineWidth = 1;
+            var lineColor = 'black';
+            var fillColor = 'white';
             context.beginPath();
             context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
             context.closePath();
@@ -112,10 +116,10 @@ function getIcon(iconName, count) {
             context.fillStyle = fillColor;
             context.fill();
             // overlay number
-            var txtX = 15.75,
-                txtY = 19;
-                txtFont = '10px Monospace',
-                txtColor = 'black';
+            var txtX = 15.75;
+            var txtY = 19;
+            var txtFont = '10px Monospace';
+            var txtColor = 'black';
             if (count >= 10) {
                 txtX = 17.75;
             }

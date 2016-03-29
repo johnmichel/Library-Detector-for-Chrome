@@ -11,7 +11,7 @@
      function wait() {
         var encodeLibraries = function(libraries) {
             var encoded = [];
-            for (var i=0; i<libraries.length; i++) {
+            for (var i = 0; i < libraries.length; i++) {
                 encoded.push(libraries[i].name + ':' + libraries[i].version);
             }
             return encoded.join(',');
@@ -45,6 +45,6 @@
 
     window.setTimeout(function() {
         wait();
-    },2000);
+    }, 2000);
 
 })();

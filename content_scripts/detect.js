@@ -13,4 +13,4 @@ function wait() {
 
 window.setTimeout(function() {
     wait();
-},2000);
+}, 2500);

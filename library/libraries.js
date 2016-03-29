@@ -57,7 +57,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'vaadin',
         url: 'http://vaadin.com/home',
         test: function(win) {
-            if(win.vaadin) {
+            if (win.vaadin && win.vaadin.registerWidgetset) {
                 return { version: 'unknown' };
             }
             return false;
@@ -271,7 +271,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'spry',
         url: 'http://labs.adobe.com/technologies/spry',
         test: function(win) {
-            if(win.Spry) {
+            if (win.Spry && win.Spry.Data) {
                 return { version: '' };
             }
             return false;
@@ -349,9 +349,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Rapha&euml;l': {
         icon: 'raphael',
-        url: 'http://raphaeljs.com',
+        url: 'http://dmitrybaranovskiy.github.io/raphael',
         test: function(win) {
-            if(win.Raphael) {
+            if (win.Raphael && win.Raphael.circle) {
                 return { version: win.Raphael.version };
             }
             return false;
@@ -362,7 +362,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'react',
         url: 'http://facebook.github.io/react/',
         test: function(win) {
-            if(win.React) {
+            if (win.React && win.React.createClass) {
                 return { version: win.React.version };
             }
             return false;
@@ -373,8 +373,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'modernizr',
         url: 'http://www.modernizr.com',
         test: function(win) {
-            if(win.Modernizr) {
-                return { version: Modernizr._version };
+            if (win.Modernizr && win.Modernizr.addTest) {
+                return { version: win.Modernizr._version };
             }
             return false;
         }
@@ -384,7 +384,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'processingjs',
         url: 'http://processingjs.org',
         test: function(win) {
-            if(win.Processing) {
+            if(win.Processing && win.Processing.box) {
                 return { version: Processing.version };
             }
             return false;
@@ -560,7 +560,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48', // currently has no icon
         url: 'https://github.com/sole/tween.js',
         test: function(win) {
-            if (win.TWEEN) {
+            if (win.TWEEN && win.TWEEN.Easing) {
                 return {version: ''};
             }
             return false;
@@ -607,7 +607,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        icon: 'philogl',
        url: 'http://www.senchalabs.org/philogl/',
        test: function(win) {
-           if (win.PhiloGL) {
+           if (win.PhiloGL && win.PhiloGL.Camera) {
                return {version: win.PhiloGL.version};
            }
            return false;
@@ -651,7 +651,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'headjs',
         url: 'http://headjs.com/',
         test: function(win) {
-            if (win.head &&  win.head.js) {
+            if (win.head && win.head.js) {
                 return {version: ''};
             }
             return false;
@@ -662,7 +662,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48',
         url: 'http://stevesouders.com/controljs/',
         test: function(win) {
-            if (win.CJS) {
+            if (win.CJS && win.CJS.start) {
                 return {version: ''};
             }
             return false;
@@ -762,7 +762,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        icon: 'popcornjs',
        url: 'http://mozillapopcorn.org/popcornjs/',
        test: function(win) {
-            if(win.Popcorn && win.Popcorn.Events) {
+            if (win.Popcorn && win.Popcorn.Events) {
                return { version: win.Popcorn.version };
            }
            return false;
@@ -773,7 +773,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'd3',
         url: 'http://d3js.org',
         test: function(win) {
-            if(win.d3 && win.d3.select) {
+            if (win.d3 && win.d3.select) {
                 return { version: win.d3.version };
             }
             return false;
@@ -795,7 +795,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'knockout',
         url: 'http://knockoutjs.com/',
         test: function(win) {
-            if(win.ko) {
+            if (win.ko && win.ko.applyBindings) {
                 return { version: win.ko.version };
             }
             return false;
@@ -829,7 +829,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48',
         url: 'https://github.com/typekit/webfontloader',
         test: function(win) {
-            if(win.WebFont) {
+            if(win.WebFont && win.WebFont.load) {
                 return { version: "N/A" };
             }
             return false;
@@ -865,7 +865,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://eightmedia.github.io/hammer.js/',
         test: function(win) {
             var hammer = win.Hammer;
-            if(hammer) {
+            if(hammer && hammer.Pinch) {
                 // Hammer.VERSION available in 1.0.10+
                 return { version: hammer.VERSION || "&lt; 1.0.10" };
             }
@@ -878,7 +878,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/ai/visibilityjs',
         test: function(win) {
             var visibility = win.Visibility;
-            if(visibility) {
+            if(visibility && visibility.every) {
                 return { version: 'unknown' };
             }
             return false;
@@ -892,7 +892,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             var jq = win.jQuery || win.$,
                 velocity = jq ? jq.Velocity : win.Velocity;
 
-            if(velocity) {
+            if(velocity && velocity.RegisterEffect) {
                 return {
                     version:
                         velocity.version.major + "." +
@@ -952,7 +952,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'fastclick',
         url: 'https://github.com/ftlabs/fastclick',
         test: function(win) {
-            if(win.FastClick) {
+            if(win.FastClick && win.FastClick.notNeeded) {
                 return { version: 'N/A' }
             }
             return false;
@@ -973,7 +973,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'marionette',
         url: 'http://marionettejs.com/',
         test: function(win) {
-            if(win.Marionette) {
+            if(win.Marionette && win.Marionette.Application) {
                 return { version: win.Marionette.VERSION };
             }
             return false;

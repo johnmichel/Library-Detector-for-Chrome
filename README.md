@@ -63,6 +63,7 @@ supports:
 - [React](https://facebook.github.io/react/)
 - [RequireJS](http://requirejs.org/)
 - [Rico](http://openrico.sourceforge.net/examples/index.html)
+- [Riot](http://riotjs.com/)
 - [RightJS](http://rightjs.org/)
 - [Sammy.js](http://sammyjs.org/)
 - [Script.aculo.us](https://script.aculo.us/)

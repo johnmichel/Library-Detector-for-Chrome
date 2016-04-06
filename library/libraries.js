@@ -1048,5 +1048,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Riot': {
+        icon: 'riot',
+        url: 'http://riotjs.com/',
+        test: function(win) {
+            if (win.riot && win.riot.mixin) {
+                return { version: win.riot.version };
+            }
+            return false;
+        }
     }
 };

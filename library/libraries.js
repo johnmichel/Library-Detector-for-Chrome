@@ -1058,5 +1058,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Sea.js': {
+        icon: 'icon_48',
+        url: 'http://seajs.org/',
+        test: function(win) {
+            if(win.seajs && win.seajs.use) {
+                return { version: win.seajs.version };
+            }
+            return false;
+        }
     }
 };

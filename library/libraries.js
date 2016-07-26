@@ -393,7 +393,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Backbone': {
         icon: 'backbone',
-        url: 'http://documentcloud.github.com/backbone',
+        url: 'http://backbonejs.org/',
         test: function(win) {
             if (win.Backbone && win.Backbone.Model.extend) {
                 return {version: win.Backbone.VERSION};
@@ -464,7 +464,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Rico': {
         icon: 'rico',
-        url: 'http://openrico.org',
+        url: 'http://openrico.sourceforge.net/examples/index.html',
         test:  function(win) {
             if (win.Rico && win.Rico.Version) {
                 return {version: win.Rico.Version};
@@ -475,7 +475,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'MochiKit': {
         icon: 'mochikit',
-        url: 'http://www.mochikit.com',
+        url: 'https://mochi.github.io/mochikit/',
         test: function(win) {
             if (win.MochiKit && win.MochiKit.Base.module) {
                 return {version: MochiKit.VERSION};
@@ -547,7 +547,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'FuseJS': {
         icon: 'fusejs',
-        url: 'http://fusejs.com',
+        url: 'http://kiro.me/projects/fuse.html',
         test: function(win) {
             if (win.fuse && win.fuse.version) {
                 return {version: win.fuse.version};
@@ -591,7 +591,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'three.js': {
        icon: 'icon_48', // currently has no icon
-       url: 'https://github.com/mrdoob/three.js',
+       url: 'http://threejs.org/',
        test: function(win) {
            if (win.THREE && win.THREE.REVISION) {
                return {version: 'r' + win.THREE.REVISION};
@@ -693,7 +693,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'jQuery Tools': {
        icon: 'jquerytools',
-       url: 'http://flowplayer.org/tools/',
+       url: 'http://jquerytools.github.io/',
        test: function(win) {
             var jq = win.jQuery || win.$;
             if(jq && jq.tools) {
@@ -738,7 +738,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Move': {
        icon: 'move',
-       url: 'http://movelang.org/',
+       url: 'https://github.com/rsms/move',
        test: function(win) {
             if(win.move && win.move.compile) {
                return { version: win.move.version() };
@@ -760,7 +760,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Popcorn.js': {
        icon: 'popcornjs',
-       url: 'http://mozillapopcorn.org/popcornjs/',
+       url: 'http://popcornjs.org/',
        test: function(win) {
             if (win.Popcorn && win.Popcorn.Events) {
                return { version: win.Popcorn.version };
@@ -960,7 +960,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Isotope': {
         icon: 'isotope',
-        url: 'https://github.com/metafizzy/isotope',
+        url: 'http://isotope.metafizzy.co/',
         test: function(win) {
             var iso = win.Isotope || (win.$ != null && win.$.Isotope);
             if(iso) {

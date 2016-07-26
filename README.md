@@ -67,6 +67,7 @@ supports:
 - [RightJS](http://rightjs.org/)
 - [Sammy.js](http://sammyjs.org/)
 - [Script.aculo.us](https://script.aculo.us/)
+- [Sea.js](http://seajs.org/)
 - [Socket.IO](http://socket.io/)
 - [Spine](http://spinejs.com/)
 - [SproutCore](http://sproutcore.com/)

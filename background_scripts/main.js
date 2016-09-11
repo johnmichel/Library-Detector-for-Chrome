@@ -31,7 +31,7 @@ function parseLibraries(libs) {
  */
 function getLibraries(libs) {  //name, version, icon, url
     libraries = parseLibraries(libs);
-    for (var i=0; i<libraries.length; i++) {
+    for (var i=0; i < libraries.length; i++) {
         lib = libraries[i];
         lib.url = Libraries[lib.name].url;
         lib.icon = Libraries[lib.name].icon;
@@ -40,22 +40,14 @@ function getLibraries(libs) {  //name, version, icon, url
 }
 
 /**
- * Set no icon
- */
-function setNoIcon() {
-    chrome.pageAction.hide(tabId);
-}
-
-/**
  * Dispatch the program
  */
 function run(libs, tab) {
-    tabId = tab;
     libraries = getLibraries(libs);
     if (libraries.length === 0) {
-        setNoIcon();
         return;
     }
+    tabId = tab;
     library = libraries[0];
     getIcon(library.icon, libraries.length);
 }
@@ -64,7 +56,6 @@ function run(libs, tab) {
  * Callback to finish rendering after canvases are done loading
  */
 function dispatch(pixelData) {
-
     chrome.pageAction.setIcon({
         tabId: tabId,
         imageData: pixelData

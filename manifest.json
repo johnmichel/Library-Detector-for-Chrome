@@ -8,8 +8,8 @@
     ],
     "description": "Detects the Javascript libraries running on a page and displays their icons in the address bar.",
     "icons": {
-        "48": "icons/icon_48.png",
-        "128": "icons/icon_128.png"
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
     "background": {
         "scripts": [
@@ -18,7 +18,10 @@
         ]
     },
     "page_action": {
-        "default_icon": "icons/null.png",
+        "default_icon": {
+            "19": "icons/icon19.png",
+            "38": "icons/icon38.png"
+        },
         "default_title": "Library Detector"
     },
     "permissions": [

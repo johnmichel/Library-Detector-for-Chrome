@@ -48,6 +48,7 @@ supports:
 - [Matter.js](http://brm.io/matter-js/)
 - [MochiKit](http://mochi.github.io/mochikit/)
 - [Modernizr](http://modernizr.com/)
+- [Moment.js](http://momentjs.com/)
 - [MooTools](http://mootools.net/)
 - [Move.js](https://visionmedia.github.io/move.js/)
 - [Mustache.js](https://mustache.github.io/)

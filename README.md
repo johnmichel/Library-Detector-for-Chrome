@@ -1,8 +1,13 @@
-Library Detector For Chrome
+[Library Detector For Chrome](https://chrome.google.com/webstore/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
 ===========================
 
-The Library Detector extension discovers which Javascript libraries are being
-utilized on webpages you visit and displays their icons in the address bar. Currently
+![](https://img.shields.io/chrome-web-store/v/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
+![](https://img.shields.io/chrome-web-store/d/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
+![](https://img.shields.io/chrome-web-store/stars/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
+![](https://img.shields.io/chrome-web-store/rating-count/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
+
+The Library Detector extension discovers which JavaScript libraries are being
+utilized on webpages you visit and displays their icons on the Chrome Menu. Currently
 supports:
 
 - [AmplifyJS](http://amplifyjs.com/)
@@ -118,6 +123,7 @@ supports:
 - [Artem Riasnianskyi](https://github.com/asci)
 - [Piotr Kaminski](https://github.com/pkaminski)
 - [Cristian Douce](https://github.com/cristiandouce)
+- [Vinicius Reis](https://github.com/vinicius73)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](http://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

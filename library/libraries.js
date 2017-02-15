@@ -993,8 +993,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'vue',
         url: 'http://vuejs.org/',
         test: function(win) {
-            if (win.Vue && win.Vue.compiler) {
-                return { version: 'N/A' };
+            if (win.Vue && win.Vue.nextTick) {
+                return { version: win.Vue.version || 'N/A' };
             }
             return false;
         }

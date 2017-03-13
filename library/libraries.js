@@ -1083,7 +1083,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'scrollmagic',
         url: 'http://scrollmagic.io/',
         test: function(win) {
-            if (win.ScrollMagic && win.ScrollMagic.version) {
+            if (win.ScrollMagic && win.ScrollMagic.Controller) {
                 return {version: ScrollMagic.version};                
             }
             return false;

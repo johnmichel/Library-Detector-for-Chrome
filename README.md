@@ -108,7 +108,7 @@ supports:
 - [John-David Dalton](http://allyoucanleet.com/)
 - [Tan Le](https://github.com/tancnle)
 - [Serkan Yerşen](http://serkan.io/)
-- [Robert Pataki](http://handcrafteddigital.london/)
+- [Robert Pataki](https://robertpataki.com/)
 - [Andrii Vakarev](https://github.com/avakarev)
 - [Allan Esquina](https://github.com/allanesquina)
 - [Derek Peterson](http://www.derekpetey.com/)

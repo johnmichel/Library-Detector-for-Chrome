@@ -1134,5 +1134,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Numeral.js': {
+        icon: 'icon_48', // currently has no icon
+        url: 'http://numeraljs.com/',
+        test: function(win) {
+            if (win.numeral && win.isNumeral) {
+                return { version: win.numeral.version || null };
+            }
+            return false;
+        }
     }
 };

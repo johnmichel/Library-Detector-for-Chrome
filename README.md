@@ -59,6 +59,7 @@ supports:
 - [MooTools](http://mootools.net/)
 - [Move.js](https://visionmedia.github.io/move.js/)
 - [Mustache.js](https://mustache.github.io/)
+- [Numeral.js](http://numeraljs.com/)
 - [Paper.js](http://paperjs.org/)
 - [PhiloGL](http://www.senchalabs.org/philogl/)
 - [Pixi.js](http://www.pixijs.com/)

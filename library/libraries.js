@@ -1124,5 +1124,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'SPF': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://youtube.github.io/spfjs/',
+        test: function(win) {
+            if (win.spf && win.spf.init) {
+                return { version: null };
+            }
+            return false;
+        }
     }
 };

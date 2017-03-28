@@ -77,6 +77,7 @@ supports:
 - [Script.aculo.us](https://script.aculo.us/)
 - [Sea.js](http://seajs.org/)
 - [Socket.IO](http://socket.io/)
+- [SPF](https://youtube.github.io/spfjs/)
 - [Spine](http://spinejs.com/)
 - [SproutCore](http://sproutcore.com/)
 - [Spry](https://github.com/adobe/Spry)

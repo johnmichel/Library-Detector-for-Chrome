@@ -1080,6 +1080,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Moment Timezone': {
+        icon: 'momentjs',
+        url: 'http://momentjs.com/timezone/',
+        test: function(win) {
+            if (win.moment && win.moment.tz) {
+                return { version: win.moment.tz.version || null };
+            }
+            return false;
+        }
+    },
     'ScrollMagic': {
         icon: 'scrollmagic',
         url: 'http://scrollmagic.io/',

@@ -55,6 +55,7 @@ supports:
 - [MochiKit](http://mochi.github.io/mochikit/)
 - [Modernizr](http://modernizr.com/)
 - [Moment.js](http://momentjs.com/)
+- [Moment Timezone](http://momentjs.com/timezone/)
 - [MooTools](http://mootools.net/)
 - [Move.js](https://visionmedia.github.io/move.js/)
 - [Mustache.js](https://mustache.github.io/)

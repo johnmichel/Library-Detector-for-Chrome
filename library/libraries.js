@@ -517,7 +517,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'socketio', // currently has no icon
         url: 'http://socket.io',
         test: function(win) {
-            if (win.io && win.io.sockets && win.io.version) {
+            // version 0.6.2 uses only io.Socket; more recent versions also have io.sockets
+            if (win.io && (win.io.sockets || win.io.Socket) && win.io.version) {
                 return {version: win.io.version};
             }
             return false;

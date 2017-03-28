@@ -26,6 +26,7 @@ supports:
 - [Ember.js](http://emberjs.com/)
 - [Ext JS](https://www.sencha.com/products/extjs/)
 - [Fabric.js](http://fabricjs.com/)
+- [FlexSlider](https://woocommerce.com/flexslider/)
 - [Flot Charts](http://www.flotcharts.org/)
 - [Foundation](http://foundation.zurb.com/)
 - [FuseJS](http://kiro.me/projects/fuse.html)

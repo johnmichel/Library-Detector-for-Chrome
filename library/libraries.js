@@ -1102,5 +1102,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'FlexSlider': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://woocommerce.com/flexslider/',
+        test: function(win) {
+            var jq = win.jQuery || win.$ || win.$jq || win.$j;
+            if (jq && jq.fn && jq.fn.jquery && jq.flexslider){
+                return { version: null };
+            }
+            return false;
+        }
     }
 };

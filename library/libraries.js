@@ -406,8 +406,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'leaflet',
         url: 'http://leafletjs.com',
         test: function(win) {
-            if (win.L && win.L.GeoJSON && win.L.marker) {
-                return {version: win.L.version};
+            // Leaflet 3.1 uses L.Marker and L.VERSION; later versions use L.marker and L.version
+            if (win.L && win.L.GeoJSON && (win.L.marker || win.L.Marker)) {
+                return { version: win.L.version || win.L.VERSION || null };
             }
             return false;
         }

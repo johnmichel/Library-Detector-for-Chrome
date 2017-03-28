@@ -675,8 +675,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'requirejs',
         url: 'http://requirejs.org/',
         test: function(win) {
-            if ((win.require && win.require.load) || (win.requirejs && win.requirejs.load)) {
-                return {version: win.require.version || win.requirejs.version};
+            var req = win.require || win.requirejs;
+            if (req && (req.load || (req.s && req.s.contexts && req.s.contexts._ && (req.s.contexts._.loaded || req.s.contexts._.load)))) {
+                return { version: req.version || null };
             }
             return false;
         }

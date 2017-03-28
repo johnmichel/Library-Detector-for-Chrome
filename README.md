@@ -11,6 +11,7 @@ utilized on webpages you visit and displays their icons on the Chrome Menu. Curr
 supports:
 
 - [AmplifyJS](http://amplifyjs.com/)
+- [Angular](https://angular.io)
 - [AngularJS](https://angularjs.org/)
 - [Backbone.js](http://backbonejs.org/)
 - [Blackbird](https://github.com/pockata/blackbird-js)
@@ -124,6 +125,7 @@ supports:
 - [Piotr Kaminski](https://github.com/pkaminski)
 - [Cristian Douce](https://github.com/cristiandouce)
 - [Vinicius Reis](https://github.com/vinicius73)
+- [Rick Viscomi](https://github.com/rviscomi)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](http://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

@@ -1088,5 +1088,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'SWFObject': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://github.com/swfobject/swfobject',
+        test: function(win) {
+            if (win.swfobject && win.swfobject.embedSWF) {
+                // 2.x - exact version only for 2.3
+                return { version: win.swfobject.version || null };
+            } else if(win.deconcept && win.deconcept.SWFObject) {
+                // 1.x
+                return { version: null };
+            }
+            return false;
+        }
     }
 };

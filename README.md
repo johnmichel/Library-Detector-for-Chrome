@@ -78,6 +78,7 @@ supports:
 - [Spine](http://spinejs.com/)
 - [SproutCore](http://sproutcore.com/)
 - [Spry](https://github.com/adobe/Spry)
+- [SWFObject](https://github.com/swfobject/swfobject)
 - [Swiffy](https://developers.google.com/swiffy/)
 - [Three.js](http://threejs.org/)
 - [Tween.js](https://github.com/tweenjs/tween.js)

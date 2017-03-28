@@ -923,8 +923,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/GoodBoyDigital/pixi.js',
         test: function(win) {
             var px = win.PIXI;
-            if(px && px.VERSION) {
-                return { version: PIXI.VERSION.split('v')[1] };
+            if(px && px.WebGLRenderer && px.VERSION) {
+                // version 4.4.3 returns simply "4.4.3"; version 1.5.2 returns "v1.5.2"
+                return { version: px.VERSION.replace('v', '') || null };
             }
             return false;
         }

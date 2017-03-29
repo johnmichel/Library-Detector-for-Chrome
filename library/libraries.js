@@ -839,6 +839,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Angular': {
+        icon: 'angular',
+        url: 'https://angular.io/',
+        test: function(win) {
+            var ng = win.document.querySelector('[ng-version]');
+            if (ng && ng.getAttribute('ng-version')) {
+                return { version: ng.getAttribute('ng-version') };
+            }
+            return false;
+        }
+    },
+
     'AngularJS': {
         icon: 'angularjs',
         url: 'http://angularjs.org',

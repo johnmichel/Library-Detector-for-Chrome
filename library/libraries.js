@@ -406,8 +406,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'leaflet',
         url: 'http://leafletjs.com',
         test: function(win) {
-            if (win.L && win.L.GeoJSON && win.L.marker) {
-                return {version: win.L.version};
+            // Leaflet 3.1 uses L.Marker and L.VERSION; later versions use L.marker and L.version
+            if (win.L && win.L.GeoJSON && (win.L.marker || win.L.Marker)) {
+                return { version: win.L.version || win.L.VERSION || null };
             }
             return false;
         }
@@ -516,7 +517,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'socketio', // currently has no icon
         url: 'http://socket.io',
         test: function(win) {
-            if (win.io && win.io.sockets && win.io.version) {
+            // version 0.6.2 uses only io.Socket; more recent versions also have io.sockets
+            if (win.io && (win.io.sockets || win.io.Socket) && win.io.version) {
                 return {version: win.io.version};
             }
             return false;
@@ -673,8 +675,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'requirejs',
         url: 'http://requirejs.org/',
         test: function(win) {
-            if ((win.require && win.require.load) || (win.requirejs && win.requirejs.load)) {
-                return {version: win.require.version || win.requirejs.version};
+            var req = win.require || win.requirejs;
+            if (req && (req.load || (req.s && req.s.contexts && req.s.contexts._ && (req.s.contexts._.loaded || req.s.contexts._.load)))) {
+                return { version: req.version || null };
             }
             return false;
         }
@@ -920,8 +923,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/GoodBoyDigital/pixi.js',
         test: function(win) {
             var px = win.PIXI;
-            if(px && px.VERSION) {
-                return { version: PIXI.VERSION.split('v')[1] };
+            if(px && px.WebGLRenderer && px.VERSION) {
+                // version 4.4.3 returns simply "4.4.3"; version 1.5.2 returns "v1.5.2"
+                return { version: px.VERSION.replace('v', '') || null };
             }
             return false;
         }
@@ -1073,8 +1077,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'momentjs',
         url: 'http://momentjs.com/',
         test: function(win) {
-            if(win.moment && win.moment.isMoment) {
-                return { version: win.moment.version };
+            if(win.moment && (win.moment.isMoment || win.moment.lang)) {
+                // version 1.0.0 has neither "isMoment" nor "version"
+                return { version: win.moment.version || null };
+            }
+            return false;
+        }
+    },
+    'Moment Timezone': {
+        icon: 'momentjs',
+        url: 'http://momentjs.com/timezone/',
+        test: function(win) {
+            if (win.moment && win.moment.tz) {
+                return { version: win.moment.tz.version || null };
             }
             return false;
         }
@@ -1085,6 +1100,51 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.ScrollMagic && win.ScrollMagic.Controller) {
                 return {version: ScrollMagic.version};                
+            }
+            return false;
+        }
+    },
+    'SWFObject': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://github.com/swfobject/swfobject',
+        test: function(win) {
+            if (win.swfobject && win.swfobject.embedSWF) {
+                // 2.x - exact version only for 2.3
+                return { version: win.swfobject.version || null };
+            } else if(win.deconcept && win.deconcept.SWFObject) {
+                // 1.x
+                return { version: null };
+            }
+            return false;
+        }
+    },
+    'FlexSlider': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://woocommerce.com/flexslider/',
+        test: function(win) {
+            var jq = win.jQuery || win.$ || win.$jq || win.$j;
+            if (jq && jq.fn && jq.fn.jquery && jq.flexslider){
+                return { version: null };
+            }
+            return false;
+        }
+    },
+    'SPF': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://youtube.github.io/spfjs/',
+        test: function(win) {
+            if (win.spf && win.spf.init) {
+                return { version: null };
+            }
+            return false;
+        }
+    },
+    'Numeral.js': {
+        icon: 'icon_48', // currently has no icon
+        url: 'http://numeraljs.com/',
+        test: function(win) {
+            if (win.numeral && win.isNumeral) {
+                return { version: win.numeral.version || null };
             }
             return false;
         }

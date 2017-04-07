@@ -1,3 +1,4 @@
+var UNKNOWN_VERSION = null;
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'GWT': {
@@ -19,7 +20,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
                 // carefully look at frames, but only if certain is GWT frame
                 var frames = doc.getElementsByTagName('iframe'),
-                    gwtVersion = 'unknown';
+                    gwtVersion = UNKNOWN_VERSION;
                 for(var n=0; n<frames.length; n++) {
                     // catch security access errors
                     try {
@@ -47,7 +48,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://ink.sapo.pt/',
         test: function(win) {
             if (win.Ink && win.Ink.createModule) {
-                return { version: 'unknown' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -58,7 +59,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://vaadin.com/home',
         test: function(win) {
             if (win.vaadin && win.vaadin.registerWidgetset) {
-                return { version: 'unknown' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -113,8 +114,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'zurb',
         url: 'http://foundation.zurb.com/',
         test: function(win) {
-            if(win.Foundation && win.Foundation.version) {
-                return { version: win.Foundation.version };
+            if(win.Foundation) {
+                return { version: win.Foundation.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -124,8 +125,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'polymer',
         url: 'http://www.polymer-project.org/',
         test: function(win) {
-            if(win.Polymer && win.Polymer.version) {
-                return { version: win.Polymer.version };
+            if(win.Polymer) {
+                return { version: win.Polymer.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -135,8 +136,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'highcharts',
         url: 'http://www.highcharts.com',
         test: function(win) {
-            if(win.Highcharts && win.Highcharts.version) {
-                return { version: win.Highcharts.version };
+            if(win.Highcharts) {
+                return { version: win.Highcharts.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -146,8 +147,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'jit',
         url: 'http://philogb.github.com/jit/',
         test: function(win) {
-            if(win.$jit && win.$jit.version) {
-                return { version: win.$jit.version };
+            if(win.$jit) {
+                return { version: win.$jit.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -157,8 +158,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48',
         url: 'http://www.flotcharts.org/',
         test: function(win) {
-            if(win.$ && win.$.plot && win.$.plot.version) {
-                return { version: win.$.plot.version };
+            if(win.$ && win.$.plot) {
+                return { version: win.$.plot.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -169,7 +170,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://www.gscottolson.com/blackbirdjs/',
         test: function(win) {
             if(win.log && win.log.warn) {
-                return { version: "N/A"}; // no version info
+                return { version: UNKNOWN_VERSION}; // no version info
             }
             return false;
         }
@@ -180,7 +181,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://createjs.com/#!/CreateJS',
         test: function(win) {
             if(win.Stage || win.Shape || win.Container) {
-                return { version: "N/A"}; // no version info available
+                return { version: UNKNOWN_VERSION}; // no version info available
             }
             return false;
         }
@@ -190,8 +191,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'gmaps',
         url: 'https://developers.google.com/maps/',
         test: function(win) {
-            if (win.google && win.google.maps && win.google.maps.version) {
-                return { version: win.google.maps.version };
+            if (win.google && win.google.maps) {
+                return { version: win.google.maps.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -202,8 +203,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://jquery.com',
         test: function(win) {
             var jq = win.jQuery || win.$ || win.$jq || win.$j;
-            if(jq && jq.fn && jq.fn.jquery) {
-                return { version: jq.fn.jquery };
+            if(jq && jq.fn) {
+                return { version: jq.fn.jquery || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -217,7 +218,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if(jq && jq.fn && jq.fn.jquery && jq.ui) {
                 var plugins = 'accordion,datepicker,dialog,draggable,droppable,progressbar,resizable,selectable,slider,menu,grid,tabs'.split(','), concat = [];
                 for (var i=0; i < plugins.length; i++) { if(jq.ui[plugins[i]]) concat.push(plugins[i].substr(0,1).toUpperCase() + plugins[i].substr(1)); }
-                return { version: jq.ui.version, details: concat.length ? 'Plugins used: '+concat.join(',') : '' };
+                return { version: jq.ui.version || UNKNOWN_VERSION, details: concat.length ? 'Plugins used: '+concat.join(',') : '' };
             }
             return false;
         }
@@ -227,8 +228,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'dojo',
         url: 'http://dojotoolkit.org',
         test: function(win) {
-            if(win.dojo && win.dojo.version) {
-                return { version: win.dojo.version.toString(), details: 'Details: '+(win.dijit ? 'Uses Dijit' : 'none') };
+            if(win.dojo) {
+                var version = win.dojo.version ? win.dojo.version.toString() : UNKNOWN_VERSION;
+                return { version: version, details: 'Details: '+(win.dijit ? 'Uses Dijit' : 'none') };
             }
             return false;
         }
@@ -238,8 +240,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'prototype',
         url: 'http://prototypejs.org',
         test: function(win) {
-            if(win.Prototype && win.Prototype.Version) {
-                return { version: win.Prototype.Version };
+            if(win.Prototype) {
+                return { version: win.Prototype.Version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -249,8 +251,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'scriptaculous',
         url: 'http://script.aculo.us',
         test: function(win) {
-            if(win.Scriptaculous && win.Scriptaculous.Version) {
-                return { version: win.Scriptaculous.Version };
+            if(win.Scriptaculous) {
+                return { version: win.Scriptaculous.Version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -260,8 +262,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'mootools',
         url: 'http://mootools.net',
         test: function(win) {
-            if(win.MooTools && win.MooTools.version) {
-                return { version: win.MooTools.version };
+            if(win.MooTools) {
+                return { version: win.MooTools.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -272,7 +274,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://labs.adobe.com/technologies/spry',
         test: function(win) {
             if (win.Spry && win.Spry.Data) {
-                return { version: '' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -282,8 +284,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'yui',
         url: 'http://developer.yahoo.com/yui/2/',
         test: function(win) {
-            if (win.YAHOO && win.YAHOO.VERSION) {
-                return { version: win.YAHOO.VERSION };
+            if (win.YAHOO) {
+                return { version: win.YAHOO.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -293,8 +295,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'yui3',
         url: 'http://yuilibrary.com/',
         test: function(win) {
-            if (win.YUI && win.YUI.Env && win.YUI.version) {
-                return { version: win.YUI.version };
+            if (win.YUI && win.YUI.Env) {
+                return { version: win.YUI.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -305,7 +307,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://qooxdoo.org',
         test: function(win) {
             if(win.qx && win.qx.Bootstrap) {
-                return { version: '' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -315,11 +317,11 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'extjs',
         url: 'http://www.sencha.com/products/extjs',
         test: function(win) {
-            if(win.Ext && win.Ext.version) {
-                return { version: win.Ext.version };
-            }
-            else if (win.Ext && win.Ext.versions) {
+            if (win.Ext && win.Ext.versions) {
                 return { version: win.Ext.versions.core.version };
+            }
+            else if(win.Ext) {
+                return { version: win.Ext.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -329,8 +331,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'base2',
         url: 'http://code.google.com/p/base2',
         test: function(win) {
-            if(win.base2 && win.base2.version) {
-                return { version: win.base2.version };
+            if(win.base2) {
+                return { version: win.base2.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -341,7 +343,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://developers.google.com/closure/library',
         test: function(win) {
             if(win.goog && win.goog.provide) {
-                return { version: '' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -352,7 +354,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://dmitrybaranovskiy.github.io/raphael',
         test: function(win) {
             if (win.Raphael && win.Raphael.circle) {
-                return { version: win.Raphael.version };
+                return { version: win.Raphael.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -363,7 +365,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://facebook.github.io/react/',
         test: function(win) {
             if (win.React && win.React.createClass) {
-                return { version: win.React.version };
+                return { version: win.React.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -374,7 +376,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://www.modernizr.com',
         test: function(win) {
             if (win.Modernizr && win.Modernizr.addTest) {
-                return { version: win.Modernizr._version };
+                return { version: win.Modernizr._version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -385,7 +387,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://processingjs.org',
         test: function(win) {
             if(win.Processing && win.Processing.box) {
-                return { version: Processing.version };
+                return { version: Processing.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -396,7 +398,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://backbonejs.org/',
         test: function(win) {
             if (win.Backbone && win.Backbone.Model.extend) {
-                return {version: win.Backbone.VERSION};
+                return {version: win.Backbone.VERSION || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -408,7 +410,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             // Leaflet 3.1 uses L.Marker and L.VERSION; later versions use L.marker and L.version
             if (win.L && win.L.GeoJSON && (win.L.marker || win.L.Marker)) {
-                return { version: win.L.version || win.L.VERSION || null };
+                return { version: win.L.version || win.L.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -419,7 +421,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://mapbox.com',
         test: function(win) {
             if (win.L && win.L.mapbox && win.L.mapbox.geocoder) {
-                return { version: win.L.mapbox.VERSION };
+                return { version: win.L.mapbox.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -433,8 +435,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 chain = typeof (chain = _ && _.chain) == 'function' && chain,
                 wrapper = (chain || _ || function() { return {}; })(1);
 
-            if (_ && _.VERSION && wrapper.__wrapped__) {
-                return { version: _.VERSION };
+            if (_ && wrapper.__wrapped__) {
+                return { version: _.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -444,9 +446,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'underscore',
         url: 'http://underscorejs.org/',
         test: function(win) {
-            if (win._ && win._.VERSION && typeof win._.tap === 'function' &&
+            if (win._ && typeof win._.tap === 'function' &&
                 !d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests['Lo-Dash'].test(win)) {
-                return {version: win._.VERSION};
+                return {version: win._.VERSION || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -456,8 +458,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'sammy',
         url: 'http://sammyjs.org',
         test: function(win) {
-            if (win.Sammy && win.Sammy.VERSION && win.Sammy.Application.curry) {
-                return {version: win.Sammy.VERSION};
+            if (win.Sammy && win.Sammy.Application.curry) {
+                return {version: win.Sammy.VERSION || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -467,8 +469,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'rico',
         url: 'http://openrico.sourceforge.net/examples/index.html',
         test:  function(win) {
-            if (win.Rico && win.Rico.Version) {
-                return {version: win.Rico.Version};
+            if (win.Rico) {
+                return {version: win.Rico.Version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -479,7 +481,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://mochi.github.io/mochikit/',
         test: function(win) {
             if (win.MochiKit && win.MochiKit.Base.module) {
-                return {version: MochiKit.VERSION};
+                return {version: MochiKit.VERSION || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -490,7 +492,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://g.raphaeljs.com',
         test: function(win) {
             if (win.Raphael && win.Raphael.fn.g) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -501,13 +503,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://www.bbc.co.uk/glow',
         test: function(win) {
             if (win.gloader) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             else if (win.glow && win.glow.dom) {
-                return {version: win.glow.VERSION};
+                return {version: win.glow.VERSION || UNKNOWN_VERSION};
             }
             else if (win.Glow) {
-                return {version: win.Glow.version};
+                return {version: win.Glow.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -518,8 +520,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://socket.io',
         test: function(win) {
             // version 0.6.2 uses only io.Socket; more recent versions also have io.sockets
-            if (win.io && (win.io.sockets || win.io.Socket) && win.io.version) {
-                return {version: win.io.version};
+            if (win.io && (win.io.sockets || win.io.Socket)) {
+                return {version: win.io.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -530,7 +532,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://mustache.github.com',
         test: function(win) {
             if (win.Mustache && win.Mustache.to_html) {
-                return {version: win.Mustache.version};
+                return {version: win.Mustache.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -541,7 +543,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://fabricjs.com/',
         test: function(win) {
             if (win.fabric && win.fabric.util) {
-                return {version: win.fabric.version};
+                return {version: win.fabric.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -551,8 +553,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'fusejs',
         url: 'http://kiro.me/projects/fuse.html',
         test: function(win) {
-            if (win.fuse && win.fuse.version) {
-                return {version: win.fuse.version};
+            if (win.fuse) {
+                return {version: win.fuse.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -563,7 +565,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/sole/tween.js',
         test: function(win) {
             if (win.TWEEN && win.TWEEN.Easing) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -574,7 +576,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://www.sproutcore.com',
        test: function(win) {
            if (win.SC && win.SC.Application) {
-               return {version: ''};
+               return {version: UNKNOWN_VERSION};
            }
            return false;
        }
@@ -585,7 +587,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://zeptojs.com',
        test: function(win) {
            if (win.Zepto && win.Zepto.fn) {
-               return {version: ''};
+               return {version: UNKNOWN_VERSION};
            }
            return false;
        }
@@ -599,7 +601,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                return {version: 'r' + win.THREE.REVISION};
            }
            else if (win.THREE) {
-               return {version: ''};
+               return {version: UNKNOWN_VERSION};
            }
            return false;
        }
@@ -610,7 +612,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://www.senchalabs.org/philogl/',
        test: function(win) {
            if (win.PhiloGL && win.PhiloGL.Camera) {
-               return {version: win.PhiloGL.version};
+               return {version: win.PhiloGL.version || UNKNOWN_VERSION};
            }
            return false;
        }
@@ -623,6 +625,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if (win.Caman && win.Caman.version) {
                 return {version: win.Caman.version.release};
             }
+            else if (win.Caman) {
+                return {version: UNKNOWN_VERSION};
+            }
             return false;
         }
     },
@@ -632,7 +637,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://yepnopejs.com/',
         test: function(win) {
             if (win.yepnope) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -643,7 +648,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://labjs.com/',
         test: function(win) {
             if (win.$LAB) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -654,7 +659,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://headjs.com/',
         test: function(win) {
             if (win.head && win.head.js) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -665,7 +670,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://stevesouders.com/controljs/',
         test: function(win) {
             if (win.CJS && win.CJS.start) {
-                return {version: ''};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -677,7 +682,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var req = win.require || win.requirejs;
             if (req && (req.load || (req.s && req.s.contexts && req.s.contexts._ && (req.s.contexts._.loaded || req.s.contexts._.load)))) {
-                return { version: req.version || null };
+                return { version: req.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -688,7 +693,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://rightjs.org/',
         test: function(win) {
             if (win.RightJS && win.RightJS.isNode) {
-                return {version: win.RightJS.version};
+                return {version: win.RightJS.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -700,7 +705,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        test: function(win) {
             var jq = win.jQuery || win.$;
             if(jq && jq.tools) {
-               return { version: jq.tools.version };
+               return { version: jq.tools.version || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -711,7 +716,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://pusher.com/docs/pusher_js/',
        test: function(win) {
             if(win.Pusher && win.Pusher.Channel) {
-               return { version: win.Pusher.VERSION };
+               return { version: win.Pusher.VERSION || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -722,7 +727,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://paperjs.org/',
        test: function(win) {
             if(win.paper && win.paper.Point) {
-               return { version: win.paper.version };
+               return { version: win.paper.version || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -733,7 +738,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://www.google.com/doubleclick/studio/swiffy/',
        test: function(win) {
             if(win.swiffy) {
-               return { version: '' };
+               return { version: UNKNOWN_VERSION };
            }
            return false;
        }
@@ -744,7 +749,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'https://github.com/rsms/move',
        test: function(win) {
             if(win.move && win.move.compile) {
-               return { version: win.move.version() };
+               return { version: win.move.version() || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -755,7 +760,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://amplifyjs.com/',
        test: function(win) {
             if(win.amplify && win.amplify.publish) {
-               return { version: '' };
+               return { version: UNKNOWN_VERSION };
            }
            return false;
        }
@@ -766,7 +771,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        url: 'http://popcornjs.org/',
        test: function(win) {
             if (win.Popcorn && win.Popcorn.Events) {
-               return { version: win.Popcorn.version };
+               return { version: win.Popcorn.version || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -777,7 +782,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://d3js.org',
         test: function(win) {
             if (win.d3 && win.d3.select) {
-                return { version: win.d3.version };
+                return { version: win.d3.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -788,7 +793,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://handlebarsjs.com/',
         test: function(win) {
             if(win.Handlebars && win.Handlebars.compile) {
-                return { version: win.Handlebars.VERSION };
+                return { version: win.Handlebars.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -799,7 +804,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://knockoutjs.com/',
         test: function(win) {
             if (win.ko && win.ko.applyBindings) {
-                return { version: win.ko.version };
+                return { version: win.ko.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -810,7 +815,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://spinejs.com/',
         test: function(win) {
             if (win.Spine && win.Spine.Controller) {
-                return {version: win.Spine.version};
+                return {version: win.Spine.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -822,7 +827,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var jq = win.jQuery || win.$ || win.$jq || win.$j;
             if(jq && jq.fn && jq.fn.jquery && jq.mobile) {
-                return { version: jq.mobile.version || '' };
+                return { version: jq.mobile.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -833,7 +838,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/typekit/webfontloader',
         test: function(win) {
             if(win.WebFont && win.WebFont.load) {
-                return { version: "N/A" };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -844,8 +849,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://angular.io/',
         test: function(win) {
             var ng = win.document.querySelector('[ng-version]');
-            if (ng && ng.getAttribute('ng-version')) {
-                return { version: ng.getAttribute('ng-version') };
+            if (ng) {
+                return { version: ng.getAttribute('ng-version') || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -859,6 +864,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if(ng && ng.version && ng.version.full) {
                 return { version: ng.version.full };
             }
+            else if (ng) {
+                return { version: UNKNOWN_VERSION };
+            }
             return false;
         }
     },
@@ -868,8 +876,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://emberjs.com/',
         test: function(win) {
             var ember = win.Ember || win.Em;
-            if (ember && ember.VERSION) {
-                return { version: ember.VERSION };
+            if (ember) {
+                return { version: ember.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -894,7 +902,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var visibility = win.Visibility;
             if(visibility && visibility.every) {
-                return { version: 'unknown' };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -907,13 +915,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             var jq = win.jQuery || win.$,
                 velocity = jq ? jq.Velocity : win.Velocity;
 
-            if(velocity && velocity.RegisterEffect) {
+            if(velocity && velocity.RegisterEffect && velocity.version) {
                 return {
                     version:
                         velocity.version.major + "." +
                         velocity.version.minor + "." +
                         velocity.version.patch
                 };
+            }
+            else if (velocity && velocity.RegisterEffect) {
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -925,7 +936,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var iv = win.ifvisible;
             if(iv && iv.__ceGUID === "ifvisible.object.event.identifier") {
-                return { version: "N/A" };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -937,7 +948,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             var px = win.PIXI;
             if(px && px.WebGLRenderer && px.VERSION) {
                 // version 4.4.3 returns simply "4.4.3"; version 1.5.2 returns "v1.5.2"
-                return { version: px.VERSION.replace('v', '') || null };
+                return { version: px.VERSION.replace('v', '') || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -947,8 +958,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://dc-js.github.io/dc.js/',
         test: function(win) {
             var dc = win.dc;
-            if(dc && dc.version && dc.registerChart) {
-                return { version: dc.version };
+            if(dc && dc.registerChart) {
+                return { version: dc.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -958,8 +969,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/greensock/GreenSock-JS',
         test: function(win) {
             var gs = win.TweenMax || win.TweenLite ;
-            if(gs && gs.version) {
-                return { version: gs.version }
+            if(gs) {
+                return { version: gs.version || UNKNOWN_VERSION }
             }
             return false;
         }
@@ -969,7 +980,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/ftlabs/fastclick',
         test: function(win) {
             if(win.FastClick && win.FastClick.notNeeded) {
-                return { version: 'N/A' }
+                return { version: UNKNOWN_VERSION }
             }
             return false;
         }
@@ -980,7 +991,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var iso = win.Isotope || (win.$ != null && win.$.Isotope);
             if(iso) {
-                return { version: 'N/A' }
+                return { version: UNKNOWN_VERSION }
             }
             return false;
         }
@@ -990,7 +1001,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://marionettejs.com/',
         test: function(win) {
             if(win.Marionette && win.Marionette.Application) {
-                return { version: win.Marionette.VERSION };
+                return { version: win.Marionette.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1000,7 +1011,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://canjs.com/',
         test: function (win) {
             if (win.can && win.can.Construct) {
-                return { version: win.can.VERSION };
+                return { version: win.can.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1010,7 +1021,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://vuejs.org/',
         test: function(win) {
             if (win.Vue && win.Vue.nextTick) {
-                return { version: win.Vue.version || 'N/A' };
+                return { version: win.Vue.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1020,7 +1031,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://jonobr1.github.io/two.js',
         test: function(win) {
             if (win.Two && win.Two.Utils) {
-                return { version: win.Two.Version };
+                return { version: win.Two.Version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1030,7 +1041,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://handcraftedldn.github.io/brewser/',
         test: function(win) {
             if(win.BREWSER && win.BREWSER.ua) {
-                return { version: BREWSER.VERSION };
+                return { version: BREWSER.VERSION || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1040,7 +1051,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     	url: 'http://www.getmdl.io/',
     	test: function(win) {
     		if(win.componentHandler && win.componentHandler.upgradeElement) {
-    			return { version: 'N/A'};
+    			return { version: UNKNOWN_VERSION};
     		}
     		return false;
     	}
@@ -1050,7 +1061,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://github.com/telerik/kendo-ui-core',
         test: function(win) {
             if (win.kendo && win.kendo.View && win.kendo.View.extend) {
-                return {version: win.kendo.version};
+                return {version: win.kendo.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -1060,7 +1071,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://brm.io/matter-js/',
         test: function(win) {
             if (win.Matter && win.Matter.Engine) {
-                return {version: 'N/A'};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }
@@ -1070,7 +1081,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://riotjs.com/',
         test: function(win) {
             if (win.riot && win.riot.mixin) {
-                return { version: win.riot.version };
+                return { version: win.riot.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1080,7 +1091,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://seajs.org/',
         test: function(win) {
             if(win.seajs && win.seajs.use) {
-                return { version: win.seajs.version };
+                return { version: win.seajs.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1091,7 +1102,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if(win.moment && (win.moment.isMoment || win.moment.lang)) {
                 // version 1.0.0 has neither "isMoment" nor "version"
-                return { version: win.moment.version || null };
+                return { version: win.moment.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1101,7 +1112,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://momentjs.com/timezone/',
         test: function(win) {
             if (win.moment && win.moment.tz) {
-                return { version: win.moment.tz.version || null };
+                return { version: win.moment.tz.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1111,7 +1122,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://scrollmagic.io/',
         test: function(win) {
             if (win.ScrollMagic && win.ScrollMagic.Controller) {
-                return {version: ScrollMagic.version};                
+                return {version: ScrollMagic.version || UNKNOWN_VERSION};                
             }
             return false;
         }
@@ -1122,10 +1133,10 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.swfobject && win.swfobject.embedSWF) {
                 // 2.x - exact version only for 2.3
-                return { version: win.swfobject.version || null };
+                return { version: win.swfobject.version || UNKNOWN_VERSION };
             } else if(win.deconcept && win.deconcept.SWFObject) {
                 // 1.x
-                return { version: null };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1136,7 +1147,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var jq = win.jQuery || win.$ || win.$jq || win.$j;
             if (jq && jq.fn && jq.fn.jquery && jq.flexslider){
-                return { version: null };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1146,7 +1157,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://youtube.github.io/spfjs/',
         test: function(win) {
             if (win.spf && win.spf.init) {
-                return { version: null };
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1156,7 +1167,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://numeraljs.com/',
         test: function(win) {
             if (win.numeral && win.isNumeral) {
-                return { version: win.numeral.version || null };
+                return { version: win.numeral.version || UNKNOWN_VERSION };
             }
             return false;
         }

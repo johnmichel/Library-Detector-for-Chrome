@@ -876,7 +876,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://emberjs.com/',
         test: function(win) {
             var ember = win.Ember || win.Em;
-            if (ember) {
+            if (ember && ember.propertyDidChange) {
                 return { version: ember.VERSION || UNKNOWN_VERSION };
             }
             return false;

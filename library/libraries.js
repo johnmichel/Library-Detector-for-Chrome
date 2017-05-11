@@ -1171,5 +1171,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'boomerang.js': {
+        icon: 'icon_48', // currently has no icon
+        url: 'https://soasta.github.io/boomerang/doc/',
+        test: function(win) {
+            if (win.BOOMR) {
+                return { version: win.BOOMR.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

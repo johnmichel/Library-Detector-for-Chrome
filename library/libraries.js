@@ -1176,7 +1176,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'icon_48', // currently has no icon
         url: 'https://soasta.github.io/boomerang/doc/',
         test: function(win) {
-            if (win.BOOMR) {
+            if (win.BOOMR && win.BOOMR.utils && win.BOOMR.init) {
                 return { version: win.BOOMR.version || UNKNOWN_VERSION };
             }
             return false;

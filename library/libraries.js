@@ -367,6 +367,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if (win.React && win.React.createClass) {
                 return { version: win.React.version || UNKNOWN_VERSION };
             }
+            if (win.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+                return { version: UNKNOWN_VERSION };
+            }
             return false;
         }
     },

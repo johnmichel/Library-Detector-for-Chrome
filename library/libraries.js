@@ -1190,7 +1190,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'scrollmagic',
         test: function(win) {
             if (win.ScrollMagic && win.ScrollMagic.Controller) {
-                return {version: ScrollMagic.version || UNKNOWN_VERSION};                
+                return {version: ScrollMagic.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -1250,6 +1250,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.BOOMR && win.BOOMR.utils && win.BOOMR.init) {
                 return { version: win.BOOMR.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'Framer': {
+        icon: 'framer',
+        url: 'https://framer.com/',
+        npm: 'framerjs',
+        test: function(win) {
+            if (win.Framer && win.Framer.Layer) {
+                return { version: win.Framer.Version.build || UNKNOWN_VERSION };
             }
             return false;
         }

@@ -7,7 +7,7 @@
 ![](https://img.shields.io/chrome-web-store/rating-count/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
 
 The Library Detector extension discovers which JavaScript libraries are being
-utilized on webpages you visit and displays their icons on the Chrome Menu. Currently
+utilized on webpages that you visit and displays their icons on the Chrome Menu. Currently
 supports:
 
 - [AmplifyJS](http://amplifyjs.com/)
@@ -31,6 +31,7 @@ supports:
 - [FlexSlider](https://woocommerce.com/flexslider/)
 - [Flot Charts](http://www.flotcharts.org/)
 - [Foundation](http://foundation.zurb.com/)
+- [Framer](https://framer.com/)
 - [FuseJS](http://kiro.me/projects/fuse.html)
 - [Glow](http://www.bbc.co.uk/glow/)
 - [Google Closure](https://developers.google.com/closure/)
@@ -134,4 +135,4 @@ supports:
 - [Rick Viscomi](https://github.com/rviscomi)
 
 ### Inspiration
-Library detection class inspired by [Paul Bakaus'](http://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)
+Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

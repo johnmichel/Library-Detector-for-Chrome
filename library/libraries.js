@@ -581,7 +581,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'fuse.js',
         test: function(win) {
             if (win.Fuse) {
-                return {version: win.fuse.version || UNKNOWN_VERSION};
+                return {version: UNKNOWN_VERSION};
             }
             return false;
         }

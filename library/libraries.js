@@ -374,14 +374,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'React': {
         icon: 'react',
-        url: 'http://facebook.github.io/react/',
+        url: 'https://facebook.github.io/react/',
         npm: 'react',
         test: function(win) {
-            if (win.React && win.React.createClass) {
-                return { version: win.React.version || UNKNOWN_VERSION };
-            }
-            if (win.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
-                return { version: UNKNOWN_VERSION };
+            var reactRoot = document.getElementById('react-root');
+            if (reactRoot && reactRoot.innerText.length > 0 || win.React && win.React.Component) {
+                return { version: win.React && win.React.version || UNKNOWN_VERSION };
             }
             return false;
         }

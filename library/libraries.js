@@ -209,8 +209,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://jquery.com',
         npm: 'jquery',
         test: function(win) {
-            var jq = win.jQuery || win.$ || win.$jq || win.$j;
-            if(jq && jq.fn) {
+            var jq = win.jQuery || win.$;
+            if (jq && jq.fn) {
                 return { version: jq.fn.jquery || UNKNOWN_VERSION};
             }
             return false;

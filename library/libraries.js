@@ -1012,13 +1012,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Greensock JS': {
+    'GreenSock JS': {
         icon: 'greensock',
         url: 'https://github.com/greensock/GreenSock-JS',
         npm: 'gsap',
         test: function(win) {
-            if(win.TweenMax || win.TweenLite) {
-                return { version: gs.version || UNKNOWN_VERSION }
+            if (win.TweenMax && win.TweenMax.pauseAll) {
+                return { version: win.TweenMax.version || UNKNOWN_VERSION }
             }
             return false;
         }

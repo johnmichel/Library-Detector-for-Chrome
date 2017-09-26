@@ -128,7 +128,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://www.polymer-project.org/',
         npm: '@polymer/polymer',
         test: function(win) {
-            if(win.Polymer) {
+            if(win.Polymer && win.Polymer.dom) {
                 return { version: win.Polymer.version || UNKNOWN_VERSION };
             }
             return false;

@@ -378,7 +378,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'react',
         test: function(win) {
             var reactRoot = document.getElementById('react-root');
-            if (reactRoot && reactRoot.innerText.length > 0 || win.React && win.React.Component) {
+            var altHasReact = document.querySelector('*[data-reactroot]');
+            if (reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
                 return { version: win.React && win.React.version || UNKNOWN_VERSION };
             }
             return false;

@@ -135,6 +135,7 @@ supports:
 - [Cristian Douce](https://github.com/cristiandouce)
 - [Vinicius Reis](https://github.com/vinicius73)
 - [Rick Viscomi](https://github.com/rviscomi)
+- [Patrick Hulce](https://github.com/patrickhulce)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

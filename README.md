@@ -135,6 +135,7 @@ supports:
 - [Cristian Douce](https://github.com/cristiandouce)
 - [Vinicius Reis](https://github.com/vinicius73)
 - [Rick Viscomi](https://github.com/rviscomi)
+- [Emmanuel Krebs](https://github.com/e-krebs)
 - [Patrick Hulce](https://github.com/patrickhulce)
 
 ### Inspiration

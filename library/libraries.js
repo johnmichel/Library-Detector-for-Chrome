@@ -211,7 +211,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var jq = win.jQuery || win.$;
             if (jq && jq.fn) {
-                return { version: jq.fn.jquery || UNKNOWN_VERSION};
+                return { version: jq.fn.jquery.replace(/[^\d+\.+]/g, '') || UNKNOWN_VERSION};
             }
             return false;
         }

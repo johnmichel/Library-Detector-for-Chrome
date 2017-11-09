@@ -726,7 +726,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'http://rightjs.org/',
         test: function(win) {
             if (win.RightJS && win.RightJS.isNode) {
-                return {version: win.RightJS.version || UNKNOWN_VERSION};
+                return { version: win.RightJS.version || UNKNOWN_VERSION };
             }
             return false;
         }

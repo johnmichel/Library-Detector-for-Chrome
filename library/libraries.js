@@ -170,17 +170,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Blackbird': {
-        icon: 'blackbird',
-        url: 'http://www.gscottolson.com/blackbirdjs/',
-        test: function(win) {
-            if(win.log && win.log.warn) {
-                return { version: UNKNOWN_VERSION}; // no version info
-            }
-            return false;
-        }
-    },
-
     'CreateJS': {
         icon: 'createjs',
         url: 'http://createjs.com/#!/CreateJS',

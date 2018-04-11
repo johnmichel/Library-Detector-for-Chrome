@@ -16,7 +16,6 @@ supports:
 - [Angular](https://angular.io)
 - [AngularJS](https://angularjs.org/)
 - [Backbone.js](http://backbonejs.org/)
-- [Blackbird](https://github.com/pockata/blackbird-js)
 - [base2](https://code.google.com/p/base2/)
 - [boomerang](https://soasta.github.io/boomerang/doc/)
 - [Bootstrap](http://getbootstrap.com/)

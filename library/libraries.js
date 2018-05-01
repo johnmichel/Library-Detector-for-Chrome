@@ -56,7 +56,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Vaadin': {
         icon: 'vaadin',
-        url: 'http://vaadin.com/home',
+        url: 'https://vaadin.com/',
         test: function(win) {
             if (win.vaadin && win.vaadin.registerWidgetset) {
                 return { version: UNKNOWN_VERSION };
@@ -113,7 +113,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Zurb': {
         icon: 'zurb',
-        url: 'http://foundation.zurb.com/',
+        url: 'https://foundation.zurb.com/',
         npm: 'foundation-sites',
         test: function(win) {
             if(win.Foundation && win.Foundation.Toggler) {
@@ -125,7 +125,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Polymer': {
         icon: 'polymer',
-        url: 'http://www.polymer-project.org/',
+        url: 'https://www.polymer-project.org/',
         npm: '@polymer/polymer',
         test: function(win) {
             if(win.Polymer && win.Polymer.dom) {
@@ -172,7 +172,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'CreateJS': {
         icon: 'createjs',
-        url: 'http://createjs.com/#!/CreateJS',
+        url: 'https://createjs.com/',
         npm: 'createjs',
         test: function(win) {
             if(win.createjs && win.createjs.promote) {
@@ -258,7 +258,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'MooTools': {
         icon: 'mootools',
-        url: 'http://mootools.net',
+        url: 'https://mootools.net/',
         test: function(win) {
             if(win.MooTools && win.MooTools.build) {
                 return { version: win.MooTools.version || UNKNOWN_VERSION };
@@ -291,7 +291,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'YUI 3': {
         icon: 'yui3',
-        url: 'http://yuilibrary.com/',
+        url: 'https://yuilibrary.com/',
         npm: 'yui',
         test: function(win) {
             if (win.YUI && win.YUI.Env) {
@@ -303,7 +303,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Qooxdoo': {
         icon: 'qooxdoo',
-        url: 'http://qooxdoo.org',
+        url: 'http://www.qooxdoo.org/',
         npm: 'qooxdoo',
         test: function(win) {
             if(win.qx && win.qx.Bootstrap) {
@@ -315,7 +315,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Ext JS': {
         icon: 'extjs',
-        url: 'http://www.sencha.com/products/extjs',
+        url: 'https://www.sencha.com/products/extjs/',
         test: function(win) {
             if (win.Ext && win.Ext.versions) {
                 return { version: win.Ext.versions.core.version };
@@ -340,7 +340,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Closure Library': {
         icon: 'closure',
-        url: 'https://developers.google.com/closure/library',
+        url: 'https://developers.google.com/closure/library/',
         npm: 'google-closure-library',
         test: function(win) {
             if(win.goog && win.goog.provide) {
@@ -352,7 +352,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Rapha&euml;l': {
         icon: 'raphael',
-        url: 'http://dmitrybaranovskiy.github.io/raphael',
+        url: 'http://dmitrybaranovskiy.github.io/raphael/',
         test: function(win) {
             if (win.Raphael && win.Raphael.circle) {
                 return { version: win.Raphael.version || UNKNOWN_VERSION };
@@ -363,7 +363,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'React': {
         icon: 'react',
-        url: 'https://facebook.github.io/react/',
+        url: 'https://reactjs.org/',
         npm: 'react',
         test: function(win) {
             var reactRoot = document.getElementById('react-root');
@@ -377,7 +377,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Modernizr': {
         icon: 'modernizr',
-        url: 'http://www.modernizr.com',
+        url: 'https://modernizr.com/',
         npm: 'modernizr',
         test: function(win) {
             if (win.Modernizr && win.Modernizr.addTest) {
@@ -426,7 +426,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Mapbox': {
         icon: 'mapbox',
-        url: 'http://mapbox.com',
+        url: 'https://www.mapbox.com/',
         npm: 'mapbox-gl',
         test: function(win) {
             if (win.L && win.L.mapbox && win.L.mapbox.geocoder) {
@@ -438,7 +438,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Lo-Dash': {
         icon: 'lodash',
-        url: 'http://lodash.com/',
+        url: 'https://lodash.com/',
         npm: 'lodash',
         test: function(win) {
             var _ = typeof (_ = win._) == 'function' && _,
@@ -500,7 +500,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'gRapha&euml;l': {
         icon: 'graphael',
-        url: 'http://g.raphaeljs.com',
+        url: 'https://github.com/DmitryBaranovskiy/g.raphael',
         test: function(win) {
             if (win.Raphael && win.Raphael.fn.g) {
                 return {version: UNKNOWN_VERSION};
@@ -511,7 +511,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Glow': {
         icon: 'glow',
-        url: 'http://www.bbc.co.uk/glow',
+        url: 'http://www.bbc.co.uk/glow/',
         test: function(win) {
             if (win.gloader && win.gloader.getRequests) {
                 return {version: UNKNOWN_VERSION};
@@ -528,7 +528,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Socket.IO': {
         icon: 'socketio', // currently has no icon
-        url: 'http://socket.io',
+        url: 'https://socket.io/',
         npm: 'socket.io',
         test: function(win) {
             // version 0.6.2 uses only io.Socket; more recent versions also have io.sockets
@@ -541,7 +541,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Mustache': {
         icon: 'mustache',
-        url: 'http://mustache.github.com',
+        url: 'http://mustache.github.io/',
         npm: 'mustache',
         test: function(win) {
             if (win.Mustache && win.Mustache.to_html) {
@@ -577,7 +577,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Tween.js': {
         icon: 'icon_48', // currently has no icon
-        url: 'https://github.com/sole/tween.js',
+        url: 'https://github.com/tweenjs/tween.js',
         npm: 'tween.js',
         test: function(win) {
             if (win.TWEEN && win.TWEEN.Easing) {
@@ -589,7 +589,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'SproutCore': {
        icon: 'sproutcore',
-       url: 'http://www.sproutcore.com',
+       url: 'http://sproutcore.com/',
        test: function(win) {
            if (win.SC && win.SC.Application) {
                return {version: UNKNOWN_VERSION};
@@ -612,7 +612,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'three.js': {
        icon: 'icon_48', // currently has no icon
-       url: 'http://threejs.org/',
+       url: 'https://threejs.org/',
        npm: 'three',
        test: function(win) {
            if (win.THREE && win.THREE.REVISION) {
@@ -665,7 +665,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'LABjs': {
         icon: 'icon_48',
-        url: 'http://labjs.com/',
+        url: 'https://github.com/getify/LABjs',
         test: function(win) {
             if (win.$LAB && win.$LAB.setOptions) {
                 return {version: UNKNOWN_VERSION};
@@ -735,7 +735,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Pusher': {
        icon: 'pusher',
-       url: 'http://pusher.com/docs/pusher_js/',
+       url: 'https://pusher.com/docs/',
        npm: 'pusher-js',
        test: function(win) {
             if(win.Pusher && win.Pusher.Channel) {
@@ -759,7 +759,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Swiffy': {
        icon: 'icon_48',
-       url: 'http://www.google.com/doubleclick/studio/swiffy/',
+       url: 'https://developers.google.com/swiffy/',
        test: function(win) {
             if(win.swiffy && win.swiffy.Stage) {
                return { version: UNKNOWN_VERSION };
@@ -794,7 +794,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Popcorn.js': {
        icon: 'popcornjs',
-       url: 'http://popcornjs.org/',
+       url: 'https://github.com/mozilla/popcorn-js/',
        test: function(win) {
             if (win.Popcorn && win.Popcorn.Events) {
                return { version: win.Popcorn.version || UNKNOWN_VERSION };
@@ -805,7 +805,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'D3': {
         icon: 'd3',
-        url: 'http://d3js.org',
+        url: 'https://d3js.org/',
         npm: 'd3',
         test: function(win) {
             if (win.d3 && win.d3.select) {
@@ -841,7 +841,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Spine': {
         icon: 'icon_48',
-        url: 'http://spinejs.com/',
+        url: 'http://spine.github.io/',
         test: function(win) {
             if (win.Spine && win.Spine.Controller) {
                 return {version: win.Spine.version || UNKNOWN_VERSION};
@@ -890,7 +890,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'AngularJS': {
         icon: 'angularjs',
-        url: 'http://angularjs.org',
+        url: 'https://angularjs.org/',
         npm: 'angular',
         test: function(win) {
             var ng = win.angular;
@@ -906,7 +906,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'Ember.js': {
         icon: 'emberjs',
-        url: 'http://emberjs.com/',
+        url: 'https://emberjs.com/',
         npm: 'ember-source',
         test: function(win) {
             var ember = win.Ember || win.Em;
@@ -979,7 +979,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Pixi.js': {
         icon: 'pixi',
-        url: 'https://github.com/GoodBoyDigital/pixi.js',
+        url: 'http://www.pixijs.com/',
         npm: 'pixi.js',
         test: function(win) {
             var px = win.PIXI;
@@ -1004,11 +1004,11 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'GreenSock JS': {
         icon: 'greensock',
-        url: 'https://github.com/greensock/GreenSock-JS',
+        url: 'https://greensock.com/gsap',
         npm: 'gsap',
         test: function(win) {
             if (win.TweenMax && win.TweenMax.pauseAll) {
-                return { version: win.TweenMax.version || UNKNOWN_VERSION }
+                return { version: win.TweenMax.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1019,25 +1019,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'fastclick',
         test: function(win) {
             if(win.FastClick && win.FastClick.notNeeded) {
-                return { version: UNKNOWN_VERSION }
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
     },
     'Isotope': {
         icon: 'isotope',
-        url: 'http://isotope.metafizzy.co/',
+        url: 'https://isotope.metafizzy.co/',
         npm: 'isotope-layout',
         test: function(win) {
             if(win.Isotope || (win.$ != null && win.$.Isotope)) {
-                return { version: UNKNOWN_VERSION }
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
     },
     'Marionette': {
         icon: 'marionette',
-        url: 'http://marionettejs.com/',
+        url: 'https://marionettejs.com/',
         npm: 'backbone.marionette',
         test: function(win) {
             if(win.Marionette && win.Marionette.Application) {
@@ -1048,7 +1048,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Can': {
         icon: 'icon_48',
-        url: 'http://canjs.com/',
+        url: 'https://canjs.com/',
         npm: 'can',
         test: function (win) {
             if (win.can && win.can.Construct) {
@@ -1059,7 +1059,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Vue': {
         icon: 'vue',
-        url: 'http://vuejs.org/',
+        url: 'https://vuejs.org/',
         npm: 'vue',
         test: function(win) {
             if (win.Vue && win.Vue.nextTick) {
@@ -1070,7 +1070,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Two': {
         icon: 'two',
-        url: 'https://jonobr1.github.io/two.js',
+        url: 'https://two.js.org/',
         npm: 'two.js',
         test: function(win) {
             if (win.Two && win.Two.Utils) {
@@ -1081,7 +1081,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Brewser': {
         icon: 'brewser',
-        url: 'http://handcraftedldn.github.io/brewser/',
+        url: 'https://robertpataki.github.io/brewser/',
         npm: 'brewser',
         test: function(win) {
             if(win.BREWSER && win.BREWSER.ua) {
@@ -1091,15 +1091,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Material Design Lite': {
-    	icon: 'mdl',
-    	url: 'http://www.getmdl.io/',
+        icon: 'mdl',
+        url: 'https://getmdl.io/',
         npm: 'material-design-lite',
-    	test: function(win) {
-    		if(win.componentHandler && win.componentHandler.upgradeElement) {
-    			return { version: UNKNOWN_VERSION};
-    		}
-    		return false;
-    	}
+        test: function(win) {
+            if(win.componentHandler && win.componentHandler.upgradeElement) {
+                return { version: UNKNOWN_VERSION};
+            }
+            return false;
+        }
     },
     'Kendo UI': {
         icon: 'kendoui',
@@ -1136,7 +1136,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'Sea.js': {
         icon: 'icon_48',
-        url: 'http://seajs.org/',
+        url: 'https://seajs.github.io/seajs/docs/',
         npm: 'seajs',
         test: function(win) {
             if(win.seajs && win.seajs.use) {
@@ -1229,7 +1229,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'boomerang.js': {
         icon: 'icon_48', // currently has no icon
-        url: 'https://soasta.github.io/boomerang/doc/',
+        url: 'https://soasta.github.io/boomerang/',
         npm: 'boomerangjs',
         test: function(win) {
             if (win.BOOMR && win.BOOMR.utils && win.BOOMR.init) {

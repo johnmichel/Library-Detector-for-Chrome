@@ -552,7 +552,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Fabric.js': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'http://fabricjs.com/',
         npm: 'fabric',
         test: function(win) {
@@ -576,7 +576,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Tween.js': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'https://github.com/tweenjs/tween.js',
         npm: 'tween.js',
         test: function(win) {
@@ -611,7 +611,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'three.js': {
-       icon: 'icon_48', // currently has no icon
+       icon: 'icon38', // currently has no icon
        url: 'https://threejs.org/',
        npm: 'three',
        test: function(win) {
@@ -664,7 +664,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'LABjs': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'https://github.com/getify/LABjs',
         test: function(win) {
             if (win.$LAB && win.$LAB.setOptions) {
@@ -687,7 +687,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'ControlJS': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'http://stevesouders.com/controljs/',
         test: function(win) {
             if (win.CJS && win.CJS.start) {
@@ -758,7 +758,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Swiffy': {
-       icon: 'icon_48',
+       icon: 'icon38',
        url: 'https://developers.google.com/swiffy/',
        test: function(win) {
             if(win.swiffy && win.swiffy.Stage) {
@@ -840,7 +840,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Spine': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'http://spine.github.io/',
         test: function(win) {
             if (win.Spine && win.Spine.Controller) {
@@ -864,7 +864,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'WebFont Loader': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'https://github.com/typekit/webfontloader',
         npm: 'webfontloader',
         test: function(win) {
@@ -931,7 +931,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Visibility.js': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'https://github.com/ai/visibilityjs',
         npm: 'visibilityjs',
         test: function(win) {
@@ -943,7 +943,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Velocity.js': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'http://velocityjs.org/',
         npm: 'velocity-animate',
         test: function(win) {
@@ -966,7 +966,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'IfVisible.js': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'http://serkanyersen.github.io/ifvisible.js/',
         npm: 'ifvisible.js',
         test: function(win) {
@@ -1135,7 +1135,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Sea.js': {
-        icon: 'icon_48',
+        icon: 'icon38',
         url: 'https://seajs.github.io/seajs/docs/',
         npm: 'seajs',
         test: function(win) {
@@ -1180,7 +1180,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'SWFObject': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'https://github.com/swfobject/swfobject',
         test: function(win) {
             if (win.swfobject && win.swfobject.embedSWF) {
@@ -1194,7 +1194,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'FlexSlider': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'https://woocommerce.com/flexslider/',
         npm: 'flexslider',
         test: function(win) {
@@ -1206,7 +1206,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'SPF': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'https://youtube.github.io/spfjs/',
         npm: 'spf',
         test: function(win) {
@@ -1217,7 +1217,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Numeral.js': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'http://numeraljs.com/',
         npm: 'numeraljs',
         test: function(win) {
@@ -1228,7 +1228,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'boomerang.js': {
-        icon: 'icon_48', // currently has no icon
+        icon: 'icon38', // currently has no icon
         url: 'https://soasta.github.io/boomerang/',
         npm: 'boomerangjs',
         test: function(win) {

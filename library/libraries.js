@@ -159,7 +159,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'FlotCharts': {
-        icon: 'icon_48',
+        icon: 'flotcharts',
         url: 'http://www.flotcharts.org/',
         npm: 'flot',
         test: function(win) {
@@ -991,7 +991,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'DC.js': {
-        icon: 'icon_48',
+        icon: 'dcjs',
         url: 'http://dc-js.github.io/dc.js/',
         npm: 'dc',
         test: function(win) {
@@ -1047,7 +1047,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Can': {
-        icon: 'icon_48',
+        icon: 'canjs',
         url: 'https://canjs.com/',
         npm: 'can',
         test: function (win) {

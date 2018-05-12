@@ -17,7 +17,7 @@
             return encoded.join(',');
         };
 
-        var detectLibraries = function() {
+        var detectedLibraries = function() {
             var tests = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
             var libraries = [];
             for (var i in tests) {
@@ -35,8 +35,18 @@
             return libraries;
         };
 
+        var sortByName = function(libraries) {
+            return libraries.sort(function(a, b) {
+                var aName = a.name.toLowerCase(),
+                    bName = b.name.toLowerCase();
+                if (aName > bName) return 1;
+                if (aName < bName) return -1;
+                return 0;
+            });
+        };
+
         if (window === top) {
-            var libs = detectLibraries();
+            var libs = sortByName(detectedLibraries());
             if (libs.length > 0) {
                 document.getElementById('d41d8cd98f00b204e9800998ecf8427e_lib_detect').content = encodeLibraries(libs);
             }

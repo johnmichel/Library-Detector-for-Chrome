@@ -368,7 +368,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var reactRoot = document.getElementById('react-root');
             var altHasReact = document.querySelector('*[data-reactroot]');
-            if (reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
+            var hasReactRoot = document.createTreeWalker(document.body, 3, node => node._reactRootContainer!=null).nextNode() != null;
+            if (hasReactRoot || reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
                 return { version: win.React && win.React.version || UNKNOWN_VERSION };
             }
             return false;

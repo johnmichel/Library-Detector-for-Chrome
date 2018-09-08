@@ -375,6 +375,33 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Preact': {
+        icon: 'preact',
+        url: 'https://preactjs.com/',
+        npm: 'preact',
+        test: function(win) {
+            var expando = typeof Symbol!='undefined' && Symbol.for && Symbol.for('preactattr');
+            function isPreactNode(node) {
+                if (node._component!=null || node.__preactattr_!=null || expando && node[expando]!=null) {
+                    return node;
+                }
+                return null;
+            }
+            var preactRoot = isPreactNode(document.body) || isPreactNode(document.body.firstElementChild);
+            if (!preactRoot) {
+                preactRoot = document.createTreeWalker(document.body, 3, isPreactNode).nextNode();
+            }
+            if (preactRoot || win.preact) {
+                var version = UNKNOWN_VERSION;
+                if (expando && preactRoot && preactRoot[expando]!=null) {
+                    version = '7';
+                }
+                return { version: version };
+            }
+            return false;
+        }
+    },
+
     'Modernizr': {
         icon: 'modernizr',
         url: 'https://modernizr.com/',

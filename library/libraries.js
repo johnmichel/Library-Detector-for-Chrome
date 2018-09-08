@@ -387,7 +387,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 }
                 return null;
             }
-            var preactRoot = isPreactNode(document.body) || isPreactNode(document.body.firstElementChild);
+            var preactRoot = isPreactNode(document.body) || isPreactNode(document.body.firstElementChild || {});
             if (!preactRoot) {
                 preactRoot = document.createTreeWalker(document.body, 3, isPreactNode).nextNode();
             }

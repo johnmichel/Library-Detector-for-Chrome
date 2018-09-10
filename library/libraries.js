@@ -366,9 +366,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://reactjs.org/',
         npm: 'react',
         test: function(win) {
+            function isReactNode(node) {
+                return node._reactRootContainer!=null;
+            }
             var reactRoot = document.getElementById('react-root');
             var altHasReact = document.querySelector('*[data-reactroot]');
-            if (reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
+            var bodyReactRoot = isReactNode(document.body) || isReactNode(document.body.firstElementChild || {});
+            var hasReactRoot = bodyReactRoot|| document.createTreeWalker(document.body, 3, isReactNode).nextNode() != null;
+            if (hasReactRoot || reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
                 return { version: win.React && win.React.version || UNKNOWN_VERSION };
             }
             return false;

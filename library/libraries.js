@@ -1253,5 +1253,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Marko': {
+        icon: 'marko',
+        url: 'https://markojs.com/',
+        npm: 'marko',
+        test: function (win) {
+            var selector = '[data-marko-key], [data-marko]';
+            var markoElement = document.querySelector(selector);
+            if (markoElement) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

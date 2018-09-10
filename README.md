@@ -140,6 +140,7 @@ supports:
 - [Rick Viscomi](https://github.com/rviscomi)
 - [Emmanuel Krebs](https://github.com/e-krebs)
 - [Patrick Hulce](https://github.com/patrickhulce)
+- [Ajaykumar Prathap](https://github.com/ajay2507)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

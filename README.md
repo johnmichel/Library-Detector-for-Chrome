@@ -58,6 +58,7 @@ supports:
 - [Lodash](https://lodash.com/)
 - [Mapbox](https://www.mapbox.com/mapbox.js/)
 - [Marionette](https://marionettejs.com/)
+- [Marko js](https://markojs.com/)
 - [Material Design Lite](https://getmdl.io/)
 - [Matter.js](http://brm.io/matter-js/)
 - [MochiKit](http://mochi.github.io/mochikit/)

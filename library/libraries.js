@@ -1299,10 +1299,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://ampproject.org/',
         npm: null,
         test: function (win) {
-            if (win.AMP && win.AMP_CONFIG && win.AMP_CONFIG.v) {
-                return { version: win.AMP_CONFIG.v };
-            }
-            return false;
-        }
+            var version = win.document.documentElement.getAttribute("amp-version");
+            return version ? { version: version } : false;
+        },
     },
 };

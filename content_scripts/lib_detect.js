@@ -8,7 +8,7 @@
      * Returns library, version pairs in format:
      * libraryName:version,libraryName:version...
      */
-     function wait() {
+     async function wait() {
         var encodeLibraries = function(libraries) {
             var encoded = [];
             for (var i = 0; i < libraries.length; i++) {
@@ -17,12 +17,12 @@
             return encoded.join(',');
         };
 
-        var detectLibraries = function() {
+        var detectLibraries = async function () {
             var tests = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
             var libraries = [];
             for (var i in tests) {
                 try {
-                    var result = tests[i].test(window);
+                    var result = await tests[i].test(window);
                     if (result === false) continue;
                     libraries.push({
                         name: i,
@@ -36,15 +36,15 @@
         };
 
         if (window === top) {
-            var libs = detectLibraries();
+            var libs = await detectLibraries();
             if (libs.length > 0) {
                 document.getElementById('d41d8cd98f00b204e9800998ecf8427e_lib_detect').content = encodeLibraries(libs);
             }
         }
     }
 
-    window.setTimeout(function() {
-        wait();
+    window.setTimeout(async function() {
+        await wait();
     }, 2000);
 
 })();

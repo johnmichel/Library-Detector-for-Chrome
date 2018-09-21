@@ -1293,5 +1293,36 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Workbox': {
+      icon: 'workbox',
+      url: 'https://developers.google.com/web/tools/workbox/',
+      npm: 'workbox-sw',
+      test: async function (win) {
+        var nav = win.navigator;
+        // Service Workers not supported
+        if (!('serviceWorker' in nav)) {
+          return false;
+        }
+        return nav.serviceWorker.getRegistration()
+        .then(function(registration) {
+          var scriptURL = nav.serviceWorker.controller.scriptURL;
+          return fetch(scriptURL, { credentials: 'include',
+            headers: { 'service-worker': 'script' }
+          })
+          .then(function(response) {
+            return response.text();
+          })
+          .then(function(scriptContent) {
+            var workboxRegExp = /new Workbox|new workbox|workbox\.precaching\.|workbox\.strategies/gm;
+            if (workboxRegExp.test(scriptContent)) {
+              return { version: UNKNOWN_VERSION };
+            }
+            return false;
+          });
+        }).catch(function(exception) {
+          return false;
+        });
+      }
     }
 };

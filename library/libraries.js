@@ -1293,5 +1293,44 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Workbox': {
+      icon: 'workbox',
+      url: 'https://developers.google.com/web/tools/workbox/',
+      npm: 'workbox-sw',
+      test: async function (win) {
+        var nav = win.navigator;
+        // Service Workers not supported
+        if (!('serviceWorker' in nav)) {
+          return false;
+        }
+        return nav.serviceWorker.getRegistration()
+        .then(function(registration) {
+          var scriptURL = nav.serviceWorker.controller.scriptURL;
+          return fetch(scriptURL, { credentials: 'include',
+            headers: { 'service-worker': 'script' }
+          })
+          .then(function(response) {
+            return response.text();
+          })
+          .then(function(scriptContent) {
+            var workboxRegExp = /new Workbox|new workbox|workbox\.precaching\.|workbox\.strategies/gm;
+            if (workboxRegExp.test(scriptContent)) {
+              // Adapted from
+              // https://github.com/semver/semver/issues/232#issue-48635632
+              var semVerRegExp = /workbox.*?\b((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(\+[0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*)?)\b/gim;
+              var matches = semVerRegExp.exec(scriptContent);
+              var version = UNKNOWN_VERSION;
+              if (Array.isArray(matches) && matches.length > 1 && matches[1]) {
+                version = matches[1];
+              }
+              return { version: version };
+            }
+            return false;
+          });
+        }).catch(function(exception) {
+          return false;
+        });
+      }
     }
 };

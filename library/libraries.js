@@ -1294,6 +1294,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'AMP': {
+        icon: 'amp',
+        url: 'https://ampproject.org/',
+        npm: null,
+        test: function (win) {
+            var version = win.document.documentElement.getAttribute("amp-version");
+            return version ? { version: version } : false;
+        }
+    },
     'Workbox': {
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',

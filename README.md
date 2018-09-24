@@ -12,6 +12,7 @@ The Library Detector extension discovers which JavaScript libraries are being
 utilized on webpages that you visit and displays their icons on the Chrome Menu. Currently
 supports:
 
+- [AMP](https://ampproject.org/)
 - [AmplifyJS](http://amplifyjs.com/)
 - [Angular](https://angular.io)
 - [AngularJS](https://angularjs.org/)

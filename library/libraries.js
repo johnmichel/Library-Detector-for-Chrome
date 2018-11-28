@@ -386,8 +386,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'preact',
         test: function(win) {
             var expando = typeof Symbol!='undefined' && Symbol.for && Symbol.for('preactattr');
-			function getMatch(node) {
-				return isMatch(node) && node;
+            function getMatch(node) {
+                return isMatch(node) && node;
             }
             function isMatch(node) {
                 return node._component!=null || node.__preactattr_!=null || expando && node[expando]!=null;

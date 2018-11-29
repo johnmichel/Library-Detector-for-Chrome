@@ -912,9 +912,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://angular.io/',
         npm: '@angular/core',
         test: function(win) {
-            var ng = win.document.querySelector('[ng-version]');
-            if (ng) {
-                return { version: ng.getAttribute('ng-version') || UNKNOWN_VERSION };
+            var ngVersion = win.document.querySelector('[ng-version]');
+            if (ngVersion) {
+                return { version: ngVersion.getAttribute('ng-version') || UNKNOWN_VERSION };
+            }
+            else if (win.ng && win.ng.probe instanceof Function) {
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }

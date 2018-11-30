@@ -366,13 +366,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://reactjs.org/',
         npm: 'react',
         test: function(win) {
-            function isReactNode(node) {
-                return node._reactRootContainer!=null;
+            function isMatch(node) {
+                return node!=null && node._reactRootContainer!=null;
+            }
+            function nodeFilter(node) {
+                return isMatch(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
             }
             var reactRoot = document.getElementById('react-root');
             var altHasReact = document.querySelector('*[data-reactroot]');
-            var bodyReactRoot = isReactNode(document.body) || isReactNode(document.body.firstElementChild || {});
-            var hasReactRoot = bodyReactRoot|| document.createTreeWalker(document.body, 1, isReactNode).nextNode() != null;
+            var bodyReactRoot = isMatch(document.body) || isMatch(document.body.firstElementChild);
+            var hasReactRoot = bodyReactRoot|| document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, nodeFilter).nextNode() != null;
             if (hasReactRoot || reactRoot && reactRoot.innerText.length > 0 || altHasReact || win.React && win.React.Component) {
                 return { version: win.React && win.React.version || UNKNOWN_VERSION };
             }

@@ -386,15 +386,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'preact',
         test: function(win) {
             var expando = typeof Symbol!='undefined' && Symbol.for && Symbol.for('preactattr');
-            function isPreactNode(node) {
-                if (node._component!=null || node.__preactattr_!=null || expando && node[expando]!=null) {
-                    return node;
-                }
-                return null;
+            function isMatch(node) {
+                return node._component!=null || node.__preactattr_!=null || expando && node[expando]!=null;
             }
-            var preactRoot = isPreactNode(document.body) || isPreactNode(document.body.firstElementChild || {});
+            function getMatch(node) {
+                return node!=null && isMatch(node) && node;
+            }
+            function nodeFilter(node) {
+                return isMatch(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+            }
+            var preactRoot = getMatch(document.body) || getMatch(document.body.firstElementChild);
             if (!preactRoot) {
-                preactRoot = document.createTreeWalker(document.body, 3, isPreactNode).nextNode();
+                preactRoot = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, nodeFilter).nextNode();
             }
             if (preactRoot || win.preact) {
                 var version = UNKNOWN_VERSION;

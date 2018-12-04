@@ -1121,6 +1121,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Nuxt.js': {
+        icon: 'nuxt',
+        url: 'https://nuxtjs.org/',
+        npm: 'nuxt',
+        test: function(win) {
+            if (win.__NUXT__ && win.__NUXT__.data !== null) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Two': {
         icon: 'two',
         url: 'https://two.js.org/',

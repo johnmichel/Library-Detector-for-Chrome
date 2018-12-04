@@ -383,6 +383,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Next.js': {
+        icon: 'next',
+        url: 'https://nextjs.org/',
+        npm: 'next',
+        test: function(win) {
+            if (win.__NEXT_DATA__ && win.__NEXT_DATA__.buildId) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Preact': {
         icon: 'preact',
         url: 'https://preactjs.com/',

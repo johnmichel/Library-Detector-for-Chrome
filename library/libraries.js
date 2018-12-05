@@ -1103,8 +1103,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://vuejs.org/',
         npm: 'vue',
         test: function(win) {
-            if (win.Vue && win.Vue.nextTick) {
-                return { version: win.Vue.version || UNKNOWN_VERSION };
+            function isVueNode(node) {
+                return node.__vue__ != null ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+            }
+            var hasVueNode = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, isVueNode).nextNode() !== null;
+            if (hasVueNode) {
+                return { version: win.Vue && win.Vue.version || UNKNOWN_VERSION }
             }
             return false;
         }

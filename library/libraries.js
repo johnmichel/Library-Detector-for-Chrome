@@ -1350,6 +1350,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Shopify': {
+        icon: 'shopify',
+        url: 'https://www.shopify.com/',
+        npm: null,
+        test: function (win) {
+            if (win.Shopify && win.Shopify.shop) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Workbox': {
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',

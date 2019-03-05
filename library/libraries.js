@@ -1366,14 +1366,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://wordpress.org/',
         npm: null,
         test: function (win) {
-            if (!!document.querySelector('meta[name=generator][content^="WordPress"]')) {
-                var versionName = document.querySelector("meta[name='generator']").getAttribute("content");
-                return { version: versionName.replace(/[^0-9\.]+/g,"") };
-            }
-            else if (!!document.querySelectorAll('link[href*="wp-includes"], script[src*="wp-includes"]').length) {
-                return { version: UNKNOWN_VERSION }; 
-            }
-            return false;
+            const hasAPILinkElem = !!document.querySelector('link[rel="https://api.w.org/"]');
+            const hasWPIncludes = !!document.querySelectorAll('link[href*="wp-includes"], script[src*="wp-includes"]').length;
+      
+            if (!hasAPILinkElem && !hasWPIncludes) return false;
+      
+            const generatorMeta = document.querySelector('meta[name=generator][content^="WordPress"]')
+            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/^\w+\s/,'') : UNKNOWN_VERSION;
+            return { version };
         }
     },
     'Workbox': {

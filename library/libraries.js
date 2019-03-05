@@ -1130,7 +1130,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://nuxtjs.org/',
         npm: 'nuxt',
         test: function(win) {
-            if (win.__NUXT__ && win.__NUXT__.data !== null) {
+            if ((win.__NUXT__ && win.__NUXT__.data !== null) || (win.$nuxt && win.$nuxt.nuxt)) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;

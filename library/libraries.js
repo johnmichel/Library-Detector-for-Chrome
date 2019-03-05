@@ -1339,6 +1339,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return version ? { version: version } : false;
         }
     },
+    'Gatsby': {
+        icon: 'gatsby',
+        url: 'https://www.gatsbyjs.org/',
+        npm: 'gatsby',
+        test: function (win) {
+            if (document.getElementById('___gatsby')) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Workbox': {
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',

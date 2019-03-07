@@ -1361,6 +1361,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'WordPress': {
+        icon: 'wordpress',
+        url: 'https://wordpress.org/',
+        npm: null,
+        test: function (win) {
+            const hasAPILinkElem = !!document.querySelector('link[rel="https://api.w.org/"]');
+            const hasWPIncludes = !!document.querySelectorAll('link[href*="wp-includes"], script[src*="wp-includes"]').length;
+      
+            if (!hasAPILinkElem && !hasWPIncludes) return false;
+      
+            const generatorMeta = document.querySelector('meta[name=generator][content^="WordPress"]')
+            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/^\w+\s/,'') : UNKNOWN_VERSION;
+            return { version };
+        }
+    },
     'Workbox': {
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',

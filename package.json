@@ -1,6 +1,6 @@
 {
   "name": "js-library-detector",
-  "version": "5.3.0",
+  "version": "5.4.0",
   "description": "Detects the JavaScript libraries running on a page",
   "main": "library/libraries.js",
   "scripts": {

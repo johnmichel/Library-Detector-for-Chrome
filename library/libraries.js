@@ -437,6 +437,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    '$mol_view': {
+        icon: 'mol',
+        url: 'http://mol.js.org/',
+        test: function(win) {
+            if (win.$mol_view) {
+                return { version: UNKNOWN_VERSION };
+            }
+            if (win.document.querySelector('$mol_view_root')) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    
     'Processing.js': {
         icon: 'processingjs',
         url: 'http://processingjs.org',

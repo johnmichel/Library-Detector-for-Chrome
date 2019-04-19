@@ -963,7 +963,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'ember-source',
         test: function(win) {
             var ember = win.Ember || win.Em;
-            if (ember && ember.propertyDidChange) {
+            if (ember && ember.GUID_KEY) {
                 return { version: ember.VERSION || UNKNOWN_VERSION };
             }
             return false;

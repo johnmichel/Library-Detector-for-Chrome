@@ -444,7 +444,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if (win.$mol_view) {
                 return { version: UNKNOWN_VERSION };
             }
-            if (win.document.querySelector('$mol_view_root')) {
+            if (win.document.querySelector('mol_view')) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;

@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 include=(
-    background_scripts 
+    background_scripts
     content_scripts
     icons
     library
@@ -12,11 +12,11 @@ include=(
 rm build/library_detector.zip
 mkdir build/library_detector
 
-for path in ${include[@]}
+for path in "${include[@]}"
 do
-    cp -R $path build/library_detector
+    cp -R "$path" build/library_detector
 done
 
-cd build
+cd build || exit
 zip -r library_detector.zip library_detector
 rm -R library_detector

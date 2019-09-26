@@ -206,6 +206,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'jQuery (Fast path)': {
+        icon: 'jquery',
+        url: 'http://jquery.com',
+        npm: 'jquery',
+        test: function (win) {
+            var jq = win.jQuery || win.$;
+            if (jq && jq.fn) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'jQuery UI': {
         icon: 'jquery_ui',
         url: 'http://jqueryui.com',
@@ -383,12 +396,42 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'React (Fast path)': {
+        icon: 'react',
+        url: 'https://reactjs.org/',
+        npm: 'react',
+        test: function (win) {
+            function isMatch(node) {
+                return node != null && node._reactRootContainer != null;
+            }
+            var reactRoot = document.getElementById('react-root');
+            var altHasReact = document.querySelector('*[data-reactroot]');
+            var hasReactRoot = isMatch(document.body) || isMatch(document.body.firstElementChild);
+            if (hasReactRoot || reactRoot || altHasReact || win.React) {
+                return { version: win.React && win.React.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Next.js': {
         icon: 'next',
         url: 'https://nextjs.org/',
         npm: 'next',
         test: function(win) {
             if (win.__NEXT_DATA__ && win.__NEXT_DATA__.buildId) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
+    'Next.js (Fast path)': {
+        icon: 'next',
+        url: 'https://nextjs.org/',
+        npm: 'next',
+        test: function (win) {
+            if (win.__NEXT_DATA__) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;
@@ -419,6 +462,26 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 if (expando && preactRoot && preactRoot[expando]!=null) {
                     version = '7';
                 }
+                return { version: version };
+            }
+            return false;
+        }
+    },
+
+    'Preact (Fast path)': {
+        icon: 'preact',
+        url: 'https://preactjs.com/',
+        npm: 'preact',
+        test: function (win) {
+            function isMatch(node) {
+                return node._component != null || node.__preactattr_ != null;
+            }
+            function getMatch(node) {
+                return node != null && isMatch(node);
+            }
+            var preactRoot = getMatch(document.body) || getMatch(document.body.firstElementChild);
+            if (preactRoot || win.preact) {
+                var version = UNKNOWN_VERSION;
                 return { version: version };
             }
             return false;
@@ -970,6 +1033,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Ember.js (Fast path)': {
+        icon: 'emberjs',
+        url: 'https://emberjs.com/',
+        npm: 'ember-source',
+        test: function (win) {
+            var ember = win.Ember || win.Em;
+            if (ember) {
+                return { version: ember.VERSION || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Hammer.js': {
         icon: 'hammerjs',
         url: 'http://eightmedia.github.io/hammer.js/',
@@ -1125,12 +1201,34 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Vue (Fast path)': {
+        icon: 'vue',
+        url: 'https://vuejs.org/',
+        npm: 'vue',
+        test: function (win) {
+            if (win.Vue) {
+                return { version: win.Vue && win.Vue.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Nuxt.js': {
         icon: 'nuxt',
         url: 'https://nuxtjs.org/',
         npm: 'nuxt',
         test: function(win) {
             if ((win.__NUXT__ && win.__NUXT__.data != null) || win.$nuxt) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'Nuxt.js (Fast path)': {
+        icon: 'nuxt',
+        url: 'https://nuxtjs.org/',
+        npm: 'nuxt',
+        test: function (win) {
+            if (win.__NUXT__  || win.$nuxt) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;

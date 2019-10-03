@@ -199,7 +199,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'jquery',
         test: function(win) {
             var jq = win.jQuery || win.$;
-            if (jq && jq.fn) {
+            if (jq && jq.fn && jq.fn.jquery) {
                 return { version: jq.fn.jquery.replace(/[^\d+\.+]/g, '') || UNKNOWN_VERSION};
             }
             return false;

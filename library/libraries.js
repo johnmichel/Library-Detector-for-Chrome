@@ -280,28 +280,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Spry': {
-        icon: 'spry',
-        url: 'http://labs.adobe.com/technologies/spry',
-        test: function(win) {
-            if (win.Spry && win.Spry.Data) {
-                return { version: UNKNOWN_VERSION };
-            }
-            return false;
-        }
-    },
-
-    'YUI 2': {
-        icon: 'yui',
-        url: 'http://developer.yahoo.com/yui/2/',
-        test: function(win) {
-            if (win.YAHOO && win.YAHOO.util) {
-                return { version: win.YAHOO.VERSION || UNKNOWN_VERSION };
-            }
-            return false;
-        }
-    },
-
     'YUI 3': {
         icon: 'yui3',
         url: 'https://yuilibrary.com/',
@@ -335,17 +313,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             else if(win.Ext) {
                 return { version: win.Ext.version || UNKNOWN_VERSION };
-            }
-            return false;
-        }
-    },
-
-    'base2': {
-        icon: 'base2',
-        url: 'http://code.google.com/p/base2',
-        test: function(win) {
-            if(win.base2 && win.base2.dom) {
-                return { version: win.base2.version || UNKNOWN_VERSION };
             }
             return false;
         }
@@ -589,17 +556,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Rico': {
-        icon: 'rico',
-        url: 'http://openrico.sourceforge.net/examples/index.html',
-        test:  function(win) {
-            if (win.Rico && window.Rico.checkIfComplete) {
-                return {version: win.Rico.Version || UNKNOWN_VERSION};
-            }
-            return false;
-        }
-    },
-
     'MochiKit': {
         icon: 'mochikit',
         url: 'https://mochi.github.io/mochikit/',
@@ -617,23 +573,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.Raphael && win.Raphael.fn.g) {
                 return {version: UNKNOWN_VERSION};
-            }
-            return false;
-        }
-    },
-
-    'Glow': {
-        icon: 'glow',
-        url: 'http://www.bbc.co.uk/glow/',
-        test: function(win) {
-            if (win.gloader && win.gloader.getRequests) {
-                return {version: UNKNOWN_VERSION};
-            }
-            else if (win.glow && win.glow.dom) {
-                return {version: win.glow.VERSION || UNKNOWN_VERSION};
-            }
-            else if (win.Glow) {
-                return {version: win.Glow.version || UNKNOWN_VERSION};
             }
             return false;
         }
@@ -870,17 +809,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Swiffy': {
-       icon: 'icon38',
-       url: 'https://developers.google.com/swiffy/',
-       test: function(win) {
-            if(win.swiffy && win.swiffy.Stage) {
-               return { version: UNKNOWN_VERSION };
-           }
-           return false;
-       }
-    },
-
     'Move': {
        icon: 'move',
        url: 'https://github.com/rsms/move',
@@ -900,17 +828,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        test: function(win) {
             if(win.amplify && win.amplify.publish) {
                return { version: UNKNOWN_VERSION };
-           }
-           return false;
-       }
-    },
-
-    'Popcorn.js': {
-       icon: 'popcornjs',
-       url: 'https://github.com/mozilla/popcorn-js/',
-       test: function(win) {
-            if (win.Popcorn && win.Popcorn.Events) {
-               return { version: win.Popcorn.version || UNKNOWN_VERSION };
            }
            return false;
        }
@@ -1341,20 +1258,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             if (win.ScrollMagic && win.ScrollMagic.Controller) {
                 return {version: ScrollMagic.version || UNKNOWN_VERSION};
-            }
-            return false;
-        }
-    },
-    'SWFObject': {
-        icon: 'icon38', // currently has no icon
-        url: 'https://github.com/swfobject/swfobject',
-        test: function(win) {
-            if (win.swfobject && win.swfobject.embedSWF) {
-                // 2.x - exact version only for 2.3
-                return { version: win.swfobject.version || UNKNOWN_VERSION };
-            } else if(win.deconcept && win.deconcept.SWFObject) {
-                // 1.x
-                return { version: UNKNOWN_VERSION };
             }
             return false;
         }

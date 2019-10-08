@@ -1361,6 +1361,22 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Magento': {
+        icon: 'magento',
+        url: 'https://magento.com/',
+        npm: null,
+        test: function (win) {
+            const hasMagentoModules = !!document.querySelectorAll('script[data-requiremodule^="mage/"], script[data-requiremodule^="Magento_"]').length;
+
+            if (hasMagentoModules) {
+                return { version: 2 };
+            } else if (win.Mage.Cookies || win.VarienForm) {
+                return { version: 1 };
+            }
+
+            return false;
+        }
+    },
     'WordPress': {
         icon: 'wordpress',
         url: 'https://wordpress.org/',

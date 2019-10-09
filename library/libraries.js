@@ -1459,6 +1459,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Magento': {
+        icon: 'magento',
+        url: 'https://magento.com/',
+        npm: null,
+        test: function (win) {
+            // Same detecton used in Magento 2 DevTools: https://github.com/magento/m2-devtools
+            const reRequireScript = /\/static(?:\/version\d+)?\/frontend\/.+\/.+\/requirejs\/require(?:\.min)?\.js/;
+            const scripts = Array.from(document.querySelectorAll('script[src]') || []);
+            if (scripts.some(s => reRequireScript.test(s.src))) {
+                return { version: 2 }; // Magento 1 is no longer supported and this only verifies version 2
+            }
+            
+            return false;
+        }
+    },
     'WordPress': {
         icon: 'wordpress',
         url: 'https://wordpress.org/',

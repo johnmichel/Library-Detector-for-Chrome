@@ -1366,14 +1366,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://magento.com/',
         npm: null,
         test: function (win) {
-            const hasMagentoModules = !!document.querySelectorAll('script[data-requiremodule^="mage/"], script[data-requiremodule^="Magento_"]').length;
-
-            if (hasMagentoModules) {
-                return { version: 2 };
-            } else if (win.Mage.Cookies || win.VarienForm) {
-                return { version: 1 };
+            // Same detecton used in Magento 2 DevTools: https://github.com/magento/m2-devtools
+            const reRequireScript = /\/static(?:\/version\d+)?\/frontend\/.+\/.+\/requirejs\/require(?:\.min)?\.js/;
+            const scripts = Array.from(document.querySelectorAll('script[src]') || []);
+            if (scripts.some(s => reRequireScript.test(s.src))) {
+                return { version: 2 }; // Magento 1 is no longer supported and this only verifies version 2
             }
-
+            
             return false;
         }
     },

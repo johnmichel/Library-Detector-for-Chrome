@@ -1576,5 +1576,28 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Create React App': {
+        icon: 'cra',
+        url: 'https://create-react-app.dev/',
+        npm: 'create-react-app',
+        test: async function (win) {
+            try {
+                const response = await fetch('/asset-manifest.json');
+                const manifest = await response.json();
+
+                const hasFilesEntrypoints = manifest.files || manifest.entrypoints;
+                const containsMainBundle = manifest['main.js'] || (manifest.files && manifest.files['main.js']);
+
+                if (hasFilesEntrypoints || containsMainBundle) {
+                    return { version: UNKNOWN_VERSION };
+                }
+            
+                return false;
+            }
+            catch (err) {
+                return false;
+            }
+        }
     }
 };

@@ -1580,7 +1580,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     'Create React App': {
         icon: 'cra',
         url: 'https://create-react-app.dev/',
-        npm: 'create-react-app',
+        npm: 'react-scripts',
         test: async function (win) {
             // CRA does not have any explicit markers
             // This requests for an asset-manifest.json file that exists for mostly all v2 and v3 CRA apps

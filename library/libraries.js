@@ -1538,5 +1538,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
           return false;
         });
       }
+    },
+    'Boq': {
+        icon: '',
+        url: '',
+        npm: null,
+        test: function (win) {
+            if (win.WIZ_global_data) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

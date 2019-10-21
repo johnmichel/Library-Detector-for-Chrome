@@ -1560,5 +1560,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'core-js': {
+        icon: '',
+        url: 'https://github.com/zloirock/core-js',
+        npm: 'core-js',
+        test: function (win) {
+            const shared = win['__core-js_shared__'];
+            const core = win.core;
+            if (shared) {
+                const versions = shared.versions;
+                return { version: Array.isArray(versions) ? versions.map(it => `${ it.version }: ${ it.mode }`).join(', ') : UNKNOWN_VERSION };
+            } else if (core) {
+                return { version: core.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

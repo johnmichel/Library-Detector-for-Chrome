@@ -2,6 +2,7 @@ var UNKNOWN_VERSION = null;
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
     'GWT': {
+        id: 'gwt',
         icon: 'gwt',
         url: 'http://www.gwtproject.org/',
         test: function(win) {
@@ -44,6 +45,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Ink': {
+        id: 'ink',
         icon: 'ink',
         url: 'http://ink.sapo.pt/',
         test: function(win) {
@@ -55,6 +57,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Vaadin': {
+        id: 'vaadin',
         icon: 'vaadin',
         url: 'https://vaadin.com/',
         test: function(win) {
@@ -66,6 +69,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Bootstrap': {
+        id: 'bootstrap',
         icon: 'bootstrap',
         url: 'http://getbootstrap.com/',
         npm: 'bootstrap',
@@ -112,6 +116,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Zurb': {
+        id: 'zurb',
         icon: 'zurb',
         url: 'https://foundation.zurb.com/',
         npm: 'foundation-sites',
@@ -124,6 +129,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Polymer': {
+        id: 'polymer',
         icon: 'polymer',
         url: 'https://www.polymer-project.org/',
         npm: '@polymer/polymer',
@@ -136,6 +142,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Highcharts': {
+        id: 'highcharts',
         icon: 'highcharts',
         url: 'http://www.highcharts.com',
         npm: 'highcharts',
@@ -148,6 +155,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'InfoVis': {
+        id: 'jit',
         icon: 'jit',
         url: 'http://philogb.github.com/jit/',
         test: function test(win) {
@@ -159,6 +167,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'FlotCharts': {
+        id: 'flotcharts',
         icon: 'flotcharts',
         url: 'http://www.flotcharts.org/',
         npm: 'flot',
@@ -171,6 +180,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'CreateJS': {
+        id: 'createjs',
         icon: 'createjs',
         url: 'https://createjs.com/',
         npm: 'createjs',
@@ -183,6 +193,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Google Maps': {
+        id: 'gmaps',
         icon: 'gmaps',
         url: 'https://developers.google.com/maps/',
         test: function(win) {
@@ -194,6 +205,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'jQuery': {
+        id: 'jquery',
         icon: 'jquery',
         url: 'http://jquery.com',
         npm: 'jquery',
@@ -207,6 +219,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'jQuery (Fast path)': {
+        id: 'jquery-fast',
         icon: 'jquery',
         url: 'http://jquery.com',
         npm: 'jquery',
@@ -220,6 +233,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'jQuery UI': {
+        id: 'jquery_ui',
         icon: 'jquery_ui',
         url: 'http://jqueryui.com',
         npm: 'jquery-ui',
@@ -235,6 +249,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Dojo': {
+        id: 'dojo',
         icon: 'dojo',
         url: 'http://dojotoolkit.org',
         npm: 'dojo',
@@ -248,6 +263,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Prototype': {
+        id: 'prototype',
         icon: 'prototype',
         url: 'http://prototypejs.org',
         test: function(win) {
@@ -259,6 +275,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Scriptaculous': {
+        id: 'scriptaculous',
         icon: 'scriptaculous',
         url: 'http://script.aculo.us',
         test: function(win) {
@@ -270,6 +287,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'MooTools': {
+        id: 'mootools',
         icon: 'mootools',
         url: 'https://mootools.net/',
         test: function(win) {
@@ -281,6 +299,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Spry': {
+        id: 'spry',
         icon: 'spry',
         url: 'http://labs.adobe.com/technologies/spry',
         test: function(win) {
@@ -292,6 +311,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'YUI 2': {
+        id: 'yui',
         icon: 'yui',
         url: 'http://developer.yahoo.com/yui/2/',
         test: function(win) {
@@ -303,6 +323,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'YUI 3': {
+        id: 'yui3',
         icon: 'yui3',
         url: 'https://yuilibrary.com/',
         npm: 'yui',
@@ -315,6 +336,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Qooxdoo': {
+        id: 'qooxdoo',
         icon: 'qooxdoo',
         url: 'http://www.qooxdoo.org/',
         npm: 'qooxdoo',
@@ -327,6 +349,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Ext JS': {
+        id: 'extjs',
         icon: 'extjs',
         url: 'https://www.sencha.com/products/extjs/',
         test: function(win) {
@@ -341,6 +364,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'base2': {
+        id: 'base2',
         icon: 'base2',
         url: 'http://code.google.com/p/base2',
         test: function(win) {
@@ -352,6 +376,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Closure Library': {
+        id: 'closure',
         icon: 'closure',
         url: 'https://developers.google.com/closure/library/',
         npm: 'google-closure-library',
@@ -364,6 +389,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Rapha&euml;l': {
+        id: 'raphael',
         icon: 'raphael',
         url: 'http://dmitrybaranovskiy.github.io/raphael/',
         test: function(win) {
@@ -375,6 +401,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'React': {
+        id: 'react',
         icon: 'react',
         url: 'https://reactjs.org/',
         npm: 'react',
@@ -397,6 +424,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'React (Fast path)': {
+        id: 'react-path',
         icon: 'react',
         url: 'https://reactjs.org/',
         npm: 'react',
@@ -415,6 +443,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Next.js': {
+        id: 'next',
         icon: 'next',
         url: 'https://nextjs.org/',
         npm: 'next',
@@ -427,6 +456,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Next.js (Fast path)': {
+        id: 'next-fast',
         icon: 'next',
         url: 'https://nextjs.org/',
         npm: 'next',
@@ -439,6 +469,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Preact': {
+        id: 'preact',
         icon: 'preact',
         url: 'https://preactjs.com/',
         npm: 'preact',
@@ -469,6 +500,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Preact (Fast path)': {
+        id: 'preact-fast',
         icon: 'preact',
         url: 'https://preactjs.com/',
         npm: 'preact',
@@ -489,6 +521,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Modernizr': {
+        id: 'modernizr',
         icon: 'modernizr',
         url: 'https://modernizr.com/',
         npm: 'modernizr',
@@ -501,6 +534,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Processing.js': {
+        id: 'processingjs',
         icon: 'processingjs',
         url: 'http://processingjs.org',
         npm: 'processing-js',
@@ -513,6 +547,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Backbone': {
+        id: 'backbone',
         icon: 'backbone',
         url: 'http://backbonejs.org/',
         npm: 'backbone',
@@ -525,6 +560,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Leaflet': {
+        id: 'leaflet',
         icon: 'leaflet',
         url: 'http://leafletjs.com',
         npm: 'leaflet',
@@ -538,6 +574,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Mapbox': {
+        id: 'mapbox',
         icon: 'mapbox',
         url: 'https://www.mapbox.com/',
         npm: 'mapbox-gl',
@@ -550,6 +587,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Lo-Dash': {
+        id: 'lodash',
         icon: 'lodash',
         url: 'https://lodash.com/',
         npm: 'lodash',
@@ -566,6 +604,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Underscore': {
+        id: 'underscore',
         icon: 'underscore',
         url: 'http://underscorejs.org/',
         npm: 'underscore',
@@ -579,6 +618,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Sammy': {
+        id: 'sammy',
         icon: 'sammy',
         url: 'http://sammyjs.org',
         test: function(win) {
@@ -590,6 +630,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Rico': {
+        id: 'rico',
         icon: 'rico',
         url: 'http://openrico.sourceforge.net/examples/index.html',
         test:  function(win) {
@@ -601,6 +642,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'MochiKit': {
+        id: 'mochikit',
         icon: 'mochikit',
         url: 'https://mochi.github.io/mochikit/',
         test: function(win) {
@@ -612,6 +654,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'gRapha&euml;l': {
+        id: 'graphael',
         icon: 'graphael',
         url: 'https://github.com/DmitryBaranovskiy/g.raphael',
         test: function(win) {
@@ -623,6 +666,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Glow': {
+        id: 'glow',
         icon: 'glow',
         url: 'http://www.bbc.co.uk/glow/',
         test: function(win) {
@@ -640,6 +684,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Socket.IO': {
+        id: 'socketio',
         icon: 'socketio', // currently has no icon
         url: 'https://socket.io/',
         npm: 'socket.io',
@@ -653,6 +698,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Mustache': {
+        id: 'mustache',
         icon: 'mustache',
         url: 'http://mustache.github.io/',
         npm: 'mustache',
@@ -665,6 +711,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Fabric.js': {
+        id: 'fabricjs',
         icon: 'icon38', // currently has no icon
         url: 'http://fabricjs.com/',
         npm: 'fabric',
@@ -677,6 +724,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'FuseJS': {
+        id: 'fusejs',
         icon: 'fusejs',
         url: 'http://fusejs.io/',
         npm: 'fuse.js',
@@ -689,6 +737,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Tween.js': {
+        id: 'tweenjs',
         icon: 'icon38', // currently has no icon
         url: 'https://github.com/tweenjs/tween.js',
         npm: 'tween.js',
@@ -701,6 +750,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'SproutCore': {
+       id: 'sproutcore',
        icon: 'sproutcore',
        url: 'http://sproutcore.com/',
        test: function(win) {
@@ -712,6 +762,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Zepto.js': {
+       id: 'zepto',
        icon: 'zepto',
        url: 'http://zeptojs.com',
        npm: 'zepto',
@@ -724,6 +775,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'three.js': {
+       id: 'threejs',
        icon: 'icon38', // currently has no icon
        url: 'https://threejs.org/',
        npm: 'three',
@@ -739,6 +791,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'PhiloGL': {
+       id: 'philogl',
        icon: 'philogl',
        url: 'http://www.senchalabs.org/philogl/',
        npm: 'philogl',
@@ -751,6 +804,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'CamanJS': {
+        id: 'camanjs',
         icon: 'camanjs',
         url: 'http://camanjs.com/',
         npm: 'caman',
@@ -766,6 +820,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'yepnope': {
+        id: 'yepnope',
         icon: 'yepnope',
         url: 'http://yepnopejs.com/',
         test: function(win) {
@@ -777,6 +832,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'LABjs': {
+        id: 'labjs',
         icon: 'icon38',
         url: 'https://github.com/getify/LABjs',
         test: function(win) {
@@ -788,6 +844,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Head JS': {
+        id: 'headjs',
         icon: 'headjs',
         url: 'http://headjs.com/',
         npm: 'headjs',
@@ -800,6 +857,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'ControlJS': {
+        id: 'controljs',
         icon: 'icon38',
         url: 'http://stevesouders.com/controljs/',
         test: function(win) {
@@ -811,6 +869,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'RequireJS': {
+        id: 'requirejs',
         icon: 'requirejs',
         url: 'http://requirejs.org/',
         npm: 'requirejs',
@@ -824,6 +883,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'RightJS': {
+        id: 'rightjs',
         icon: 'rightjs',
         url: 'http://rightjs.org/',
         test: function(win) {
@@ -835,6 +895,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'jQuery Tools': {
+       id: 'jquerytools',
        icon: 'jquerytools',
        url: 'http://jquerytools.github.io/',
        test: function(win) {
@@ -847,6 +908,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Pusher': {
+       id: 'pusher',
        icon: 'pusher',
        url: 'https://pusher.com/docs/',
        npm: 'pusher-js',
@@ -859,6 +921,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Paper.js': {
+       id: 'paperjs',
        icon: 'paperjs',
        url: 'http://paperjs.org/',
        npm: 'paper',
@@ -871,6 +934,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Swiffy': {
+       id: 'swiffy',
        icon: 'icon38',
        url: 'https://developers.google.com/swiffy/',
        test: function(win) {
@@ -882,6 +946,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Move': {
+       id: 'move',
        icon: 'move',
        url: 'https://github.com/rsms/move',
        npm: 'move',
@@ -894,6 +959,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'AmplifyJS': {
+       id: 'amplifyjs',
        icon: 'amplifyjs',
        url: 'http://amplifyjs.com/',
        npm: 'amplifyjs',
@@ -906,6 +972,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Popcorn.js': {
+       id: 'popcornjs',
        icon: 'popcornjs',
        url: 'https://github.com/mozilla/popcorn-js/',
        test: function(win) {
@@ -917,6 +984,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'D3': {
+        id: 'd3',
         icon: 'd3',
         url: 'https://d3js.org/',
         npm: 'd3',
@@ -929,6 +997,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Handlebars': {
+        id: 'handlebars',
         icon: 'handlebars',
         url: 'http://handlebarsjs.com/',
         npm: 'handlebars',
@@ -941,6 +1010,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Knockout': {
+        id: 'knockout',
         icon: 'knockout',
         url: 'http://knockoutjs.com/',
         npm: 'knockout',
@@ -953,6 +1023,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Spine': {
+        id: 'spine',
         icon: 'icon38',
         url: 'http://spine.github.io/',
         test: function(win) {
@@ -964,6 +1035,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'jQuery Mobile': {
+        id: 'jquery-mobile',
         icon: 'jquery_mobile',
         url: 'http://jquerymobile.com/',
         npm: 'jquery-mobile',
@@ -977,6 +1049,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'WebFont Loader': {
+        id: 'webfontloader',
         icon: 'icon38',
         url: 'https://github.com/typekit/webfontloader',
         npm: 'webfontloader',
@@ -989,6 +1062,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Angular': {
+        id: 'angular',
         icon: 'angular',
         url: 'https://angular.io/',
         npm: '@angular/core',
@@ -1005,6 +1079,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'AngularJS': {
+        id: 'angularjs',
         icon: 'angularjs',
         url: 'https://angularjs.org/',
         npm: 'angular',
@@ -1021,6 +1096,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Ember.js': {
+        id: 'emberjs',
         icon: 'emberjs',
         url: 'https://emberjs.com/',
         npm: 'ember-source',
@@ -1034,6 +1110,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Ember.js (Fast path)': {
+        id: 'emberjs-fast',
         icon: 'emberjs',
         url: 'https://emberjs.com/',
         npm: 'ember-source',
@@ -1047,6 +1124,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Hammer.js': {
+        id: 'hammerjs',
         icon: 'hammerjs',
         url: 'http://eightmedia.github.io/hammer.js/',
         npm: 'hammerjs',
@@ -1060,6 +1138,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Visibility.js': {
+        id: 'visibilityjs',
         icon: 'icon38',
         url: 'https://github.com/ai/visibilityjs',
         npm: 'visibilityjs',
@@ -1072,6 +1151,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'Velocity.js': {
+        id: 'velocityjs',
         icon: 'icon38',
         url: 'http://velocityjs.org/',
         npm: 'velocity-animate',
@@ -1095,6 +1175,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'IfVisible.js': {
+        id: 'ifvisiblejs',
         icon: 'icon38',
         url: 'http://serkanyersen.github.io/ifvisible.js/',
         npm: 'ifvisible.js',
@@ -1107,6 +1188,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Pixi.js': {
+        id: 'pixi',
         icon: 'pixi',
         url: 'http://www.pixijs.com/',
         npm: 'pixi.js',
@@ -1120,6 +1202,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'DC.js': {
+        id: 'dcjs',
         icon: 'dcjs',
         url: 'http://dc-js.github.io/dc.js/',
         npm: 'dc',
@@ -1132,6 +1215,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'GreenSock JS': {
+        id: 'greensock',
         icon: 'greensock',
         url: 'https://greensock.com/gsap',
         npm: 'gsap',
@@ -1143,6 +1227,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'FastClick': {
+        id: 'fastclick',
         icon: 'fastclick',
         url: 'https://github.com/ftlabs/fastclick',
         npm: 'fastclick',
@@ -1154,6 +1239,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Isotope': {
+        id: 'isotope',
         icon: 'isotope',
         url: 'https://isotope.metafizzy.co/',
         npm: 'isotope-layout',
@@ -1165,6 +1251,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Marionette': {
+        id: 'marionette',
         icon: 'marionette',
         url: 'https://marionettejs.com/',
         npm: 'backbone.marionette',
@@ -1176,6 +1263,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Can': {
+        id: 'canjs',
         icon: 'canjs',
         url: 'https://canjs.com/',
         npm: 'can',
@@ -1187,6 +1275,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Vue': {
+        id: 'vue',
         icon: 'vue',
         url: 'https://vuejs.org/',
         npm: 'vue',
@@ -1202,6 +1291,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Vue (Fast path)': {
+        id: 'vue-fast',
         icon: 'vue',
         url: 'https://vuejs.org/',
         npm: 'vue',
@@ -1213,6 +1303,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Nuxt.js': {
+        id: 'nuxt',
         icon: 'nuxt',
         url: 'https://nuxtjs.org/',
         npm: 'nuxt',
@@ -1224,6 +1315,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Nuxt.js (Fast path)': {
+        id: 'nuxt-fast',
         icon: 'nuxt',
         url: 'https://nuxtjs.org/',
         npm: 'nuxt',
@@ -1235,6 +1327,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Two': {
+        id: 'two',
         icon: 'two',
         url: 'https://two.js.org/',
         npm: 'two.js',
@@ -1246,6 +1339,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Brewser': {
+        id: 'brewser',
         icon: 'brewser',
         url: 'https://robertpataki.github.io/brewser/',
         npm: 'brewser',
@@ -1257,6 +1351,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Material Design Lite': {
+        id: 'materialdesignlite',
         icon: 'mdl',
         url: 'https://getmdl.io/',
         npm: 'material-design-lite',
@@ -1268,6 +1363,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Kendo UI': {
+        id: 'kendoui',
         icon: 'kendoui',
         url: 'https://github.com/telerik/kendo-ui-core',
         npm: 'kendo-ui-core',
@@ -1279,6 +1375,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Matter.js': {
+        id: 'matterjs',
         icon: 'matter-js',
         url: 'http://brm.io/matter-js/',
         npm: 'matter-js',
@@ -1290,6 +1387,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Riot': {
+        id: 'riot',
         icon: 'riot',
         url: 'http://riotjs.com/',
         npm: 'riot',
@@ -1301,6 +1399,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Sea.js': {
+        id: 'seajs',
         icon: 'icon38',
         url: 'https://seajs.github.io/seajs/docs/',
         npm: 'seajs',
@@ -1312,6 +1411,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Moment.js': {
+        id: 'momentjs',
         icon: 'momentjs',
         url: 'http://momentjs.com/',
         npm: 'moment',
@@ -1324,6 +1424,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Moment Timezone': {
+        id: 'moment-timezone',
         icon: 'momentjs',
         url: 'http://momentjs.com/timezone/',
         npm: 'moment-timezone',
@@ -1335,6 +1436,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'ScrollMagic': {
+        id: 'scrollmagic',
         icon: 'scrollmagic',
         url: 'http://scrollmagic.io/',
         npm: 'scrollmagic',
@@ -1346,6 +1448,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'SWFObject': {
+        id: 'swfobject',
         icon: 'icon38', // currently has no icon
         url: 'https://github.com/swfobject/swfobject',
         test: function(win) {
@@ -1360,6 +1463,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'FlexSlider': {
+        id: 'flexslider',
         icon: 'icon38', // currently has no icon
         url: 'https://woocommerce.com/flexslider/',
         npm: 'flexslider',
@@ -1372,6 +1476,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'SPF': {
+        id: 'spf',
         icon: 'icon38', // currently has no icon
         url: 'https://youtube.github.io/spfjs/',
         npm: 'spf',
@@ -1383,6 +1488,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Numeral.js': {
+        id: 'numeraljs',
         icon: 'icon38', // currently has no icon
         url: 'http://numeraljs.com/',
         npm: 'numeraljs',
@@ -1394,6 +1500,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'boomerang.js': {
+        id: 'boomerangjs',
         icon: 'icon38', // currently has no icon
         url: 'https://soasta.github.io/boomerang/',
         npm: 'boomerangjs',
@@ -1405,6 +1512,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Framer': {
+        id: 'framer',
         icon: 'framer',
         url: 'https://framer.com/',
         npm: 'framerjs',
@@ -1416,6 +1524,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Marko': {
+        id: 'marko',
         icon: 'marko',
         url: 'https://markojs.com/',
         npm: 'marko',
@@ -1429,6 +1538,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'AMP': {
+        id: 'amp',
         icon: 'amp',
         url: 'https://ampproject.org/',
         npm: null,
@@ -1438,6 +1548,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Gatsby': {
+        id: 'gatsby',
         icon: 'gatsby',
         url: 'https://www.gatsbyjs.org/',
         npm: 'gatsby',
@@ -1449,6 +1560,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Shopify': {
+        id: 'shopify',
         icon: 'shopify',
         url: 'https://www.shopify.com/',
         npm: null,
@@ -1460,6 +1572,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Magento': {
+        id: 'magento',
         icon: 'magento',
         url: 'https://magento.com/',
         npm: null,
@@ -1475,6 +1588,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'WordPress': {
+        id: 'wordpress',
         icon: 'wordpress',
         url: 'https://wordpress.org/',
         npm: null,
@@ -1490,6 +1604,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Wix': {
+        id: 'wix',
         icon: 'wix',
         url: 'https://www.wix.com/',
         npm: null,
@@ -1501,6 +1616,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Workbox': {
+      id: 'workbox',
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',
       npm: 'workbox-sw',
@@ -1540,7 +1656,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
       }
     },
     'Boq': {
-        icon: '',
+        id: 'boq',
+        icon: 'icon38',
         url: '',
         npm: null,
         test: function (win) {
@@ -1551,7 +1668,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Wiz': {
-        icon: '',
+        id: 'wiz',
+        icon: 'icon38',
         url: '',
         npm: null,
         test: function (win) {
@@ -1562,7 +1680,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'core-js': {
-        icon: '',
+        id: 'corejs',
+        icon: 'icon38',
         url: 'https://github.com/zloirock/core-js',
         npm: 'core-js',
         test: function (win) {
@@ -1578,6 +1697,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
     'Create React App': {
+        id: 'create-react-app',
         icon: 'cra',
         url: 'https://create-react-app.dev/',
         npm: 'react-scripts',

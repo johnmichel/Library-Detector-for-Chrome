@@ -424,7 +424,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
 
     'React (Fast path)': {
-        id: 'react-path',
+        id: 'react-fast',
         icon: 'react',
         url: 'https://reactjs.org/',
         npm: 'react',

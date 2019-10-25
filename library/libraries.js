@@ -1658,7 +1658,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     'Boq': {
         id: 'boq',
         icon: 'icon38',
-        url: '',
+        url: 'https://github.com/johnmichel/Library-Detector-for-Chrome/pull/143',
         npm: null,
         test: function (win) {
             if (win.WIZ_global_data) {
@@ -1670,7 +1670,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     'Wiz': {
         id: 'wiz',
         icon: 'icon38',
-        url: '',
+        url: 'https://github.com/johnmichel/Library-Detector-for-Chrome/pull/147',
         npm: null,
         test: function (win) {
             if (document.__wizdispatcher) {

@@ -4,7 +4,7 @@
   "description": "Detects the JavaScript libraries running on a page",
   "main": "library/libraries.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/object-test.js"
   },
   "repository": {
     "type": "git",

@@ -1540,8 +1540,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     'AMP': {
         id: 'amp',
         icon: 'amp',
-        url: 'https://ampproject.org/',
-        npm: null,
+        url: 'https://amp.dev/',
+        npm: 'https://www.npmjs.com/org/ampproject',
         test: function (win) {
             var version = win.document.documentElement.getAttribute("amp-version");
             return version ? { version: version } : false;

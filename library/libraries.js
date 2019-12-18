@@ -476,7 +476,10 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function(win) {
             var expando = typeof Symbol!='undefined' && Symbol.for && Symbol.for('preactattr');
             function isMatch(node) {
-                return node._component!=null || node.__preactattr_!=null || expando && node[expando]!=null;
+                if ('__k' in node && 'props' in node.__k && 'type' in node.__k) {
+                    return true;
+                }
+                return '_component' in node || '__preactattr_' in node || expando && node[expando]!=null;
             }
             function getMatch(node) {
                 return node!=null && isMatch(node) && node;
@@ -492,6 +495,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 var version = UNKNOWN_VERSION;
                 if (expando && preactRoot && preactRoot[expando]!=null) {
                     version = '7';
+                }
+                if (preactRoot && '__k' in preactRoot) {
+                    version = '10';
                 }
                 return { version: version };
             }

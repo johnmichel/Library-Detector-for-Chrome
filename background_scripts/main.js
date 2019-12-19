@@ -84,6 +84,7 @@ function getIcon(iconName, count) {
     image.height = 19;
     var context = image.getContext('2d');
     var icon = new Image;
+    icon.crossOrigin = 'Anonymous';
     icon.src = '../icons/'+iconName+'.png';
     icon.addEventListener('load', function() {
         context.drawImage(icon, 0, 0, 19, 19);

@@ -1695,7 +1695,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             const core = win.core;
             if (shared) {
                 const versions = shared.versions;
-                return { version: Array.isArray(versions) ? versions.map(it => `${ it.version }: ${ it.mode }`).join(', ') : UNKNOWN_VERSION };
+                return { version: Array.isArray(versions) ? versions.map(it => `${ it.version } for ${ it.mode }`).join(' and ') : UNKNOWN_VERSION };
             } else if (core) {
                 return { version: core.version || UNKNOWN_VERSION };
             }

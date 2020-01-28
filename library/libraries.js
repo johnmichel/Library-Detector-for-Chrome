@@ -493,11 +493,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             if (preactRoot || win.preact) {
                 var version = UNKNOWN_VERSION;
-                if (expando && preactRoot && preactRoot[expando]!=null) {
-                    version = '7';
-                }
-                if (preactRoot && '__k' in preactRoot) {
-                    version = '10';
+                if (preactRoot) {
+                    if ('__k' in preactRoot) {
+                        version = '10';
+                    }
+                    if ('__preactattr_' in preactRoot) {
+                        version = '8';
+                    }
+                    if (expando && preactRoot[expando]!=null) {
+                        version = '7';
+                    }
                 }
                 return { version: version };
             }

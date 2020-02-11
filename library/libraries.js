@@ -1727,5 +1727,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 return false;
             }
         }
+    },
+    'Drupal': {
+        id: 'drupal',
+        icon: 'drupal',
+        url: 'https://www.drupal.org/',
+        npm: null,
+        test: function (win) {
+            if (win.Drupal && win.Drupal.behaviors) {
+                const generatorMeta = document.querySelector('meta[name=Generator][content^="Drupal"]');
+                const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
+                return { version };
+            }
+            return false;
+        }
     }
 };

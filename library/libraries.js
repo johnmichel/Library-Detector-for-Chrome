@@ -1739,11 +1739,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://www.drupal.org/',
         npm: null,
         test: function (win) {
-            if (win.Drupal && win.Drupal.behaviors) {
-                const generatorMeta = document.querySelector('meta[name=Generator][content^="Drupal"]');
-                const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
+            const generatorMeta = document.querySelector('meta[name=Generator][content^="Drupal"]');
+            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
+
+            // Detect Drupal resources patterns
+            const resDrupal = /\/sites\/(?:default|all)\/(?:themes|modules|files)/;
+            const res = Array.from(document.querySelectorAll('link,style,script') || []);
+
+            if (res.some(s => resDrupal.test(s.src)) || res.some(s => resDrupal.test(s.href)) ||
+                generatorMeta || (win.Drupal && win.Drupal.behaviors)) {
                 return { version };
             }
+
             return false;
         }
     }

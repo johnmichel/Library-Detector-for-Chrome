@@ -32,6 +32,7 @@ supports:
 - [D3](https://d3js.org/)
 - [DC.js](https://dc-js.github.io/dc.js/)
 - [Dojo](https://dojotoolkit.org/)
+- [Drupal](https://drupal.org/)
 - [Ember.js](https://emberjs.com/)
 - [Ext JS](https://www.sencha.com/products/extjs/)
 - [Fabric.js](http://fabricjs.com/)

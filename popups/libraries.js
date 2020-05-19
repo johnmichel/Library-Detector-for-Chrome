@@ -13,8 +13,9 @@ var addLibrary = function(library) {
 
     container.appendChild(link);
 
-    var version = document.createElement('span');
-    if (library.version !== undefined || library.version !== 'undefined' || library.version !== null || library.version !== '') {
+    if (library.version) {
+        var version = document.createElement('span');
+
         version.innerHTML = ' ' + library.version;
         container.appendChild(version);
     }

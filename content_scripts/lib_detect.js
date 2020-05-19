@@ -12,7 +12,7 @@
         var encodeLibraries = function(libraries) {
             var encoded = [];
             for (var i = 0; i < libraries.length; i++) {
-                encoded.push(libraries[i].name + ':' + libraries[i].version);
+                encoded.push(libraries[i].name + ':' + (libraries[i].version || ''));
             }
             return encoded.join(',');
         };

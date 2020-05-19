@@ -1753,5 +1753,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             return false;
         }
-    }
+    },
+    'Joomla': {
+        id: 'joomla',
+        icon: 'joomla',
+        url: 'https://www.joomla.org/',
+        npm: null,
+        test: function (win) {
+            const generatorMeta = document.querySelector('meta[name=Generator][content^="Joomla"]');
+            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
+
+            return false;
+        }
+    }    
 };

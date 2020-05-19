@@ -1739,7 +1739,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://www.drupal.org/',
         npm: null,
         test: function (win) {
-            const generatorMeta = document.querySelector('meta[name=Generator][content^="Drupal"]');
+            const generatorMeta = document.querySelector('meta[name="generator"][content^="Drupal"]');
             const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
 
             // Detect Drupal resources patterns

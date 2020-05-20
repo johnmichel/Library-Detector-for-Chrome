@@ -1759,11 +1759,31 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'joomla',
         url: 'https://www.joomla.org/',
         npm: null,
-        test: function (win) {
-            const generatorMeta = document.querySelector('meta[name=Generator][content^="Joomla"]');
-            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/\D+/gi,'') : UNKNOWN_VERSION;
+        test: async function (win) { 
+             const generatorMeta = !!document.querySelector('meta[name="generator"][content*="Joomla"]');
+             const joomlaComponent = !!document.querySelector('[href*="index.php?option=com_"]');
 
+             try {
+                const response = await fetch('/language/en-GB/en-GB.xml');
+                const manifest = await response.text();
+                const parser = new DOMParser();
+      
+            let parsedManifest = null;
+                if (manifest) {
+                    parsedManifest = parser.parseFromString(manifest, "text/xml");
+            }
+
+            if (parsedManifest && !!parsedManifest.getElementsByTagName("version").length) {
+                return  { version: parsedManifest.getElementsByTagName("version")[0].childNodes[0].nodeValue }
+            } else if (generatorMeta || joomlaComponent) {
+                return { version: UNKNOWN_VERSION };
+            }
+        }
+        catch (err) {
             return false;
         }
+
+        return false;
+       }
     }    
 };

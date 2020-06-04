@@ -1120,20 +1120,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Ember.js (Fast path)': {
-        id: 'emberjs-fast',
-        icon: 'emberjs',
-        url: 'https://emberjs.com/',
-        npm: 'ember-source',
-        test: function (win) {
-            var ember = win.Ember || win.Em;
-            if (ember) {
-                return { version: ember.VERSION || UNKNOWN_VERSION };
-            }
-            return false;
-        }
-    },
-
     'Hammer.js': {
         id: 'hammerjs',
         icon: 'hammerjs',

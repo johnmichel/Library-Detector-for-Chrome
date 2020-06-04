@@ -141,6 +141,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'LitElement': {
+        id: 'litelement',
+        icon: 'polymer',
+        url: 'https://lit-element.polymer-project.org/',
+        npm: 'lit-element',
+        test: function(win) {
+            if(win.litElementVersions && win.litElementVersions.length) {
+                // Get latest version if multiple versions are used
+                var versions = [...win.litElementVersions].sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+                return { version: versions[versions.length - 1] };
+            }
+            return false;
+        }
+    },
+
     'Highcharts': {
         id: 'highcharts',
         icon: 'highcharts',

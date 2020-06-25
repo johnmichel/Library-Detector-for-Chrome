@@ -1296,7 +1296,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
                 return node.__vue__ != null ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
             }
             var hasVueNode = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, isVueNode).nextNode() !== null;
-            if (hasVueNode) {
+            if (hasVueNode || win.Vue) {
                 return { version: win.Vue && win.Vue.version || UNKNOWN_VERSION };
             }
             return false;

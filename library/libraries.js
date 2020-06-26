@@ -1768,7 +1768,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             if (generatorMeta || res.some(s => resourcesTYPO3.test(s.src)) || res.some(s => resourcesTYPO3.test(s.href))) {
 		// No version exposure available in TYPO3 due to information disclosure
-                return { UNKNOWN_VERSION };
+                return { version: UNKNOWN_VERSION };
             }
 
             return false;

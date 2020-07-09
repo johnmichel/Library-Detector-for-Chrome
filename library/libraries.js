@@ -531,7 +531,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://preactjs.com/',
         npm: 'preact',
         test: function (win) {
+            var version = UNKNOWN_VERSION;
             function isMatch(node) {
+                if (node.__k != null) { version = '10'; return true; }
                 return node._component != null || node.__preactattr_ != null;
             }
             function getMatch(node) {
@@ -539,7 +541,6 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             var preactRoot = getMatch(document.body) || getMatch(document.body.firstElementChild);
             if (preactRoot || win.preact) {
-                var version = UNKNOWN_VERSION;
                 return { version: version };
             }
             return false;

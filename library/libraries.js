@@ -1728,5 +1728,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             return false;
         }
+    },
+    'TYPO3': {
+        id: 'typo3',
+        icon: 'typo3',
+        url: 'https://typo3.org/',
+        npm: null,
+        test: function (win) {
+            const generatorMeta = document.querySelector('meta[name="generator"][content^="TYPO3"]');
+
+            // TYPO3 resource patterns / paths - search in link, style or script tags
+            const resourcesTYPO3 = /\/(typo3conf|typo3temp|fileadmin)/;
+            const res = Array.from(document.querySelectorAll('link,style,script') || []);
+
+            if (generatorMeta || res.some(s => resourcesTYPO3.test(s.src)) || res.some(s => resourcesTYPO3.test(s.href))) {
+		// No version exposure available in TYPO3 due to information disclosure
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
     }
 };

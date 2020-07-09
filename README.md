@@ -110,6 +110,7 @@ supports:
 - [Three.js](https://threejs.org/)
 - [Tween.js](https://github.com/tweenjs/tween.js)
 - [Two](https://two.js.org/)
+- [TYPO3](https://typo3.org/)
 - [Underscore](http://underscorejs.org/)
 - [Vaadin](https://vaadin.com/)
 - [Velocity.js](http://julian.com/research/velocity/)
@@ -161,6 +162,7 @@ supports:
 - [Emmanuel Krebs](https://github.com/e-krebs)
 - [Patrick Hulce](https://github.com/patrickhulce)
 - [Ajaykumar Prathap](https://github.com/ajay2507)
+- [Benni Mack](https://github.com/bmack)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

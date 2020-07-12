@@ -27,6 +27,7 @@ supports:
 - [Closure Library](https://developers.google.com/closure/library/)
 - [ControlJS](https://stevesouders.com/controljs/)
 - [Core-js](https://github.com/zloirock/core-js)
+- [Create React App](https://create-react-app.dev/)
 - [CreateJS](https://createjs.com/)
 - [D3](https://d3js.org/)
 - [DC.js](https://dc-js.github.io/dc.js/)

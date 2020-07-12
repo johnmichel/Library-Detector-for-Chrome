@@ -1743,7 +1743,28 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             const res = Array.from(document.querySelectorAll('link,style,script') || []);
 
             if (generatorMeta || res.some(s => resourcesTYPO3.test(s.src)) || res.some(s => resourcesTYPO3.test(s.href))) {
-		// No version exposure available in TYPO3 due to information disclosure
+		        // No version exposure available in TYPO3 due to information disclosure
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
+    },
+    'Create React App': {
+        id: 'create-react-app',
+        icon: 'cra',
+        url: 'https://create-react-app.dev/',
+        npm: 'react-scripts',
+        test: function (win) {
+            let child = win.document.body.firstElementChild;
+            let noscript, root;
+            
+            do {
+                if (child.localName === 'noscript') noscript = child;
+                else if (child.id === 'root') root = child;
+            } while (child = child.nextElementSibling);
+            
+            if (root && noscript && /You need to enable JavaScript to run this app/.test(noscript.textContent)) {
                 return { version: UNKNOWN_VERSION };
             }
 

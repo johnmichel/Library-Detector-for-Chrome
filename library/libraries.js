@@ -1,3 +1,12 @@
+function _createTimeoutHelper() {
+    let timeout;
+    const timeoutPromise = new Promise((_, reject) => {
+        timeout = setTimeout(() => reject(new Error('Timed out')), 5000);
+    });
+
+    return {timeoutPromise, clearTimeout: () => clearTimeout(timeout)};
+}
+
 var UNKNOWN_VERSION = null;
 var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
@@ -1639,9 +1648,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         if (!('serviceWorker' in nav)) {
           return false;
         }
-        return nav.serviceWorker.getRegistration()
+
+        const {timeoutPromise, clearTimeout} = _createTimeoutHelper();
+
+        const workerPromise = nav.serviceWorker.getRegistration()
         .then(function(registration) {
-          var scriptURL = nav.serviceWorker.controller.scriptURL;
+          var scriptURL = nav.serviceWorker.controller ? nav.serviceWorker.controller.scriptURL :
+            registration.active.scriptURL;
           return fetch(scriptURL, { credentials: 'include',
             headers: { 'service-worker': 'script' }
           })
@@ -1663,8 +1676,13 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
           });
-        }).catch(function(exception) {
+        });
+        
+        return Promise.race([workerPromise, timeoutPromise]).catch(function(exception) {
           return false;
+        }).finally(result => {
+          clearTimeout();
+          return result;
         });
       }
     },

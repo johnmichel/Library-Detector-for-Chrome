@@ -45,6 +45,7 @@ supports:
 - [Gatsby](https://www.gatsbyjs.org/)
 - [Glow](http://www.bbc.co.uk/glow/)
 - [Google Maps](https://developers.google.com/maps/)
+- [Guess.js](https://guess-js.github.io/)
 - [gRaphaël](https://github.com/DmitryBaranovskiy/g.raphael)
 - [Greensock JS](https://greensock.com/gsap)
 - [GWT](http://www.gwtproject.org/)

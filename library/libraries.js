@@ -1788,5 +1788,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             return false;
         }
+    },
+    'Guess.js': {
+        id: 'guessjs',
+        icon: 'guessjs',
+        url: 'https://guess-js.github.io/',
+        test: function (win) {
+            if (win.__GUESS__ && win.__GUESS__.guess) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

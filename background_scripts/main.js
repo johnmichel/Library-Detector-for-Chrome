@@ -125,6 +125,6 @@ function getIcon(iconName, count) {
     }, false);
 }
 
-chrome.extension.onMessage.addListener(function(library, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(library, sender, sendResponse) {
     run(library, sender.tab.id);
 });

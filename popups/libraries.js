@@ -24,8 +24,8 @@ var addLibrary = function(library) {
 };
 
 var handlePageLoad = function() {
-    chrome.tabs.getSelected(null, function(tab) {
-        var libraries = JSON.parse(localStorage.getItem('libraries_'+tab.id));
+    chrome.tabs.query({active: true}, function(tab) {
+        var libraries = JSON.parse(localStorage.getItem('libraries_'+tab[0].id));
         if (libraries === null) return;
         for (var i=0, j=libraries.length; i < j; i++) {
             addLibrary(libraries[i]);

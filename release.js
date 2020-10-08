@@ -73,6 +73,8 @@ fs.writeFileSync(path.resolve('./README.md'), README);
 
 console.log(`
 📄 README.md updated
+→ consider also updating gh-pages package.json and library/libraries.js
+→ for loading into https://johnmichel.github.io/Library-Detector-for-Chrome/
 
 🍻 Cheers to all ${ contributors.length } contributors!
 `);

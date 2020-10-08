@@ -147,7 +147,7 @@ supports:
 ### Contributors
 - [Andrew Bredow](http://andrewbredow.com)
 - [John Michel](https://cowbird.org)
-- [Artem Nezvigin](http://artnez.com)) (Multiple library icon concept)
+- [Artem Nezvigin](http://artnez.com) (Multiple library icon concept)
 - [Karl Swedberg](https://karlswedberg.com/)
 - [Joseph Lust](https://lustforge.com/)
 - [Eliot Sykes](https://www.eliotsykes.com)

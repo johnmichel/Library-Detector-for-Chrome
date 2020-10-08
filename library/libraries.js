@@ -165,6 +165,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'lit-html': {
+        id: 'lit-html',
+        icon: 'polymer',
+        url: 'https://lit-html.polymer-project.org/',
+        npm: 'lit-element',
+        test: function(win) {
+            if(win.litHtmlVersions && win.litHtmlVersions.length) {
+                // Get latest version if multiple versions are used
+                var versions = [...win.litHtmlVersions].sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+                return { version: versions[versions.length - 1] };
+            }
+            return false;
+        }
+    },
+
     'Highcharts': {
         id: 'highcharts',
         icon: 'highcharts',

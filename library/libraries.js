@@ -1676,7 +1676,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
           });
-        });
+        })
+        /* fix for https://github.com/johnmichel/Library-Detector-for-Chrome/issues/178
+         * `TypeError: Cannot read property 'active' of undefined` on registration.active.scriptURL from failed serviceWorker where 'registration' is undefined above
+         */
+        .catch(function(err){
+          return false;
+        })
+        ;
         
         return Promise.race([workerPromise, timeoutPromise]).catch(function(exception) {
           return false;

@@ -1121,11 +1121,8 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         npm: 'angular',
         test: function(win) {
             var ng = win.angular;
-            if(ng && ng.version && ng.version.full) {
+            if (ng && ng.version && ng.version.full) {
                 return { version: ng.version.full };
-            }
-            else if (ng) {
-                return { version: UNKNOWN_VERSION };
             }
             return false;
         }

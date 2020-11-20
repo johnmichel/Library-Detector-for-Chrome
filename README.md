@@ -82,6 +82,7 @@ supports:
 - [Next.js](https://nextjs.org/)
 - [Numeral.js](http://numeraljs.com/)
 - [Nuxt.js](https://nuxtjs.org/)
+- [October CMS](https://octobercms.com/)
 - [Paper.js](http://paperjs.org/)
 - [PhiloGL](http://www.senchalabs.org/philogl/)
 - [Pixi.js](http://www.pixijs.com/)

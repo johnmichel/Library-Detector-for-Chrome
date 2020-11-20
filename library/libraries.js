@@ -1799,5 +1799,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'October CMS': {
+        id: 'octobercms',
+        icon: 'octobercms',
+        url: 'https://octobercms.com/',
+        npm: null,
+        test: function (win) {
+            const generatorMeta = document.querySelector('meta[name="generator"][content^="OctoberCMS"]');
+
+            // October CMS resource patterns / paths - search in link, style or script tags
+            const resourcesOctober = /\/modules\/system\/assets\/(css|js)\/framework\.(extras|combined)-min/;
+            const res = Array.from(document.querySelectorAll('link,style,script') || []);
+
+            if (generatorMeta || res.some(s => resourcesOctober.test(s.src)) || res.some(s => resourcesOctober.test(s.href))) {
+		        // No version exposure available in October CMS due to information disclosure
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
     }
 };

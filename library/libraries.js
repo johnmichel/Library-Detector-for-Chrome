@@ -1813,7 +1813,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             const res = Array.from(document.querySelectorAll('link,style,script') || []);
 
             if (generatorMeta || res.some(s => resourcesOctober.test(s.src)) || res.some(s => resourcesOctober.test(s.href))) {
-		        // No version exposure available in October CMS due to information disclosure
+                // No version exposure available in October CMS due to information disclosure
                 return { version: UNKNOWN_VERSION };
             }
 

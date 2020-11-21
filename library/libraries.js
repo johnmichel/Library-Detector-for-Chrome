@@ -1810,7 +1810,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             const generatorMeta2 = document.querySelector('meta[name="generator"][content^="October CMS"]');
             
             // October CMS resource patterns / paths - search in link, style or script tags
-            const resourcesOctober = /\/modules\/system\/assets\/(css|js)\/framework\.(extras|combined)-min/;
+            const resourcesOctober = /\/modules\/system\/assets\/(css|js)\/framework(\.extras|\.combined)?(-min)?/;
             const res = Array.from(document.querySelectorAll('link,style,script') || []);
 
             if (generatorMeta1 || generatorMeta2 || res.some(s => resourcesOctober.test(s.src || s.href))) {

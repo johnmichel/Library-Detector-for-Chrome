@@ -1820,5 +1820,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             return false;
         }
+    },
+    'Joomla': {
+        id: 'joomla',
+        icon: 'joomla',
+        url: 'https://www.joomla.org/',
+        npm: null,
+        test: function (win) {
+            // You can disable the generator tag as well as the version from the backend
+            const generatorMeta = document.querySelector('meta[name=generator][content^="Joomla"]');
+            // This is the path to the joomla core bootstrap but sites are not required to load that file but could also load a different version
+            const hasJoomlaBootstrap = !!document.querySelectorAll('script[src*="/media/jui/js/bootstrap.min.js"]').length;
+            
+            if (generatorMeta) {
+                return { version: generatorMeta.getAttribute("content").replace(/^\w+\s/,'') };
+            } else if (win.Joomla || hasJoomlaBootstrap) {
+                return { version: UNKNOWN_VERSION };
+            }
+            
+            return false;
+        }
     }
 };

@@ -137,6 +137,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Bryntum': {
+        id: 'bryntum',
+        icon: 'bryntum',
+        url: 'https://bryntum.com/',
+        npm: 'bryntum',
+        test: function(win) {
+            if(win.bryntum) {
+                return { version: bryntum.getVersion('core') || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Polymer': {
         id: 'polymer',
         icon: 'polymer',
@@ -1605,7 +1618,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if (scripts.some(s => reRequireScript.test(s.src))) {
                 return { version: 2 }; // Magento 1 is no longer supported and this only verifies version 2
             }
-            
+
             return false;
         }
     },
@@ -1677,7 +1690,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
           });
         });
-        
+
         return Promise.race([workerPromise, timeoutPromise]).catch(function(exception) {
           return false;
         }).finally(result => {
@@ -1776,12 +1789,12 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         test: function (win) {
             let child = win.document.body.firstElementChild;
             let noscript, root;
-            
+
             do {
                 if (child.localName === 'noscript') noscript = child;
                 else if (child.id === 'root') root = child;
             } while (child = child.nextElementSibling);
-            
+
             if (root && noscript && /You need to enable JavaScript to run this app/.test(noscript.textContent)) {
                 return { version: UNKNOWN_VERSION };
             }

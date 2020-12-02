@@ -20,6 +20,7 @@ supports:
 - [base2](https://code.google.com/p/base2/)
 - [boomerang](https://soasta.github.io/boomerang/)
 - [Bootstrap](http://getbootstrap.com/)
+- [Bryntum](https://bryntum.com/)
 - Boq
 - [Brewser](https://robertpataki.github.io/brewser/)
 - [CamanJS](http://camanjs.com/)

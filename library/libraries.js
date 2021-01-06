@@ -165,6 +165,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'lit-html': {
+        id: 'lit-html',
+        icon: 'polymer',
+        url: 'https://lit-html.polymer-project.org/',
+        npm: 'lit-element',
+        test: function(win) {
+            if(win.litHtmlVersions && win.litHtmlVersions.length) {
+                // Get latest version if multiple versions are used
+                var versions = [...win.litHtmlVersions].sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+                return { version: versions[versions.length - 1] };
+            }
+            return false;
+        }
+    },
+
     'Highcharts': {
         id: 'highcharts',
         icon: 'highcharts',
@@ -1676,7 +1691,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
           });
-        });
+        })
+        /* fix for https://github.com/johnmichel/Library-Detector-for-Chrome/issues/178
+         * `TypeError: Cannot read property 'active' of undefined` on registration.active.scriptURL from failed serviceWorker where 'registration' is undefined above
+         */
+        .catch(function(err){
+          return false;
+        })
+        ;
         
         return Promise.race([workerPromise, timeoutPromise]).catch(function(exception) {
           return false;

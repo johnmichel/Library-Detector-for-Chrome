@@ -1821,5 +1821,46 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'October CMS': {
+        id: 'octobercms',
+        icon: 'octobercms',
+        url: 'https://octobercms.com/',
+        npm: null,
+        test: function (win) {
+            const generatorMeta1 = document.querySelector('meta[name="generator"][content^="OctoberCMS"]');
+            const generatorMeta2 = document.querySelector('meta[name="generator"][content^="October CMS"]');
+            
+            // October CMS resource patterns / paths - search in link, style or script tags
+            const resourcesOctober = /\/modules\/system\/assets\/(css|js)\/framework(\.extras|\.combined)?(-min)?/;
+            const res = Array.from(document.querySelectorAll('link,style,script') || []);
+
+            if (generatorMeta1 || generatorMeta2 || res.some(s => resourcesOctober.test(s.src || s.href))) {
+                // No version exposure available in October CMS due to information disclosure
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
+    },
+    'Joomla': {
+        id: 'joomla',
+        icon: 'joomla',
+        url: 'https://www.joomla.org/',
+        npm: null,
+        test: function (win) {
+            // You can disable the generator tag as well as the version from the backend
+            const generatorMeta = document.querySelector('meta[name=generator][content^="Joomla"]');
+            // This is the path to the joomla core bootstrap but sites are not required to load that file but could also load a different version
+            const hasJoomlaBootstrap = !!document.querySelectorAll('script[src*="/media/jui/js/bootstrap.min.js"]').length;
+            
+            if (generatorMeta) {
+                return { version: generatorMeta.getAttribute("content").replace(/^\w+\s/,'') };
+            } else if (win.Joomla || hasJoomlaBootstrap) {
+                return { version: UNKNOWN_VERSION };
+            }
+            
+            return false;
+        }
     }
 };

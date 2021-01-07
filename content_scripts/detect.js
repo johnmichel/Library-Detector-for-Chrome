@@ -7,7 +7,7 @@
 function wait() {
     var meta = document.getElementById('d41d8cd98f00b204e9800998ecf8427e_lib_detect');
     if (meta) {
-        chrome.extension.sendMessage(meta.content);
+        chrome.runtime.sendMessage(meta.content);
     }
 }
 

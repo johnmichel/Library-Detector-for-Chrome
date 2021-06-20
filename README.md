@@ -55,6 +55,7 @@ supports:
 - [IfVisible.js](http://serkanyersen.github.io/ifvisible.js/)
 - [InfoVis](http://philogb.github.com/jit/)
 - [Ink](http://ink.sapo.pt/)
+- [Ionic](https://ionicframework.com/)
 - [Isotope](https://isotope.metafizzy.co/)
 - [jQuery](http://jquery.com)
 - [jQuery (Fast path)](http://jquery.com)
@@ -176,6 +177,7 @@ supports:
 - [Patrick Hulce](https://github.com/patrickhulce)
 - [Ajaykumar Prathap](https://github.com/ajay2507)
 - [Benni Mack](https://github.com/bmack)
+- [Helio Souza](https://github.com/Helioty)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

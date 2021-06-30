@@ -24,6 +24,7 @@ supports:
 - [Brewser](https://robertpataki.github.io/brewser/)
 - [CamanJS](http://camanjs.com/)
 - [Can](https://canjs.com/)
+- [Clerk](https://clerk.dev)
 - [Closure Library](https://developers.google.com/closure/library/)
 - [ControlJS](http://stevesouders.com/controljs/)
 - [core-js](https://github.com/zloirock/core-js)

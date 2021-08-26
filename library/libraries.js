@@ -1646,7 +1646,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://www.wix.com/',
         npm: null,
         test: function (win) {
-            if (win.wixBiSession) {
+            if (win.wixPerformanceMeasurements && win.wixPerformanceMeasurements.info) {
+                return { version: UNKNOWN_VERSION };
+            } else if (win.wixBiSession && win.wixBiSession.info) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;

@@ -35,6 +35,7 @@ supports:
 - [Drupal](https://www.drupal.org/)
 - [Ember.js](https://emberjs.com/)
 - [Ext JS](https://www.sencha.com/products/extjs/)
+- [Ezoic](https://www.ezoic.com/)
 - [Fabric.js](http://fabricjs.com/)
 - [FastClick](https://github.com/ftlabs/fastclick)
 - [FlexSlider](https://woocommerce.com/flexslider/)

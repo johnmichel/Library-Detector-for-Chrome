@@ -407,7 +407,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         icon: 'ezoic',
         url: 'https://www.ezoic.com/',
         test: function(win) {
-            if (typeof win.ezdomain !== 'undefined') {
+            if (win.__ez && win.__ez.template) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;

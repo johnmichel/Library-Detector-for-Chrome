@@ -1869,9 +1869,15 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://sugarjs.com',
         npm: 'sugar',
         test: function (win) {
-            if (!win.Sugar) return false;
-            if (win.Sugar.VERSION) return { version: win.Sugar.VERSION };
-            return { version: UNKNOWN_VERSION };
+            if (win.Sugar) {
+                return { version: win.Sugar.VERSION || UNKNOWN_VERSION };
+            }
+
+            if (win.Array.SugarMethods) {
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
         }
     }
 };

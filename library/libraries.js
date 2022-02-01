@@ -1862,5 +1862,16 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             
             return false;
         }
+    },
+    'Sugar': {
+        id: 'sugar',
+        icon: 'sugar',
+        url: 'https://sugarjs.com',
+        npm: 'sugar',
+        test: function (win) {
+            if (!win.Sugar) return false;
+            if (win.Sugar.VERSION) return { version: win.Sugar.VERSION };
+            return { version: UNKNOWN_VERSION };
+        }
     }
 };

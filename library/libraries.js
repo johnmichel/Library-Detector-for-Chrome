@@ -402,6 +402,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Ezoic': {
+        id: 'ezoic',
+        icon: 'ezoic',
+        url: 'https://www.ezoic.com/',
+        test: function(win) {
+            if (win.__ez && win.__ez.template) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'base2': {
         id: 'base2',
         icon: 'base2',

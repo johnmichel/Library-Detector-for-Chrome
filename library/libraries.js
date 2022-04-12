@@ -402,6 +402,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Ezoic': {
+        id: 'ezoic',
+        icon: 'ezoic',
+        url: 'https://www.ezoic.com/',
+        test: function(win) {
+            if (win.__ez && win.__ez.template) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'base2': {
         id: 'base2',
         icon: 'base2',
@@ -1863,16 +1875,33 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Bento': {
-        id: 'bentojs',
-        icon: 'bentojs',
-        url: 'https://bentojs.dev',
-        npm: 'https://www.npmjs.com/org/bentoproject',
+    'Sugar': {
+        id: 'sugar',
+        icon: 'sugar',
+        url: 'https://sugarjs.com',
+        npm: 'sugar',
         test: function (win) {
-          if (win.BENTO && win.BENTO.push) {
-            return { version: UNKNOWN_VERSION };
-          }
-          return false;
+            if (win.Sugar) {
+                return { version: win.Sugar.VERSION || UNKNOWN_VERSION };
+            }
+
+            if (win.Array.SugarMethods) {
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
         }
+    },
+    'Bento': {
+      id: 'bentojs',
+      icon: 'bentojs',
+      url: 'https://bentojs.dev',
+      npm: 'https://www.npmjs.com/org/bentoproject',
+      test: function (win) {
+        if (win.BENTO && win.BENTO.push) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
     }
 };

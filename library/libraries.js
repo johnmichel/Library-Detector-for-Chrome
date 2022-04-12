@@ -1891,5 +1891,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
 
             return false;
         }
+    },
+    'Bento': {
+      id: 'bentojs',
+      icon: 'bentojs',
+      url: 'https://bentojs.dev',
+      npm: 'https://www.npmjs.com/org/bentoproject',
+      test: function (win) {
+        if (win.BENTO && win.BENTO.push) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
     }
 };

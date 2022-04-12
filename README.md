@@ -18,6 +18,7 @@ supports:
 - [AngularJS](https://angularjs.org/)
 - [Backbone](http://backbonejs.org/)
 - [base2](http://code.google.com/p/base2)
+- [Bento](https://bentojs.dev)
 - [boomerang.js](https://soasta.github.io/boomerang/)
 - [Bootstrap](http://getbootstrap.com/)
 - [Boq](https://github.com/johnmichel/Library-Detector-for-Chrome/pull/143)

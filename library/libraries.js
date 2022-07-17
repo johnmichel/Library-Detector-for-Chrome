@@ -1158,6 +1158,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Ionic': {
+        id: 'ionic',
+        icon: 'ionic',
+        url: 'https://ionicframework.com/',
+        npm: '@ionic/cli',
+        test: function(win) {
+            var ion = win.document.querySelector('ion-app');
+            if (ion && ion.nodeName === 'ION-APP') {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Ember.js': {
         id: 'emberjs',
         icon: 'emberjs',
@@ -1838,7 +1852,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
     },
     'October CMS': {
         id: 'octobercms',
-        icon: 'octobercms',
+        icon: 'october',
         url: 'https://octobercms.com/',
         npm: null,
         test: function (win) {

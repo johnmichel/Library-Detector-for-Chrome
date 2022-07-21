@@ -165,6 +165,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'lit-html': {
+        id: 'lit-html',
+        icon: 'polymer',
+        url: 'https://lit-html.polymer-project.org/',
+        npm: 'lit-element',
+        test: function(win) {
+            if(win.litHtmlVersions && win.litHtmlVersions.length) {
+                // Get latest version if multiple versions are used
+                var versions = [...win.litHtmlVersions].sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+                return { version: versions[versions.length - 1] };
+            }
+            return false;
+        }
+    },
+
     'Highcharts': {
         id: 'highcharts',
         icon: 'highcharts',
@@ -382,6 +397,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             else if(win.Ext) {
                 return { version: win.Ext.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
+    'Ezoic': {
+        id: 'ezoic',
+        icon: 'ezoic',
+        url: 'https://www.ezoic.com/',
+        test: function(win) {
+            if (win.__ez && win.__ez.template) {
+                return { version: UNKNOWN_VERSION };
             }
             return false;
         }
@@ -1144,6 +1171,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Ionic': {
+        id: 'ionic',
+        icon: 'ionic',
+        url: 'https://ionicframework.com/',
+        npm: '@ionic/cli',
+        test: function(win) {
+            var ion = win.document.querySelector('ion-app');
+            if (ion && ion.nodeName === 'ION-APP') {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Ember.js': {
         id: 'emberjs',
         icon: 'emberjs',
@@ -1343,7 +1384,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://nuxtjs.org/',
         npm: 'nuxt',
         test: function(win) {
-            if ((win.__NUXT__ && win.__NUXT__.data != null) || win.$nuxt) {
+            if (win.__NUXT__ || win.$nuxt || [...win.document.querySelectorAll('*')].some(el => el.__vue__?.nuxt)) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;
@@ -1644,7 +1685,9 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://www.wix.com/',
         npm: null,
         test: function (win) {
-            if (win.wixBiSession) {
+            if (win.wixPerformanceMeasurements && win.wixPerformanceMeasurements.info) {
+                return { version: UNKNOWN_VERSION };
+            } else if (win.wixBiSession && win.wixBiSession.info) {
                 return { version: UNKNOWN_VERSION };
             }
             return false;
@@ -1689,7 +1732,14 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
           });
-        });
+        })
+        /* fix for https://github.com/johnmichel/Library-Detector-for-Chrome/issues/178
+         * `TypeError: Cannot read property 'active' of undefined` on registration.active.scriptURL from failed serviceWorker where 'registration' is undefined above
+         */
+        .catch(function(err){
+          return false;
+        })
+        ;
         
         return Promise.race([workerPromise, timeoutPromise]).catch(function(exception) {
           return false;
@@ -1812,5 +1862,75 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'October CMS': {
+        id: 'octobercms',
+        icon: 'october',
+        url: 'https://octobercms.com/',
+        npm: null,
+        test: function (win) {
+            const generatorMeta1 = document.querySelector('meta[name="generator"][content^="OctoberCMS"]');
+            const generatorMeta2 = document.querySelector('meta[name="generator"][content^="October CMS"]');
+            
+            // October CMS resource patterns / paths - search in link, style or script tags
+            const resourcesOctober = /\/modules\/system\/assets\/(css|js)\/framework(\.extras|\.combined)?(-min)?/;
+            const res = Array.from(document.querySelectorAll('link,style,script') || []);
+
+            if (generatorMeta1 || generatorMeta2 || res.some(s => resourcesOctober.test(s.src || s.href))) {
+                // No version exposure available in October CMS due to information disclosure
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
+    },
+    'Joomla': {
+        id: 'joomla',
+        icon: 'joomla',
+        url: 'https://www.joomla.org/',
+        npm: null,
+        test: function (win) {
+            // You can disable the generator tag as well as the version from the backend
+            const generatorMeta = document.querySelector('meta[name=generator][content^="Joomla"]');
+            // This is the path to the joomla core bootstrap but sites are not required to load that file but could also load a different version
+            const hasJoomlaBootstrap = !!document.querySelectorAll('script[src*="/media/jui/js/bootstrap.min.js"]').length;
+            
+            if (generatorMeta) {
+                return { version: generatorMeta.getAttribute("content").replace(/^\w+\s/,'') };
+            } else if (win.Joomla || hasJoomlaBootstrap) {
+                return { version: UNKNOWN_VERSION };
+            }
+            
+            return false;
+        }
+    },
+    'Sugar': {
+        id: 'sugar',
+        icon: 'sugar',
+        url: 'https://sugarjs.com',
+        npm: 'sugar',
+        test: function (win) {
+            if (win.Sugar) {
+                return { version: win.Sugar.VERSION || UNKNOWN_VERSION };
+            }
+
+            if (win.Array.SugarMethods) {
+                return { version: UNKNOWN_VERSION };
+            }
+
+            return false;
+        }
+    },
+    'Bento': {
+      id: 'bentojs',
+      icon: 'bentojs',
+      url: 'https://bentojs.dev',
+      npm: 'https://www.npmjs.com/org/bentoproject',
+      test: function (win) {
+        if (win.BENTO && win.BENTO.push) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
     }
 };

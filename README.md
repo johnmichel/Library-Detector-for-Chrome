@@ -135,6 +135,7 @@ supports:
 - [Wiz](https://github.com/johnmichel/Library-Detector-for-Chrome/pull/147)
 - [WordPress](https://wordpress.org/)
 - [Workbox](https://developers.google.com/web/tools/workbox/)
+- [WP Rocket](https://wp-rocket.me/)
 - [yepnope](http://yepnopejs.com/)
 - [YUI 2](http://developer.yahoo.com/yui/2/)
 - [YUI 3](https://yuilibrary.com/)

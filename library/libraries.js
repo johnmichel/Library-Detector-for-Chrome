@@ -1933,7 +1933,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             if ( wpRocketRUCSS || wpRocketLazyLoad || wpRocketComment ) {
                 return { version: UNKNOWN_VERSION };
             }
-            let url = (new URL(window.location));
+            let url = (new URL(win.location));
             const domain = url.hostname;
             const protocol = url.protocol;
             // This is the path to the wp-rocket admin css.

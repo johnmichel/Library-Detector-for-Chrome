@@ -1919,5 +1919,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
         return false;
       }
+    },
+    'WP Rocket':{
+        id:'wp-rocket',
+        icon:'wp-rocket',
+        url: 'https://wp-rocket.me/',
+        npm: null,
+        test: async function (win) {
+            const wpRocketLazyLoad = typeof RocketLazyLoadScripts !== 'undefined'|| typeof RocketPreloadLinksConfig !== 'undefined' ||typeof rocket_lazy !== 'undefined';
+            const wpRocketRUCSS = !!document.querySelector('style#wpr-usedcss');
+            const wpRocketComment = document.lastChild.nodeType === Node.COMMENT_NODE && document.lastChild.textContent.includes('WP Rocket');
+
+            if ( wpRocketRUCSS || wpRocketLazyLoad || wpRocketComment ) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
     }
 };

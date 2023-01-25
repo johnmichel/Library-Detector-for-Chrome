@@ -1072,6 +1072,19 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    'Handsontable': {
+        id: 'handsontable',
+        icon: 'handsontable',
+        url: 'https://handsontable.com/',
+        npm: 'handsontable',
+        test: function(win) {
+            if (win.Handsontable && win.Handsontable.Core) {
+                return { version: win.Handsontable.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+
     'Knockout': {
         id: 'knockout',
         icon: 'knockout',

@@ -52,6 +52,7 @@ supports:
 - [GWT](http://www.gwtproject.org/)
 - [Hammer.js](http://eightmedia.github.io/hammer.js/)
 - [Handlebars](http://handlebarsjs.com/)
+- [Handsontable](https://handsontable.com/)
 - [Head JS](http://headjs.com/)
 - [Highcharts](http://www.highcharts.com)
 - [IfVisible.js](http://serkanyersen.github.io/ifvisible.js/)

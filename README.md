@@ -87,6 +87,7 @@ supports:
 - [Mustache](http://mustache.github.io/)
 - [Next.js](https://nextjs.org/)
 - [Next.js (Fast path)](https://nextjs.org/)
+- [NitroPack](https://nitropack.io/)
 - [Numeral.js](http://numeraljs.com/)
 - [Nuxt.js](https://nuxtjs.org/)
 - [Nuxt.js (Fast path)](https://nuxtjs.org/)

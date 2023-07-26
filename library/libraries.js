@@ -1946,6 +1946,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'NitroPack': {
+        id: 'nitropack',
+        icon: 'nitropack',
+        url: 'https://nitropack.io/',
+        npm: null,
+        test: async function (win) {
+            const nitroPackGenerator = !!document.querySelector('meta[name="generator"][content="NitroPack"]');
+
+            if ( nitroPackGenerator ) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Remix': {
       id: 'remix',
       icon: 'remix',

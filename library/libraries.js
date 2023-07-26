@@ -1959,5 +1959,17 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Remix': {
+      id: 'remix',
+      icon: 'remix',
+      url: 'https://remix.run/',
+      npm: 'remix',
+      test: function (win) {
+        if (win.__remixContext) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
     }
 };

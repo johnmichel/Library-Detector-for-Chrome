@@ -106,6 +106,7 @@ supports:
 - [Rapha&euml;l](http://dmitrybaranovskiy.github.io/raphael/)
 - [React](https://reactjs.org/)
 - [React (Fast path)](https://reactjs.org/)
+- [Remix](https://remix.run/)
 - [RequireJS](http://requirejs.org/)
 - [Rico](http://openrico.sourceforge.net/examples/index.html)
 - [RightJS](http://rightjs.org/)

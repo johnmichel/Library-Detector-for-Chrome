@@ -2046,7 +2046,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         url: 'https://plotly.com/javascript/',
         test: function (win) {
             if (win.Plotly && win.Plotly.newPlot) {
-                return { version: Plotly.version || UNKNOWN_VERSION };
+                return { version: win.Plotly.version || UNKNOWN_VERSION };
             }
             // detect bundled version
             if (win.document.querySelector('.js-plotly-plot')) {

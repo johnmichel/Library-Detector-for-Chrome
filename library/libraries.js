@@ -1945,5 +1945,115 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
-    }
+    },
+    'ECharts': {
+        id: 'echarts',
+        icon: 'echarts',
+        url: 'https://echarts.apache.org/en/index.html',
+        test: function (win) {
+            if (win.echarts && win.echarts.getInstanceByDom) {
+                return { version: win.echarts.version || UNKNOWN_VERSION };
+            }
+            // detect bundled version
+            if (win.document.querySelector('[_echarts_instance_]')) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'Chart.js': {
+        id: 'chartjs',
+        icon: 'chartjs',
+        url: 'https://www.chartjs.org/',
+        test: function (win) {
+            if (win.Chart && win.Chart.registry) {
+                return { version: win.Chart.version || UNKNOWN_VERSION };
+            }
+            // detect bundled version
+            if ([...win.document.querySelectorAll('canvas')].some(el => el.$chartjs)) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'FusionCharts': {
+        id: 'fusioncharts',
+        icon: 'fusioncharts',
+        url: 'https://www.fusioncharts.com/',
+        test: function (win) {
+            if (win.FusionCharts && Array.isArray(win.FusionCharts.version)) {
+                return { version: win.FusionCharts.version.join('.') || UNKNOWN_VERSION };
+            }
+            // detect bundled version
+            if ([...win.document.querySelectorAll('.fusioncharts-container')].some(el => el.FusionCharts)) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'AmCharts': {
+        id: 'amcharts',
+        icon: 'amcharts',
+        url: 'https://www.amcharts.com/',
+        test: function (win) {
+            if (win.am5 && win.am5.registry) {
+                return { version: win.am5.registry.version || UNKNOWN_VERSION };
+            }
+            if (win.am4core) {
+                return { version: '4' };
+            }
+            if (win.AmCharts) {
+                return { version: '3' };
+            }
+            // detect bundled version
+            if (win.document.querySelector('.am5-html-container')) {
+                return { version: '5' };
+            }
+            return false;
+        }
+    },
+    'ApexCharts': {
+        id: 'apexcharts',
+        icon: 'apexcharts',
+        url: 'https://apexcharts.com/',
+        test: function (win) {
+            if (win.ApexCharts && win.ApexCharts.getChartByID) {
+                // apex doesn't have a version number attribute
+                return { version: UNKNOWN_VERSION };
+            }
+            // detect bundled version
+            if (document.querySelector('svg.apexcharts-svg')) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    'Chartist': {
+        id: 'chartist',
+        icon: 'chartist',
+        url: 'https://github.com/chartist-js/chartist',
+        test: function (win) {
+            // detect bundled version
+            if ([...win.document.querySelectorAll('svg')].some(el => el.attributes['xmlns:ct'])) {
+                return { version: UNKNOWN_VERSION };
+            }            
+            return false;
+        }
+    },    
+    'Plotly': {
+        id: 'plotly',
+        icon: 'plotly',
+        url: 'https://plotly.com/javascript/',
+        test: function (win) {
+            if (win.Plotly && win.Plotly.newPlot) {
+                return { version: Plotly.version || UNKNOWN_VERSION };
+            }
+            // detect bundled version
+            if (win.document.querySelector('.js-plotly-plot')) {
+                return { version: UNKNOWN_VERSION };
+            }            
+            return false;
+        }
+    },    
+
 };

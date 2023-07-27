@@ -60,6 +60,7 @@ supports:
 - [Ink](http://ink.sapo.pt/)
 - [Ionic](https://ionicframework.com/)
 - [Isotope](https://isotope.metafizzy.co/)
+- [Joomla](https://www.joomla.org/)
 - [jQuery](http://jquery.com)
 - [jQuery (Fast path)](http://jquery.com)
 - [jQuery Mobile](http://jquerymobile.com/)
@@ -121,6 +122,7 @@ supports:
 - [Spine](http://spine.github.io/)
 - [SproutCore](http://sproutcore.com/)
 - [Spry](http://labs.adobe.com/technologies/spry)
+- [Sugar](https://sugarjs.com)
 - [SWFObject](https://github.com/swfobject/swfobject)
 - [Swiffy](https://developers.google.com/swiffy/)
 - [three.js](https://threejs.org/)
@@ -183,7 +185,6 @@ supports:
 - [Patrick Hulce](https://github.com/patrickhulce)
 - [Ajaykumar Prathap](https://github.com/ajay2507)
 - [Benni Mack](https://github.com/bmack)
-- [Helio Souza](https://github.com/Helioty)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

@@ -1980,7 +1980,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
       test: function (win) {
         // can be toggled with discloseVersion option
         // see https://svelte.dev/docs/svelte-compiler#types-compileoptions
-        const versions = win.__svelte.v;
+        const versions = win.__svelte?.v;
         if (versions) {
           if (versions.size === 1) {
             return { version: versions.values().next().value };

@@ -125,6 +125,8 @@ supports:
 - [Sugar](https://sugarjs.com)
 - [SWFObject](https://github.com/swfobject/swfobject)
 - [Swiffy](https://developers.google.com/swiffy/)
+- [Svelte](https://svelte.dev/)
+- [SvelteKit](https://kit.svelte.dev/)
 - [three.js](https://threejs.org/)
 - [Tween.js](https://github.com/tweenjs/tween.js)
 - [Two](https://two.js.org/)

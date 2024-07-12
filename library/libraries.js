@@ -596,6 +596,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
+    '$mol_view': {
+        icon: 'mol',
+        url: 'http://mol.js.org/',
+        test: function(win) {
+            if (win.$mol_view) {
+                return { version: UNKNOWN_VERSION };
+            }
+            if (win.document.querySelector('mol_view')) {
+                return { version: UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
+    
     'Processing.js': {
         id: 'processingjs',
         icon: 'processingjs',
@@ -2081,4 +2095,39 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },    
+    'Svelte': {
+      id: 'svelte',
+      icon: 'svelte',
+      url: 'https://svelte.dev/',
+      npm: 'svelte',
+      test: function (win) {
+        // can be toggled with discloseVersion option
+        // see https://svelte.dev/docs/svelte-compiler#types-compileoptions
+        const versions = win.__svelte?.v;
+        if (versions) {
+          if (versions.size === 1) {
+            return { version: versions.values().next().value };
+          } else {
+            return { version: UNKNOWN_VERSION };
+          }
+        }
+        if (document.querySelector('[class*="svelte-"]')) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
+    },
+    'SvelteKit': {
+      id: 'sveltekit',
+      icon: 'svelte',
+      url: 'https://kit.svelte.dev/',
+      npm: '@sveltejs/kit',
+      test: function (win) {
+        if (document.body.innerHTML.includes('__sveltekit_')) {
+          return { version: UNKNOWN_VERSION };
+        }
+        return false;
+      }
+    }
+
 };

@@ -27,6 +27,7 @@ supports:
 - [Brewser](https://robertpataki.github.io/brewser/)
 - [CamanJS](http://camanjs.com/)
 - [Can](https://canjs.com/)
+- [Clerk](https://clerk.dev)
 - [Closure Library](https://developers.google.com/closure/library/)
 - [Chartist](https://github.com/chartist-js/chartist)
 - [Chart.js](https://www.chartjs.org)

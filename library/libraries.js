@@ -1361,6 +1361,18 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
+    'Clerk': {
+        id: 'clerk',
+        icon: 'clerk',
+        url: 'https://clerk.dev/',
+        npm: '@clerk/clerk-js',
+        test: function(win) {
+            if (win.Clerk) {
+                return { version: win.Clerk.version || UNKNOWN_VERSION };
+            }
+            return false;
+        }
+    },
     'Vue': {
         id: 'vue',
         icon: 'vue',

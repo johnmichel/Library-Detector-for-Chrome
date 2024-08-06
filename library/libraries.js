@@ -2128,6 +2128,20 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
         return false;
       }
+    },
+    'SliderRevolution': {
+        id: 'sliderrevolution',
+        icon: 'sliderrevolution',
+        url: 'https://www.sliderrevolution.com/',
+        npm: 'slider-revolution',
+        test: function(win) {
+            if(win.SR7) {                
+                return { version: win.SR7.version };
+            } else 
+            if (win.jQuery && win.jQuery.fn && win.jQuery.fn.revolution) {
+                return { version: jQuery.fn.revolution.getversion()}
+            }
+            return false;
+        }
     }
-
 };

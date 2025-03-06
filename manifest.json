@@ -1,45 +1,42 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Library Detector",
     "short_name": "Library Detector",
-    "version": "6.8.0",
-    "web_accessible_resources": [
-        "library/libraries.js",
-        "content_scripts/lib_detect.js"
-    ],
+    "version": "7.0.0",
     "description": "Detects the Javascript libraries running on a page and displays their icons in the address bar.",
     "icons": {
         "48": "icons/icon48.png",
         "128": "icons/icon128.png"
     },
     "background": {
-        "scripts": [
-            "library/libraries.js",
-            "background_scripts/main.js"
-        ],
-        "persistent": false
+      "service_worker": "background_scripts/main.js",
+      "type": "module"
     },
-    "page_action": {
+    "action": {
         "default_icon": {
             "19": "icons/icon19.png",
             "38": "icons/icon38.png"
         },
-        "default_title": "Library Detector"
+        "default_title": "Library Detector",
+        "default_popup": "popups/libraries.html"
     },
     "permissions": [
         "tabs",
-        "http://*/*",
-        "https://*/*"
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
     ],
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["content_scripts/inject.js"],
-            "run_at": "document_end"
+            "js": ["library/libraries.js", "content_scripts/detect.js"],
+            "run_at": "document_idle",
+            "world": "MAIN"
         },
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["content_scripts/detect.js"],
+            "js": ["content_scripts/run.js"],
             "run_at": "document_idle"
         }
     ]

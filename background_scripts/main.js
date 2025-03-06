@@ -2,129 +2,119 @@
     description: Responds to notification from the Content Script and displays the icon
 **/
 
+import '../library/libraries.js';
+
 var libraries;
-var library;
-var tabId;
 var Libraries = d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests;
 
-/**
- * Parse the data from the meta tag
- */
-function parseLibraries(libs) {
-    if (libs.length === 0) {
-        return [];
-    }
-    var libkeys = [];
-    libs = libs.split(',');
-    for (var i=0; i<libs.length; i++) {
-        var libdata = libs[i].split(':');
-        libkeys.push({
-            name: libdata[0],
-            version: libdata[1]
-        });
-    }
-    return libkeys;
-}
-
-/**
- * Add in the static properties that go with the runtime library data
- */
-function getLibraries(libs) {  //name, version, icon, url
-    libraries = parseLibraries(libs);
-    for (var i=0; i < libraries.length; i++) {
-        lib = libraries[i];
-        lib.url = Libraries[lib.name].url;
-        lib.icon = Libraries[lib.name].icon;
-    }
-    return libraries;
+async function runInPage(tabId) {
+    const [{result}] = await chrome.scripting.executeScript({
+        // this was defined in content_scripts/detect.js
+        func: () => window.d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests_detect(),
+        args: [],
+        target: {
+          tabId: tabId ??
+            (await chrome.tabs.query({active: true, currentWindow: true}))[0].id
+        },
+        world: 'MAIN',
+      });
+    return result;
 }
 
 /**
  * Dispatch the program
  */
-function run(libs, tab) {
-    libraries = getLibraries(libs);
-    if (libraries.length === 0) {
+async function run(tabId) {
+    const libs = await runInPage(tabId);
+    libraries = libs;
+
+    // Add in the static properties that go with the runtime library data
+    for (const lib of libs) {
+        lib.url = Libraries[lib.name].url;
+        lib.icon = Libraries[lib.name].icon;
+    }
+
+    if (libs.length === 0) {
         return;
     }
-    tabId = tab;
-    library = libraries[0];
-    getIcon(library.icon, libraries.length);
+
+    const lib = libs[0];
+    getIcon(tabId, lib.icon, libs.length);
 }
 
 /**
  * Callback to finish rendering after canvases are done loading
  */
-function dispatch(pixelData) {
-    chrome.pageAction.setIcon({
+async function dispatch(tabId, pixelData) {
+    const libs = libraries;
+    const lib = libs[0];
+
+    await chrome.action.setIcon({
         tabId: tabId,
         imageData: pixelData
     });
 
-    chrome.pageAction.setTitle({
+    await chrome.action.setTitle({
         tabId: tabId,
-        title: libraries.length > 1 ? libraries.length + ' libraries detected' : library.name + ' ' + library.version
+        title: libs.length > 1 ? libs.length + ' libraries detected' : lib.name + ' ' + lib.version
     });
-    chrome.pageAction.setPopup({
+    await chrome.action.setPopup({
         'tabId': tabId,
         'popup': '../popups/libraries.html'
     });
-
-    localStorage.setItem('libraries_' + tabId, JSON.stringify(libraries));
-
-    chrome.pageAction.show(tabId);
 }
 
 /**
  * Use a canvas to add an overlay to the icon, if necessary, return the pixel data
  */
-function getIcon(iconName, count) {
-    var image = document.createElement('canvas');
-    image.width = 19;
-    image.height = 19;
-    var context = image.getContext('2d');
-    var icon = new Image;
-    icon.crossOrigin = 'Anonymous';
-    icon.src = '../icons/'+iconName+'.png';
-    icon.addEventListener('load', function() {
-        context.drawImage(icon, 0, 0, 19, 19);
-        if (count > 1) {
-            // overlay circle
-            var x = 13;
-            var y = 13;
-            var radius = 5.5;
-            var startAngle = 0;
-            var endAngle = 2 * Math.PI;
-            var counterClockwise = false;
-            var lineWidth = 1;
-            var lineColor = 'black';
-            var fillColor = 'white';
-            context.beginPath();
-            context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-            context.closePath();
-            context.lineWidth = lineWidth;
-            context.strokeStyle = lineColor;
-            context.stroke();
-            context.fillStyle = fillColor;
-            context.fill();
-            // overlay number
-            var txtX = 15.75;
-            var txtY = 19;
-            var txtFont = '10px Monospace';
-            var txtColor = 'black';
-            if (count >= 10) {
-                txtX = 17.75;
-            }
-            context.font = txtFont;
-            context.fillStyle = txtColor;
-            context.textBaseline = 'bottom';
-            context.textAlign = 'right';
-            context.fillText(count, txtX, txtY);
+async function getIcon(tabId, iconName, count) {
+    var canvas = new OffscreenCanvas(19, 19);
+    var context = canvas.getContext('2d');
+
+    const blob = await fetch('../icons/'+iconName+'.png').then(r => r.blob());
+    const img = await createImageBitmap(blob);
+
+    context.drawImage(img, 0, 0, 19, 19);
+    if (count > 1) {
+        // overlay circle
+        var x = 13;
+        var y = 13;
+        var radius = 5.5;
+        var startAngle = 0;
+        var endAngle = 2 * Math.PI;
+        var counterClockwise = false;
+        var lineWidth = 1;
+        var lineColor = 'black';
+        var fillColor = 'white';
+        context.beginPath();
+        context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.closePath();
+        context.lineWidth = lineWidth;
+        context.strokeStyle = lineColor;
+        context.stroke();
+        context.fillStyle = fillColor;
+        context.fill();
+        // overlay number
+        var txtX = 15.75;
+        var txtY = 19;
+        var txtFont = '10px Monospace';
+        var txtColor = 'black';
+        if (count >= 10) {
+            txtX = 17.75;
         }
-        dispatch(context.getImageData(0, 0, 19, 19));
-    }, false);
+        context.font = txtFont;
+        context.fillStyle = txtColor;
+        context.textBaseline = 'bottom';
+        context.textAlign = 'right';
+        context.fillText(count, txtX, txtY);
+    }
+    dispatch(tabId, context.getImageData(0, 0, 19, 19));
 }
 
-chrome.extension.onMessage.addListener(function(library, sender, sendResponse) {
-    run(library, sender.tab.id);
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.type === 'run') {
+        run(sender.tab.id);
+    } else if (message.type === 'popup-request-libs') {
+        sendResponse({libs: libraries});
+    }
 });

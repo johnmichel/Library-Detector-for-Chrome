@@ -2143,5 +2143,21 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Optimole':{
+        id:'optimole',
+        icon:'optimole',
+        url: 'https://optimole.com/',
+        npm: null,
+        test: function (win) {
+            const hasOptimoleData = win.optimoleData === Object( win.optimoleData ) && ( typeof win.optimoleData.key !== 'undefined' || typeof win.optimoleData.maxWidth !== 'undefined' );
+            const hasOptimoleImg = !!document.querySelector('img[data-opt-src]');
+
+            if (!hasOptimoleData && !hasOptimoleImg) return false;
+
+            const generatorMeta = document.querySelector('meta[name=generator][content^="Optimole"]');
+            const version = generatorMeta ? generatorMeta.getAttribute("content").replace(/^\w+\s/,'') : UNKNOWN_VERSION;
+            return { version };
+        }
     }
 };

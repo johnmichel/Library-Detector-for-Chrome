@@ -23,14 +23,9 @@ var addLibrary = function(library) {
     document.getElementById('libraries').appendChild(container);
 };
 
-var handlePageLoad = function() {
-    chrome.tabs.getSelected(null, function(tab) {
-        var libraries = JSON.parse(localStorage.getItem('libraries_'+tab.id));
-        if (libraries === null) return;
-        for (var i=0, j=libraries.length; i < j; i++) {
-            addLibrary(libraries[i]);
-        }
-    });
-};
-
-window.addEventListener("load", handlePageLoad, false);
+(async () => {
+    const response = await chrome.runtime.sendMessage({type: 'popup-request-libs'});
+    for (const lib of response.libs) {
+        addLibrary(lib);
+    }
+})();

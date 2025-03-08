@@ -196,6 +196,7 @@ supports:
 - [Patrick Hulce](https://github.com/patrickhulce)
 - [Ajaykumar Prathap](https://github.com/ajay2507)
 - [Benni Mack](https://github.com/bmack)
+- [Connor Clark](https://github.com/connorjclark)
 
 ### Inspiration
 Library detection class inspired by [Paul Bakaus'](https://paulbakaus.com/) [Library Detector for Firefox](https://addons.mozilla.org/en-us/firefox/addon/library-detector/)

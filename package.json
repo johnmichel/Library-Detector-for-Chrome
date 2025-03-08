@@ -57,7 +57,8 @@
 {"name":"Emmanuel Krebs","url":"https://github.com/e-krebs"},
 {"name":"Patrick Hulce","url":"https://github.com/patrickhulce"},
 {"name":"Ajaykumar Prathap","url":"https://github.com/ajay2507"},
-{"name":"Benni Mack","url":"https://github.com/bmack"}
-  ],
+{"name":"Benni Mack","url":"https://github.com/bmack"},
+{"name":"Connor Clark","url":"https://github.com/connorjclark"}
+],
   "engines" : { "node" : ">=12" }
 }

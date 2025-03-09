@@ -25,7 +25,7 @@ var addLibrary = function(library) {
 
 (async () => {
     const response = await chrome.runtime.sendMessage({type: 'popup-request-libs'});
-    for (const lib of response.libs) {
+    for (const lib of Array.from(response.libs)) {
         addLibrary(lib);
     }
 })();

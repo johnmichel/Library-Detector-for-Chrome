@@ -3,6 +3,7 @@
   "version": "7.0.1",
   "description": "Detects the JavaScript libraries running on a page",
   "main": "library/libraries.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node test/object-test.js",
     "release": "node release.js"

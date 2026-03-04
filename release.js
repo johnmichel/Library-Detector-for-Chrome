@@ -39,13 +39,13 @@ const contributors = package.contributors.map((person, i)=>{
 	return `- [${person.name}](${person.url || ''})${ person.comment ? (' '+person.comment):'' }`;
 })
 
-const README = `[Library Detector For Chrome](https://chrome.google.com/webstore/detail/library-detector/${ chrome.id }?hl=en)
+const README = `[Library Detector For Chrome](https://chromewebstore.google.com/detail/library-detector/${ chrome.id }?hl=en)
 ===========================
 
 [![](https://img.shields.io/chrome-web-store/v/${ chrome.id }.svg?style=flat-square)
 ![](https://img.shields.io/chrome-web-store/d/${ chrome.id }.svg?style=flat-square)
 ![](https://img.shields.io/chrome-web-store/stars/${ chrome.id }.svg?style=flat-square)
-![](https://img.shields.io/chrome-web-store/rating-count/${ chrome.id }.svg?style=flat-square)](https://chrome.google.com/webstore/detail/library-detector/${ chrome.id }?hl=en)
+![](https://img.shields.io/chrome-web-store/rating-count/${ chrome.id }.svg?style=flat-square)](https://chromewebstore.google.com/detail/library-detector/${ chrome.id }?hl=en)
 
 [![](https://img.shields.io/npm/v/${ package.name }.svg?style=flat-square)](https://npm.im/${ package.name })
 

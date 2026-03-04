@@ -1,10 +1,10 @@
-[Library Detector For Chrome](https://chrome.google.com/webstore/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
+[Library Detector For Chrome](https://chromewebstore.google.com/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
 ===========================
 
 [![](https://img.shields.io/chrome-web-store/v/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
 ![](https://img.shields.io/chrome-web-store/d/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
 ![](https://img.shields.io/chrome-web-store/stars/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)
-![](https://img.shields.io/chrome-web-store/rating-count/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)](https://chrome.google.com/webstore/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
+![](https://img.shields.io/chrome-web-store/rating-count/cgaocdmhkmfnkdkbnckgmpopcbpaaejo.svg?style=flat-square)](https://chromewebstore.google.com/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
 
 [![](https://img.shields.io/npm/v/js-library-detector.svg?style=flat-square)](https://npm.im/js-library-detector)
 

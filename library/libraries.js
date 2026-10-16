@@ -2143,6 +2143,25 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             }
             return false;
         }
+    },
+    'Webflow': {
+        id: 'webflow',
+        icon: 'webflow',
+        url: 'https://www.webflow.com/',
+        npm: null,
+        test: function(win) {
+            if (win.Webflow && (win.Webflow.require || win.Webflow.push)) {
+                return { version: UNKNOWN_VERSION };
+            }
+
+            const html = document.documentElement;
+
+            if (html.getAttribute('data-wf-site')) {
+                return {version: UNKNOWN_VERSION}
+            }
+
+            return false;
+        }
     }
 };
 

@@ -147,6 +147,7 @@ supports:
 - [Vue](https://vuejs.org/)
 - [Vue (Fast path)](https://vuejs.org/)
 - [WebFont Loader](https://github.com/typekit/webfontloader)
+- [Webflow](https://www.webflow.com/)
 - [Wix](https://www.wix.com/)
 - [Wiz](https://github.com/johnmichel/Library-Detector-for-Chrome/pull/147)
 - [WordPress](https://wordpress.org/)
